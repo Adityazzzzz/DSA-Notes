@@ -35,7 +35,7 @@ vector<vectpr<int>>vertical(Node* root){
         if(temp->right) q.push({temp->right, {x+1,y+1}});
     }
     
-    for(auto it1 : q){
+    for(auto it1 : mpp){
         vector<int>res;
         for(auto it2 : it1.second){
             res.insert(res.end(),res.second.begin(),res.second.end());

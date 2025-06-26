@@ -22,3 +22,40 @@ Node* searching(Node* root, int k){
     }
     return temp;
 }
+
+// ceil value searching in BST
+int findCeil(TreeNode* temp, int key){
+    int ceil = -1; 
+    while(temp){
+        if(temp->val == key){
+            ceil = temp->val;
+            return ceil;
+        } 
+
+        if(key > temp->val) temp = temp->right;
+        else{ 
+            ceil = temp->val;
+            temp = temp->left;
+        }
+    }
+    return ceil;
+}
+
+
+// floor value
+int findfloor(TreeNode* temp, int key){
+    int floor = -1; 
+    while(temp){
+        if(temp->val == key){
+            floor = temp->val;
+            return floor;
+        } 
+
+        if(key < temp->val) temp = temp->left;
+        else{ 
+            floor = temp->val;
+            temp = temp->right;
+        }
+    }
+    return floor;
+}
