@@ -31,3 +31,48 @@ int main2(){
     return 0;
     
 }
+
+
+// BFS Traversal
+vector<int>bfsgraph(int V, vector<int>& adj[]){
+    vector<int>ans;
+
+    int vis[n] = {0};
+    vis[0] = 1;
+
+    queue<int>q;
+    q.push(0);
+    while(!q.empty()){
+        int temp = q.front();
+        q.pop();
+        ans.push_back(temp);
+
+        for(auto it: adj[temp]){
+            if( vis[it] == 0 ){
+                vis[it] = 1;
+                q.push(it);
+            }
+        }
+    }
+    return ans;
+}
+
+
+
+// DFS Traversal
+vector<int>dfsgraph(int V, vector<int>& adj[]){
+    vector<int>list;
+    int vis[n] = {0};
+    int start = 0;
+
+    dfs(start,adj,vis,list);
+    return list;
+}
+void dfs(int node, vector<int>& adj[], int vis[], vector<int>& list){
+    vis[node] = 1;
+    list.push_back(node);
+
+    for(auto it: adj[node]){
+        if(!vis[it]) dfs(node,adj,vis,list);
+    }
+}
