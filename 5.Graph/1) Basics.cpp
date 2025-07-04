@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n,m;
+    cin>>n>>m;
+
+    int adj[n+1][n+1];
+    for(int i=0;i<m;i++){
+        int x,y;
+        cin>>x>>y;
+
+        adj[x][y] = 1;
+        adj[y][x] = 1;
+    }
+    return 0;
+}
+
+int main2(){
+    int n,m;
+    cin>>n>>m;
+
+    vector<int>adj[n+1];
+    for(int i=0;i<m;i++){
+        int x,y;
+        cin>>x>>y;
+        // if graph is undirected
+        adj[x].push_back(y);
+        // adj[y].push_back(x); 
+    }
+    return 0;
+    
+}
