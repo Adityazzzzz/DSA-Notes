@@ -37,7 +37,7 @@ int main2(){
 vector<int>bfsgraph(int V, vector<int>& adj[]){
     vector<int>ans;
 
-    int vis[n] = {0};
+    int vis[V] = {0};
     vis[0] = 1;
 
     queue<int>q;

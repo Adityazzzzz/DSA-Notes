@@ -29,5 +29,5 @@ int numofprovinces(vector<vector<int>>adjmat, int V){
             dfs(i,adjls,vis);
         }
     } 
-    return ans;
+    return cnt;
 }
