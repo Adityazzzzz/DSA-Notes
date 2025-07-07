@@ -21,6 +21,6 @@ vector<vector<int>>Floodfill(vector<vector<int>>&image,int sr,int sc, int newcol
     int initialcolor = image[sr][sc];
     vector<vector<int>>ans = image;
     int drow[] ={-1,0,1,0};
-    inr dcol[] ={0,1,0,-1};
+    int dcol[] ={0,1,0,-1};
     dfs(sr,sc,ans,initialcolor,newcolor,drow,dcol);
 }
