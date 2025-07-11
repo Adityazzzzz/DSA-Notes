@@ -32,7 +32,7 @@ lass Solution {
                 int nrow = row + delrow[i];
                 int ncol = col + delcol[i]; 
 
-                if(nrow >=0 && nrow <n && ncol >=0 && ncol < m && vis[nrow][ncol] == 0 && grid[nro][ncol] == 1) {
+                if(nrow >=0 && nrow <n   &&    ncol >=0 && ncol < m   &&   vis[nrow][ncol] == 0    &&   grid[nro][ncol] == 1) {
                     q.push({nrow, ncol});
                     vis[nrow][ncol] = 1; 
                 }
