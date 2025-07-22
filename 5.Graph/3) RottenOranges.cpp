@@ -36,7 +36,7 @@ int rottenOranges(vector<vector<int>>grid){
             int c = col + dcol[i];
 
             if((r>=0 && r<n)  &&  (c>=0 && c<m)  &&  (vis[r][c]!=2)  &&  (grid[r][c]==1)){
-                vis[r][c]=1;
+                vis[r][c]=2;
                 q.push({{r,c}, t+1});
             }
         }
