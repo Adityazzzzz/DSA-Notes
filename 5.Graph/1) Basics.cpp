@@ -43,11 +43,11 @@ vector<int>bfsgraph(int V, vector<int>& adj[]){
     queue<int>q;
     q.push(0);
     while(!q.empty()){
-        int temp = q.front();
+        int node = q.front();
         q.pop();
-        ans.push_back(temp);
+        ans.push_back(node);
 
-        for(auto it: adj[temp]){
+        for(auto it: adj[node]){
             if( !vis[it] ){
                 vis[it] = 1;
                 q.push(it);

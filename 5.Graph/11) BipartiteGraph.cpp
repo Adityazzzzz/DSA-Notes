@@ -13,7 +13,6 @@ bool dfs(int node,int nodecolor,int color[],vector<int>&adj[]){
 
 bool isBipartite(int V, vector<int>adj[]){
     int color[V] = {-1};
-
     for(int i=0;i<V;i++){
         if(color[i]==-1){
             if(dfs(i,0,color,adj) == false) return false;
