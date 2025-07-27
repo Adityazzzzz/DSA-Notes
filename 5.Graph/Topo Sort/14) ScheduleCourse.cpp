@@ -1,4 +1,5 @@
-
+#include<iostream>
+using namespace std;
 
 bool scheduleCourse1(int V,vector<pair<int,int>>&data){
     vector<int>adj[]
