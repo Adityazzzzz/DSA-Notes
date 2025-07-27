@@ -13,7 +13,6 @@ int climbStairs(int n) {.
     return solve(n,dp);
 }
 
-
 int climbStairs(int n) {
     if (n <= 2) return n;
 
@@ -26,4 +25,56 @@ int climbStairs(int n) {
         prev1 = cur;
     }
     return cur;        
+}
+
+// ------------------------------------------------------------------------------
+
+//  Frog jump
+// recursive 
+int f(int index, vector<int>&height){
+    if(index==0) return 0;
+
+    int left = f(index-1,height) + abs(height[index] - heigh[index-1]);
+    int right = INT_MAX;
+    if(index>1) right = f(index-2,height) + abs(height[index] - heigh[index-2]);
+
+    return min(left,right);
+}
+// recursive to dp
+int f(int index, vector<int>&height,vector<int>&dp){
+    if(index==0) return 0;
+    if(dp[index]!=-1) return dp[index];
+
+    int left = f(index-1,height,dp) + abs(height[index] - heigh[index-1]);
+    int right = INT_MAX;
+    if(index>1) right = f(index-2,height,dp) + abs(height[index] - heigh[index-2]);
+
+    return dp[index] = min(left,right);
+}
+// dp to tabular
+int f(int index){
+    vector<int>dp(n,0);
+    dp[0] = 0;
+    for(int i=1;i<n;i++){
+        int l = dp[i-1] + abs(height[i] - heigh[i-1]);
+        if(i>1) r = dp[i-2] + abs(height[i] - heigh[i-1]);
+
+        dp[i] = min(l,r);
+    }
+    return dp[n-1];
+}
+// space optimization
+int f(int index){
+    // vector<int>dp(n,0);
+    prev1 = 0;
+    prev2 = 0;
+    for(int i=1;i<n;i++){
+        int l = prev1 + abs(height[i] - heigh[i-1]);
+        if(i>1) r = prev2 + abs(height[i] - heigh[i-1]);
+
+        int curr = min(l,r);
+        prev2 = prev1;
+        prev1 = curr;
+    }
+    return prev1;
 }
