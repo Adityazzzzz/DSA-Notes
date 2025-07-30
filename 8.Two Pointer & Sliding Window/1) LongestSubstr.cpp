@@ -2,15 +2,21 @@
 using namespace std;
 
 // longest substr withut repeating char
-
 int lengthOfLongestSubstring(string s) {
-    unordered_map<char, int> m;
-    int maxLen = 0, l = 0;
+    int n = s.size();
+    int left=0,right=0,maxlen=0;
+    unordered_set<char>st;
     
-    for (int r = 0; r < s.length(); r++) {
-        if (m.count(s[r]) && m[s[r]] >= l)l = m[s[r]] + 1;
-        m[s[r]] = r;
-        maxLen = max(maxLen, r - l + 1);
+    while(right<n){ 
+        if(st.find(s[right])==st.end()){
+            st.insert(s[right]);
+            maxlen = max(maxlen,right-left+1);
+            right++;
+        }
+        else{
+            st.erase(s[left]);
+            left++;
+        }
     }
-    return maxLen;
+    return maxlen;
 }
