@@ -78,3 +78,58 @@ int f(int index){
     }
     return prev1;
 }
+
+
+//----------------------------------------------------------------------------------------------
+
+// Maximum sum of non-adjacent element
+//recursion
+func(int index){
+    if(index==0) return arr[index];
+    if(index<0) return 0;
+
+    int pick = arr[index] + func(index-2);
+    int notpick = 0 + func(index-1);
+
+    return max(pick,notpick);
+}
+// recursion to dp
+func(int index,vector<int>&dp){
+    if(index==0) return arr[index];
+    if(index<0) return 0;
+    if(dp[index] != -1) return dp[index];
+
+    int pick = arr[index] + func(index-2);
+    int notpick = 0 + func(index-1);
+
+    return dp[index] = max(pick,notpick);
+}
+// dp to tabulation
+func(int index){
+    vector<int>dp;
+    dp[0] = arr[0];
+    for(int i=1;i<n;i++){
+        int pick = arr[index] + dp[n-2];
+        int notpick = 0 + dp[n-1];
+
+        dp[i] = max(pic,notpick);
+    }
+    return dp[n-1];
+}
+// space optimization
+func(int index){
+    // vector<int>dp;
+    int prev = arr[0];
+    int prev2 = 0;
+
+    for(int i=1;i<n;i++){
+        int pick = arr[i]
+        if(pick>1) pick+=prev2;
+        int notpick = 0 + prev;
+
+        int curr = max(pic,notpick);
+        prev2 = prev;
+        prev = curr
+    }
+    return prev;
+}
