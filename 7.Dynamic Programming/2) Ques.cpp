@@ -133,3 +133,34 @@ func(int index){
     }
     return prev;
 }
+
+
+// House Robber
+// same as above ques - but here houses are in circle 
+func(int index){
+    int prev = arr[0];
+    int prev2 = 0;
+    for(int i=1;i<n;i++){
+        int pick = arr[i]
+        if(pick>1) pick+=prev2;
+        int notpick = 0 + prev;
+
+        int curr = max(pic,notpick);
+        prev2 = prev;
+        prev = curr
+    }
+    return prev;
+}
+long long houseRobber(vector<int>&houses){
+    vector<int>temp1;
+    vector<int>temp2;
+    int n = houses.size();
+    if(n==1) return houses[0];
+
+    for(int i=0;i<n;i++){
+        // fill element
+        if(i!=0) temp1.push_back(houses[i]); // except first ele
+        if(i!=n-1) temp2.push_back(houses[i]);// except second ele
+    }
+    return max(func(temp1),func(temp2));
+}
