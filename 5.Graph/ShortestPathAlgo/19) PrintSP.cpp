@@ -25,7 +25,7 @@ vector<int> shortestPath(int n, int m, vector<vector<int>>& edges) {
             int nextnode = it2.first;
             int edgeweight = it2.second;
 
-            if(dis + edgeweight < dist[nextnode]) {
+            if(dis + edgeweight < dist[nextnode]){
                 dist[nextnode] = dis + edgeweight;
                 q.push({dist[nextnode], nextnode});
                 parent[nextnode] = node;

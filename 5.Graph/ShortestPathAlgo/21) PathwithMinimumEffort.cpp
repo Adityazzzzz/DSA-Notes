@@ -31,7 +31,8 @@ int MinimumEffort(vector<vector<int>>& heights){
             if (nr >= 0 && nc >= 0 && nr < n && nc < m){
 
                 int newEffort = max(abs(heights[row][col] - heights[nr][nc]), diff);
-                if (newEffort < dist[nr][nc]) {
+                if (newEffort < dist[nr][nc]){
+                    
                     dist[nr][nc] = newEffort;
                     pq.push({newEffort,{nr,nc}})
                 }
