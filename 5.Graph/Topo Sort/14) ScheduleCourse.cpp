@@ -25,7 +25,7 @@ bool scheduleCourse1(int V,vector<pair<int,int>>&data){
 
         for(auto it:adj[node]){
             degree--;
-            if(degree[it]==0) q.push.push(it);
+            if(degree[it]==0) q.push(it);
         }
     }
     // for checking if there exists a cycle or not
