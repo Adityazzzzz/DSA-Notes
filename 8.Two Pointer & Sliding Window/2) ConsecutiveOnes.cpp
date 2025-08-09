@@ -65,3 +65,45 @@ int func(string s,int k){
         r++;
     }
 }
+
+
+// Number of substring containing all three characters
+int func(string s){
+    lastseen[3]={-1,-1,-1};
+    int cnt=0;
+    
+    for(i=0;i<n;i++){
+        lastseen[s[i]-'a'] = i;
+        if(lastseen[0]!=-1  &&  lastseen[1]!=-1  &&  lastseen[2]!=-1){
+            cnt = cnt + (1 + *min_element(lastseen.begin(),lastseen.end()));
+        }
+    }
+    return cnt;
+}
+
+
+// Maximum point you can obtain from cards (only in one direction:either start or reverse)
+/*
+    cases : 
+    [1 2 3 _ _ _]
+    [1 2 _ _ _ 3]
+    [1 _ _ _ 2 3]
+    [_ _ _ 1 2 3]
+*/
+int func(nums,k){
+    int lsum=0,rsum=0,maxsum=0;
+    for(int i=0;i<k-1;i++){
+        lsum = lsum + nums[i];
+    }
+    maxsum = lsum;
+    int rindex = n-1;
+
+    for(int i=k-1;i>=0;i--){
+        lsum = lsum - nums[i];
+        rsum = rsum + nums[rindex];
+        rindex --;
+
+        maxsum = max(maxsum, lsum+rsum);
+    }
+    return maxsum;  
+}
