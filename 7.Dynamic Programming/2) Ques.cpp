@@ -152,6 +152,7 @@ func(int index){
     }
     return prev;
 }
+
 long long houseRobber(vector<int>&houses){
     vector<int>temp1;
     vector<int>temp2;
