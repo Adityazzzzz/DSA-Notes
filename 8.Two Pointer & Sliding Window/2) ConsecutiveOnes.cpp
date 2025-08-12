@@ -107,3 +107,19 @@ int func(nums,k){
     }
     return maxsum;  
 }
+
+
+// func(n) - func(n-1)
+int func(int nums[]){
+    if(goal<0) return 0;
+    while(r<nums.size()){
+        sum = sm + nums[r];
+        while(sum>goal){
+            sum = sum - nums[l];
+            l++;
+        }
+        cnt = cnt + r-l+1;
+
+        r++;
+    }
+}
