@@ -15,14 +15,37 @@ class Node{
     }
 };
 
-Node* reverseinKgroups(Node* head){
+Node* getkthNode(Node* temp,int k){
+    k = k-1;
+    while(temp != NULL && k>0){
+        k--;
+        temp = temp->next;
+    }
+    return temp;
+}
+
+Node* reverseinKgroups(Node* head,int k){
     Node* temp = head;
     Node* prevNode = NULL;
-    Node* nextNode = NULL;
 
     while(temp != NULL){
-        
+        Node* kthnode = getkthNode(temp,k);
+        if(kthnode == NULL){ //edge case: if kth group is smaller than k
+            if(prevNode) prevNode->next = temp;
+            break;
+        }
+
+        Node* nextNode = kthnode->next;
+        kthnode->next = nullptr;
+        reverseLL(temp); // basic reverseLL function
+
+        if(temp == head) head = kthnode; // it means its a first group
+        else prevNode->next = kthnode;
+
+        prevNode = temp;
+        temp = nextNode;
     }
+    return head;
 }
 
 int main(){
