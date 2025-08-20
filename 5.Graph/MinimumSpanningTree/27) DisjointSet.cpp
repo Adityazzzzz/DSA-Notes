@@ -16,7 +16,7 @@ public:
     int findUParent(int node){
         if(node == parent[node]) return node;
         // return findParent(parent[node]);
-        return parent[node] = findUParent(parent[node]);// path compression
+        return parent[node] = findUParent(parent[node]); // path compression
     }
 
     void unionByRank(int u,int v){

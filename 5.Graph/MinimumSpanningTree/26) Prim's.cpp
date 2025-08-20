@@ -10,7 +10,6 @@ int spanningTree(int V, vector<vector<int>> adj) {
     int sum = 0;
 
     while(!pq.empty()){
-
         int wt = pq.top().first;
         int node = pq.top().second;
         pq.pop();
