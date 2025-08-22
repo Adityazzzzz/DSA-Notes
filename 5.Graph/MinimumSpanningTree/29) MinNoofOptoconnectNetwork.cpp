@@ -33,3 +33,27 @@ public:
     }
 
 }
+
+int Solve(int n, vector<vector<int>>& edge) {
+    DisjointSet ds(n);
+    int cntExtras = 0;
+    for (auto it : edge) {
+        int u = it[0];
+        int v = it[1];
+        if (ds.findUParent(u) == ds.findUParent(v)) {
+            cntExtras++;
+        }
+        else {
+            ds.unionByRank(u, v);
+        }
+    }
+
+    int cntC = 0;
+    for (int i = 0; i < n; i++) {
+        if (ds.parent[i] == i) cntC++;
+    }
+
+    int ans = cntC - 1;
+    if (cntExtras >= ans) return ans;
+    return -1;
+}
