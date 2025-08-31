@@ -1,0 +1,39 @@
+vector<int> numOfIslands(int n, int m, vector<vector<int>> &operators) {
+    DisjointSet ds(n * m);
+
+    vector<vector<int>> vis(n, vector<int>(m, 0));
+    int cnt = 0;
+
+    vector<int> ans;
+
+    int dr[] = {-1, 0, 1, 0};
+    int dc[] = {0, 1, 0, -1};
+
+    for (auto it : operators) {
+        int row = it[0];
+        int col = it[1];
+        if(vis[row][col] == 1){
+            ans.push_back(cnt);
+            continue;
+        }
+        vis[row][col] = 1;
+        cnt++;
+
+        int nodeNo = row * m + col;
+
+        for(int i = 0; i < 4; i++){
+            int nr = row + dr[i];
+            int nc = col + dc[i];
+                
+            if(nr >= 0 && nr < n   &&    nc >= 0 && nc < m    &&    vis[nr][nc] == 1){
+                int adjNode = nr * m + nc;
+                if(ds.findPar(nodeNo) != ds.findPar(adjNode)){
+                    cnt--;
+                    ds.unionBySize(nodeNo,adjNode);
+                }
+            }
+        }
+        ans.push_back(cnt);
+    }
+    return ans;
+}
