@@ -9,6 +9,9 @@
     "files.associations": {
         "ostream": "cpp",
         "vector": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "xlocinfo": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp"
     }
 }
