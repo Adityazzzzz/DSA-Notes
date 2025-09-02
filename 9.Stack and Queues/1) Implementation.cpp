@@ -1,3 +1,7 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
 // Implement Stack using 1 queue
 
 class MyStack{
