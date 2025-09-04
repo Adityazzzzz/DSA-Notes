@@ -2,14 +2,16 @@
 using namespace std;
 
 class DisjointSet{
-    vector<int>rank,parent;
+    vector<int>rank,parent,size;
 public:
     DisjointSet(int n){
         rank.resize(n+1,0);
         parent.resize(n+1);
+        size.resize(n+1);
 
         for(int i=0;i<n;i++){
             parent[i] = i;
+            size[i] = 1;
         }
     }
 
@@ -32,8 +34,22 @@ public:
         }
     }
 
-}
+    void unionBySize(int u,int v){
+        int Pu = findUParent(u);
+        int Pv = findUParent(v);
+        if(Pu==Pv) return;
 
+        if(size[Pu] < size[Pv]){
+            parent[Pu] = Pv;
+            size[Pv] += size[Pu];
+        }
+        else{
+            parent[Pv] = Pu;
+            size[Pu] += size[Pv];
+        }
+    }
+
+}
 int kruskals(int V,vector<vector<int>>adj[]){
     // 1->2 & 2->1 : bidirectional
     vector<pair<int,pair<int,int>>>> edges;
