@@ -27,7 +27,6 @@ string serialize(Node* root) {
         q.pop();
 
         if (temp == NULL) s = s + "#,";
-
         else {
             s = s + to_string(temp->val) + ",";
             q.push(temp->left);
