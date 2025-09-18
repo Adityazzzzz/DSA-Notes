@@ -59,7 +59,7 @@ int maxRemove(vector<vector<int>>& stones, int n) {
         maxCol = max(maxCol, it[1]);
     }
 
-    DisjointSet ds(maxRow + maxCol + 1);
+    DisjointSet ds(maxRow + maxCol + 2);
 
     unordered_map<int, int> mpp;
 
