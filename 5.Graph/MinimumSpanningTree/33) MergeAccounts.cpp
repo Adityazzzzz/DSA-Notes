@@ -1,90 +1,87 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-class DisjointSet{
-    vector<int>rank,parent,size;
+class DisjointSet {
 public:
-    DisjointSet(int n){
-        rank.resize(n+1,0);
+    vector<int> rank, size, parent;
+    DisjointSet(int n) {
+        rank.resize(n+1, 0);
         parent.resize(n+1);
-        size.resize(n+1);
-
-        for(int i=0;i<n;i++){
+        size.resize(n+1, 1);
+        for (int i = 0; i <= n; i++) {
             parent[i] = i;
-            size[i] = 1;
         }
     }
-
-    int findUParent(int node){
-        if(node == parent[node]) return node;
-        // return findParent(parent[node]);
-        return parent[node] = findUParent(parent[node]); // path compression
+    int findUparent(int node) {
+        if (node == parent[node]) return node;
+        return parent[node] = findUparent(parent[node]);
     }
+    void unionbyrank(int x, int y) {
+        int px = findUparent(x);
+        int py = findUparent(y);
+        if (px == py) return;
 
-    void unionByRank(int u,int v){
-        int Pu = findUParent(u);
-        int Pv = findUParent(v);
-        if(Pu==Pv) return;
-
-        if(rank[Pu]<rank[Pv]) parent[Pu] = Pv;
-        else if(rank[Pu]>rank[Pv]) parent[Pv] = Pu;
-        else{// Pu=Pv
-            parent[Pv] = Pu;
-            rank[Pu]++;
+        if (rank[px] < rank[py]) parent[px] = py;
+        else if (rank[py] < rank[px]) parent[py] = px;
+        else {
+            parent[px] = py;
+            rank[py]++; // ✅ fix
         }
     }
+    void unionbysize(int x, int y) {
+        int px = findUparent(x);
+        int py = findUparent(y);
+        if (px == py) return;
 
-    void unionBySize(int u,int v){
-        int Pu = findUParent(u);
-        int Pv = findUParent(v);
-        if(Pu==Pv) return;
-
-        if(size[Pu] < size[Pv]){
-            parent[Pu] = Pv;
-            size[Pv] += size[Pu];
-        }
-        else{
-            parent[Pv] = Pu;
-            size[Pu] += size[Pv];
+        if (size[px] < size[py]) {
+            parent[px] = py;
+            size[py] += size[px];
+        } else {
+            parent[py] = px;
+            size[px] += size[py];
         }
     }
+};
 
-}
+class Solution {
+public:
+    vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {
+        int n = accounts.size();
+        DisjointSet ds(n);
 
-vector<vector<string>> mergeDetails(vector<vector<string>> &details) {
-    int n = details.size();
-    unordered_map<string, int> mapMailNode;
-    DisjointSet(n);
+        unordered_map<string, int> mpp; // email -> account index
 
-    for(int i = 0; i < n; i++) {
-        for(int j = 1; j < details[i].size(); j++) {
-            string mail = details[i][j];
-            if(mapMailNode.find(mail) == mapMailNode.end()) {
-                mapMailNode[mail] = i;
-            } else {
-                ds.unionBySize(i, mapMailNode[mail]);
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j < accounts[i].size(); j++) {
+                string mail = accounts[i][j];
+                if (mpp.find(mail) == mpp.end()) {
+                    mpp[mail] = i;
+                } else {
+                    ds.unionbysize(i, mpp[mail]);
+                }
             }
         }
-    }
 
-    vector<string> mergedMail[n];
-    for(auto it : mapMailNode) {
-        string mail = it.first;
-        int node = ds.findPar(it.second);
-        mergedMail[node].push_back(mail);
-    }
-
-    vector<vector<string>> ans;
-    for(int i = 0; i < n; i++) {
-        if(mergedMail[i].size() == 0) continue;
-        sort(mergedMail[i].begin(), mergedMail[i].end());
-        vector<string> temp;
-        temp.push_back(details[i]);
-        for(auto it : mergedMail[i]) {
-            temp.push_back(it);
+        vector<vector<string>> merged(n);
+        for (auto it : mpp) {
+            string mail = it.first;
+            int node = ds.findUparent(it.second);
+            merged[node].push_back(mail);
         }
-        ans.push_back(temp);
-    }
 
-    return ans;
-}
+        // Step 3: Prepare result
+        vector<vector<string>> result;
+        for (int i = 0; i < n; i++) {
+            if (merged[i].empty()) continue;
+            sort(merged[i].begin(), merged[i].end());
+
+            vector<string> temp;
+            temp.push_back(accounts[i][0]); // account name
+            temp.insert(temp.end(), merged[i].begin(), merged[i].end());
+            
+            result.push_back(temp);
+        }
+
+        return result;
+    }
+};
