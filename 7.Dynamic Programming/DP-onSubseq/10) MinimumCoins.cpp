@@ -3,7 +3,7 @@ using namespcae std
 
 int f(int ind, int T, vector<int> &nums) {
     if(ind == 0){
-        if (T % nums[0] == 0) return T / nums[0];
+        if (T % nums[0] == 0) return T/nums[0];
         return 1e9;
     }
     if(dp[ind][T] != -1) return dp[ind][T];
