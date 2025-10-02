@@ -8,8 +8,8 @@ int minDiffSubsetSum(vector<int>&arr, int target){
 
     //base cases
     vector<vector<bool>> dp(n, vector<bool>(k+1, 0));
-    for(int i = 0; i < n; i++) dp[i][0] = true;
-    if(arr[0] <= k) dp[0][arr[0]] = true;
+    for(int i=0;i<n;i++)   dp[i][0] = true;
+    if(arr[0]<=k)   dp[0][arr[0]] = true;
 
     //operation
     for(int ind = 1; ind < n; ind++) {

@@ -20,7 +20,7 @@ int f(int i, int j, vector<vector<int>>& triangle, int n) {
     for(int j=0;j<n;j++) dp[n-1][j] = triangle[n-1][j];
 
     for(int i=n-2;i>=0;i--){
-        for(int j=i;j>=0;j--){
+        for(int j=0;j<=i;j++){
             int down = triangle[i][j] + dp[i+1][j];
             int diagonal = triangle[i][j] + dp[i+1][j+1];
 
@@ -38,7 +38,7 @@ int f(vector<vector<int>>& triangle, int n) {
 
     for(int i=n-2;i>=0;i--){
         vector<int>curr(n,0);
-        for(int j=i;j>=0;j--){
+        for(int j=0;j<=i;j++){
             int down = triangle[i][j] + front[j];
             int diagonal = triangle[i][j] + front[j+1];
 
