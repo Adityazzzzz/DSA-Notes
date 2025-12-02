@@ -25,6 +25,6 @@ public:
             dp[i][1] = max(-prices[i]+dp[i+1][0], 0+dp[i+1][1]);
             dp[i][0] = max(prices[i]+dp[i+1][1], 0+dp[i+1][0]);
         }
-        return dp[0][1];
+        return dp[0][0];
     }
 };
