@@ -5,6 +5,7 @@ using namespace std;
 int lis(int arr[],int n){
     vector<int>temp;
     temp.push_back(arr[0]);
+    
     for(int i=1;i<n;i++){
         if(arr[i]>temp.back()){
             temp.push_back(arr[i]);
