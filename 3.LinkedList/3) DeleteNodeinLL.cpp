@@ -39,7 +39,7 @@ Node* removetail(Node* head){
 
     Node* temp = head;
     while(temp->next->next != NULL){
-        temp=temp-next;
+        temp=temp->next;
     }
     delete temp->next;
     temp->next = nullptr;

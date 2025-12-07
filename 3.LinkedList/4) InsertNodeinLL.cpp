@@ -82,7 +82,7 @@ Node* insertNodebeforeELEMENTgiven(Node* head, int val, int el){
     }
     Node* temp=head;
     while(temp->next != NULL){
-        if(temp->next->next == el){
+        if(temp->next->next->data == el){
             temp->next=newNode;
             break;
         }
