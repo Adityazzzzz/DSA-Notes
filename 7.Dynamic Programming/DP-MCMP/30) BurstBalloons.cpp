@@ -17,7 +17,7 @@ int burstBalloons(int n,vector<int>&arr){
     // insert 1 at beginning and end
     arr.push_back(1);
     arr.insert(arr.begin(),1);
-    vector<vector<int>>dp(n+1,vector<int>(n+1,0))
+    vector<vector<int>>dp(n+2,vector<int>(n+2,0))
 
     for(int i=n;i>=1;i--){
         for(int j=1;j<=n;j++){
