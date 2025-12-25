@@ -1,22 +1,30 @@
 #include <iostream>
 using namespace std;
 
-int f(int ind, vector<int> &num, int k) {
-    int n = num.size();
-    if (ind == n) return 0;
-    
-    int len = 0;
-    int maxi = INT_MIN;
-    int maxAns = INT_MIN;
+class Solution {
+public:
+    int func(int i, vector<int>& arr, int k, vector<int>& dp) {
+        int n = arr.size();
+        if (i == n) return 0;
+        if (dp[i] != -1) return dp[i];
 
-    for(int j=ind;j<min(ind + k, n);j++){
-        len++;
-        maxi = max(maxi, num[j]);
-        int sum = len*maxi + f(j+1,num,k);
-        maxAns = max(maxAns,sum);
+        int maxsum = 0;
+        int maxi = 0;
+
+        for (int ind = 1; ind <= k && i + ind <= n; ind++) {
+            maxi = max(maxi, arr[i + ind - 1]);
+            int sum = maxi*ind + func(i + ind, arr, k, dp);
+            maxsum = max(maxsum, sum);
+        }
+
+        return dp[i] = maxsum;
     }
-    return maxAns;
-}
+    int maxSumAfterPartitioning(vector<int>& arr, int k) {
+        int n = arr.size();
+        vector<int> dp(n, -1);
+        return func(0, arr, k, dp);
+    }
+};
 
 //tabulation -------------------------------------------------------------------------------------
 int maximumSubarray(vector<int> &num, int k) {
