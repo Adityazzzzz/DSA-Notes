@@ -33,19 +33,20 @@ public:
         }
     }
     int getMax(int num) {
-    Node* node = root;
-    int maxNum = 0;
-    for (int i = 31; i >= 0; i--) {
-        int bit = (num >> i) & 1;
-        if (node->containsKey(1 - bit)) {
-            maxNum = maxNum | (1 << i);
-            node = node->get(1 - bit);
-        } else {
-            node = node->get(bit);
+        Node* node = root;
+        int maxNum = 0;
+        for (int i = 31; i >= 0; i--) {
+            int bit = (num >> i) & 1;
+            if (node->containsKey(1 - bit)) {
+                maxNum = maxNum | (1 << i);
+                node = node->get(1 - bit);
+            } else {
+                node = node->get(bit);
+            }
         }
+        return maxNum;
     }
-    return maxNum;
-}};
+};
 
 int maxXOR(int n, int m, vector<int> &arr1, vector<int> &arr2) {
     Trie trie;
