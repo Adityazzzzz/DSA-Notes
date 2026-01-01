@@ -38,7 +38,7 @@ public:
                 temp->put(word[i],new Node());
             }
             // move to reference trie
-            temp->get(word[i]);
+            temp = temp->get(word[i]);
         }
         temp->setEnd();
     }
