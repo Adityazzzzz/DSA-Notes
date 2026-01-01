@@ -47,7 +47,7 @@ public:
     bool search(string word){
         Node* temp = root;
         for(int i=0;i<word.length();i++){
-            if(temp->containsKey(word[i] == false)){
+            if(temp->containsKey(word[i]) == false){
                 return false;
             }
             temp = temp->get(word[i]);
@@ -59,7 +59,7 @@ public:
     bool startWith(string prefix){  
         Node* temp = root;
         for(int i=0;i<word.length();i++){
-            if(temp->containsKey(word[i] == false)){
+            if(temp->containsKey(word[i]) == false){
                 return false;
             }
             temp = temp->get(word[i]);
