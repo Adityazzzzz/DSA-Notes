@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// TC O(NlogK)
 vector<int> mergeKSortedArrays(vector<vector<int>> &arrays) {
     vector<int> result;
     using T = tuple<int, int, int>; 
