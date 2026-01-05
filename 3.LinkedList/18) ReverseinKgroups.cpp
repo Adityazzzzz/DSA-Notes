@@ -17,7 +17,7 @@ class Node{
 
 class Solution {
 private:
-    ListNode* findkthNode(ListNode* temp, int k) {
+    Node* findkthNode(Node* temp, int k) {
         k--;
         while (temp != NULL && k > 0) {
             k--;
@@ -26,11 +26,11 @@ private:
         return temp;
     }
 
-    ListNode* reverseLL(ListNode* head) {
+    Node* reverseLL(Node* head) {
         if (head == NULL || head->next == NULL) return head;
 
-        ListNode* newHead = reverseLL(head->next);
-        ListNode* front = head->next;
+        Node* newHead = reverseLL(head->next);
+        Node* front = head->next;
 
         front->next = head;
         head->next = NULL;
@@ -38,22 +38,22 @@ private:
     }
 
 public:
-    ListNode* reverseKGroup(ListNode* head, int k) {
-        ListNode* temp = head;
-        ListNode* prev = NULL;
+    Node* reverseKGroup(Node* head, int k) {
+        Node* temp = head;
+        Node* prev = NULL;
 
         while (temp != NULL) {
-            ListNode* kthnode = findkthNode(temp, k);
+            Node* kthnode = findkthNode(temp, k);
             if (kthnode == NULL) {
                 if (prev) prev->next = temp;
                 break;
             }
 
-            ListNode* nextNode = kthnode->next;
+            Node* nextNode = kthnode->next;
             kthnode->next = NULL;
 
             // reverse current block
-            ListNode* newHead = reverseLL(temp);
+            Node* newHead = reverseLL(temp);
 
             // first group
             if (temp == head) head = newHead;
