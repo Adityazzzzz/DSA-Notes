@@ -15,6 +15,16 @@ class Node{
     }
 };
 
+// height of tree
+int maxDepth(TreeNode* root){
+    if(!root) return 0;
+    int lh=maxDepth(root->left);
+    int rh=maxDepth(root->right);
+    
+    return 1+max(lh,rh);
+}
+
+
 // is tree balanced
 bool balancedHeigth(Node* root){
     return dfsHeight(root) != -1;
