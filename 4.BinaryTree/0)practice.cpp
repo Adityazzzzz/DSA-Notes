@@ -35,9 +35,8 @@ vector<vector<int>> bfs(Node* root){
         ans.push_back(list);
     }
     return ans;
-
+ 
 }
-
 //---------------------------------------------------------------------------------
 int maxDepth(TreeNode* root){
     if(!root) return 0;
@@ -47,3 +46,28 @@ int maxDepth(TreeNode* root){
     return 1+max(lh,rh);
 }
 //---------------------------------------------------------------------------------
+int dfs(Node* root){
+    if(!root) return 0;
+    int lh=dfs(root->left);
+    int rh=dfs(root->right);
+
+    if(abs(lh-rh)>1) return -1;
+    return 1+max(lh,rh); 
+}
+bool balancedHeigth(Node* root){
+    return (dfs(root)!=-1) return true;
+}
+//---------------------------------------------------------------------------------
+//diameter
+int dfs(TreeNode* root,int &maxi){
+    if(!root) return 0;
+    int lh=dfs(root->left,maxi);
+    int rh=dfs(root->right,maxi);
+    maxi=max(maxi,lh+rh);
+    return 1+max(lh,rh);
+}
+int diameterOfBinaryTree(TreeNode* root){
+    int maxi=0;
+    dfs(root,maxi);
+    return maxi;
+}
