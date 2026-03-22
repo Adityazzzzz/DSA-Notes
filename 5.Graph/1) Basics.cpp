@@ -48,7 +48,7 @@ vector<int>bfsgraph(int V, vector<int>& adj[]){
         ans.push_back(node);
 
         for(auto it: adj[node]){
-            if( !vis[it] ){
+            if(!vis[it]){
                 vis[it] = 1;
                 q.push(it);
             }
