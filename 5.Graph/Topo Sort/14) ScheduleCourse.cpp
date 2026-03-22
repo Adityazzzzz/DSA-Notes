@@ -24,7 +24,7 @@ bool scheduleCourse1(int V,vector<pair<int,int>>&data){
         ans.push_back(node);
 
         for(auto it:adj[node]){
-            degree--;
+            degree[it]--;
             if(degree[it]==0) q.push(it);
         }
     }

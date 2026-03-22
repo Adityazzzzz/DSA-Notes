@@ -7,7 +7,7 @@ vector<int>Nodes(int V,vector<int>adj[]){
     for(int i=0;i<V;i++){
         for(auto it:adj[i]){
             adj[it].push_back(i);
-            degree++;
+            degree[i]++;
         }
     }
     queue<int> q;
