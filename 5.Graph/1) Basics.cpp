@@ -73,6 +73,6 @@ void dfs(int node, vector<int>& adj[], int vis[], vector<int>& list){
     list.push_back(node);
 
     for(auto it: adj[node]){
-        if(!vis[it]) dfs(node,adj,vis,list);
+        if(!vis[it]) dfs(it,adj,vis,list);
     }
 }
