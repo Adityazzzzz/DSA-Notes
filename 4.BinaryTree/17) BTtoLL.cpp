@@ -15,7 +15,7 @@ class Node{
     }
 };
 
-
+// 1st way
 TreeNode* prev = NULL;
 void flatten(TreeNode* root) {
     if(root==NULL) return;
@@ -29,7 +29,7 @@ void flatten(TreeNode* root) {
     prev = root;
 }
 
-
+// 2nd way
 TreeNode* prev = NULL;
 void flatten(TreeNode* root) {
     if(root == NULL) return;
@@ -45,8 +45,7 @@ void flatten(TreeNode* root) {
     }
 }
 
-
-
+// 3rd way - leetcode
 void flatten(TreeNode* root) {
     TreeNode* curr = root;
     while (curr) {
