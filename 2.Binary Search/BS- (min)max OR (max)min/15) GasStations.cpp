@@ -44,7 +44,7 @@ int gasstation(int *arr,int dist){
     return cnt;
 }
 
-long double gasstation(int *arr,int n,int k){//         imp to take long double bcz ans will be decimals
+long double gasstation(int *arr,int n,int k){//imp to take long double bcz ans will be decimals
     long double low=0;
     long double high=0;
     for(int i=0;i<n-1;i++){
