@@ -32,13 +32,5 @@ int bookall(int *book,int n,int students){
     return ans;
 }
 
-int main(){
-    int n=4;
-    int student=3;
-    int book[]={3,4,6,9};
-    cout<<bookall(book,n,student)<<endl;
-    return 0;
-}
-
 
 

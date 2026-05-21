@@ -32,13 +32,6 @@ double median(int *arr1,int* arr2,int k){
     }
     return 0;
 }
-int main(){
-    int arr1[]={1,2,3,5,7};
-    int arr2[]={4,5,6,8};
-
-    cout<<median(arr1,arr2, 4)<<endl;
-    return 0;
-}
 
 
 

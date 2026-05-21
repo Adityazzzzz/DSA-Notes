@@ -64,13 +64,5 @@ long double gasstation(int *arr,int n,int k){//         imp to take long double 
     return ans;
 }
 
-int main(){
-    int n=4;
-    int k=3;// extra to be inserted
-    int station[]={3,4,6,9};
-    cout<<gasstation(book,n,k)<<endl;
-    return 0;
-}
-
 
 

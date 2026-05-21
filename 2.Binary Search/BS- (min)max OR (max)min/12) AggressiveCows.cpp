@@ -34,14 +34,3 @@ int aggcows(int *arr,int n,int cows){
     return ans;
 }
 
-
-int main(){
-    int n=4;
-    int cows=3;
-    int arr[]={3,4,6,9};
-    cout<<aggcows(arr,n,cows)<<endl;
-    return 0;
-}
-
-
-
