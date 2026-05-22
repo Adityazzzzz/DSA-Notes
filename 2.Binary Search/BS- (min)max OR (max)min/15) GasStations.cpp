@@ -5,10 +5,9 @@ using namespace std;
 // we have to insert K new stations between them such that (the difference b/w consecutive is maximum) ans then take minimum of all cases
 
 
-/*
 // tc: O(nlogn + klogn);
 // sc: O(n-1);
-long double gasstation(int *arr,int n,int k){//         imp to take long double bcz ans will be decimals
+long double gasstation(int *arr,int n,int k){//imp to take long double bcz ans will be decimals
     vector<int>howmany(n-1,0);
     priority_queue<pair<long double,int>>pq;
 
@@ -29,7 +28,6 @@ long double gasstation(int *arr,int n,int k){//         imp to take long double 
 
     return pq.top().first;
 }
-*/
 //------------------------------------------------------------------------------------------------------------------------------------
 
 int gasstation(int *arr,int dist){
