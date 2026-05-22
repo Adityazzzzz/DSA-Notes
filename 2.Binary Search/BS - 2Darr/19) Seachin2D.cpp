@@ -18,15 +18,6 @@ bool search(vector<vector<int>>&arr,int target){
     return false;
 }
 
-int main(){
-    vector<vector<int>>arr={{2,3,4,9},
-                            {13,16,19,20},
-                            {21,22,25,30},
-                        }; 
-
-    cout<<search(arr,25)<<endl;
-    return 0;
-}
 
 
 
