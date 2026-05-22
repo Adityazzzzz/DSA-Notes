@@ -7,7 +7,8 @@ double median(int *arr1,int* arr2,int k){
     int n2=arr2.size();
     if(n1>n2) return median(arr2,arr1,k);
 
-    int low=max(0,k-n2),high=min(k,n1);//         ***imp
+    int low=max(0,k-n2);//  **imp
+    int high=min(k,n1);//  **imp
 
     int left=k;
     int n=n1+n2;
