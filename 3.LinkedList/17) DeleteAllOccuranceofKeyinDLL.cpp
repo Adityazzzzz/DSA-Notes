@@ -31,12 +31,13 @@ Node* deleteAllOccuranceofKey(Node* head, int key){
             if(prevNode != NULL) nextNode->back = prevNode;
             delete temp;
             temp = nextNode;
+            temp = temp->next;
         }
-        temp = temp->next;
+        else{
+            temp = temp->next;
+        }
     }
-    else{
-        temp = temp->next;
-    }
+    
     return head;
 }
 //----------------------------------------------------------------------------------------------
