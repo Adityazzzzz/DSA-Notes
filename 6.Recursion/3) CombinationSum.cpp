@@ -13,7 +13,7 @@ void subseq(int index,int target,vector<int>&arr,vector<vector<int>>&ans,vector<
 
     if(arr[index]<=target){
         ds.push_back(arr[index]);
-        subseq(index+1,target-arr[index],arr,ans,ds);
+        subseq(index,target-arr[index],arr,ans,ds);
         ds.pop_back();
     }
     subseq(index+1,target,arr,ans,ds);
