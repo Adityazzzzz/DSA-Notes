@@ -12,7 +12,10 @@ class Solution {
         
         board[i][j] = '*'; //temp replace char
 
-        bool check = dfs(board, i + 1, j, word, ind + 1) || dfs(board, i, j + 1, word, ind + 1) || dfs(board, i - 1, j, word, ind + 1) || dfs(board, i, j - 1, word, ind + 1);
+        bool check = dfs(board, i+1, j, word, ind+1) 
+                    || dfs(board, i, j+1, word, ind+1) 
+                    || dfs(board, i-1, j, word, ind+1) 
+                    || dfs(board, i, j-1, word, ind+1);
 
         board[i][j] = c;
         return check;
