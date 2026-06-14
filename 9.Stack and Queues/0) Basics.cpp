@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// 1. Array to Stack
+// 1. Stack using Arr
 class stack{
 public:
     int top=-1;
@@ -10,19 +10,19 @@ public:
         if(top >= capacity-1){
             return;
         }
-        st[++top] = x;
+        arr[++top] = x;
     }
     int pop(){
         if(isEmpty()){
             return -1; 
         }
-        return st[top--];
+        return arr[top--];
     }
     int top(){
         if(isEmpty()){
             return -1; 
         }
-        return st[top];
+        return arr[top];
     }
     bool isEmpty(){
         return top==-1;
@@ -30,7 +30,7 @@ public:
 };
 
 //----------------------------------------------------------------------------------------------
-// 2. Array to Queue
+// 2. Queue using Arr
 class q{
 public:
     arr = new int[10];
@@ -64,5 +64,79 @@ public:
     }
     bool isEmpty(){
         return(currSize==0);
+    }
+};
+
+//---------------------------------------------------------------------------------------------
+// 3. Stack using LL
+class Node {
+public:
+    int data;
+    Node* next;
+    Node(int val) {
+        data = val;
+        next = NULL;
+    }
+};
+class Stack {
+    Node* top = NULL;
+public:
+    void push(int x) {
+        Node* temp = new Node(x);
+        temp->next = top;
+        top = temp;
+    }
+    void pop() {
+        if(top==NULL) return;
+        Node* temp = top;
+        top = top->next;
+        delete temp;
+    }
+    int peek() {
+        if(top==NULL) return -1;
+        return top->data;
+    }
+    bool empty() {
+        return top==NULL;
+    }
+};
+
+//--------------------------------------------------------------------------------------------------
+// 4. Queue using LL
+class Node {
+public:
+    int data;
+    Node* next;
+    Node(int val) {
+        data = val;
+        next = NULL;
+    }
+};
+class Queue {
+    Node *front=NULL, *rear=NULL;
+public:
+    void push(int x) {
+        Node* temp = new Node(x);
+        if(rear==NULL){
+            front = rear = temp;
+            return;
+        }
+        rear->next = temp;
+        rear = temp;
+    }
+    void pop() {
+        if(front==NULL) return;
+        Node* temp = front;
+        front = front->next;
+
+        if(front == NULL) rear = NULL;
+        delete temp;
+    }
+    int peek() {
+        if(front==NULL) return -1;
+        return front->data;
+    }
+    bool empty() {
+        return front==NULL;
     }
 };
