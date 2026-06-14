@@ -1,8 +1,7 @@
 #include<iostream>
 using namespace std;
 
-
-// Implement Stack using 1 queue
+// 1. Implement Stack using 1 queue
 class MyStack{
     queue<int>q;
 public:
@@ -28,8 +27,39 @@ public:
     }
 };
 
+//--------------------------------------------------------------------------------------------------
+// 2. Implement Queue using 2 stacks - COSTLY PUSH - easy 
+class Queue {
+    stack<int> s1, s2;
+public:
+    void push(int x) {
+        while (!s1.empty()) {
+            s2.push(s1.top());
+            s1.pop();
+        }
+        s1.push(x);
+        while (!s2.empty()) {
+            s1.push(s2.top());
+            s2.pop();
+        }
+    }
+    void pop() {
+        if (s1.empty()) {
+            return;
+        }
+        s1.pop();
+    }
+    int front() {
+        if (s1.empty()) return -1;
+        return s1.top();
+    }
+    bool empty() {
+        return s1.empty();
+    }
+};
 
-// Implement Queue in O(1);
+//---------------------------------------------------------------------------------------------------
+// 3. Implement Queue in O(1) / Implement Queue using 2 stacks - COSTLY POP;
 class MyQueue {
     stack<int>st1;
     stack<int>st2;
