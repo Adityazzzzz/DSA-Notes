@@ -7,25 +7,25 @@ public:
     int top=-1;
 
     void push(int x){
-        if (top >= capacity-1){
+        if(top >= capacity-1){
             return;
         }
         st[++top] = x;
     }
     int pop(){
-        if (isEmpty()){
+        if(isEmpty()){
             return -1; 
         }
         return st[top--];
     }
     int top(){
-        if (isEmpty()){
+        if(isEmpty()){
             return -1; 
         }
         return st[top];
     }
     bool isEmpty(){
-        return top == -1;
+        return top==-1;
     }
 };
 
@@ -40,45 +40,29 @@ public:
     maxSize = 10;
 
     void push(int x){
-        if (currSize == maxSize){
-            exit(1);
-        }
-        if (end == -1){
-            start = 0;
-            end = 0;
-        } 
-        else{
-            end = (end + 1) % maxSize;
-        }
+        if(currSize==maxSize) exit(1);
+        
+        if(end==-1) start = 0;end = 0;
+        else end =(end + 1) % maxSize;
             
         arr[end] = x;
         currSize++;
     }
-
     int pop(){
-        if (start == -1){
-            exit(1);
-        }
+        if(start==-1) exit(1);
+
         int popped = arr[start];
-        if (currSize == 1){
-            start = -1;
-            end = -1;
-        }
-        else{
-            start = (start + 1) % maxSize;
-        }
+        if(currSize==1) start = -1; end = -1;
+        else start =(start + 1) % maxSize;
         
         currSize--;
         return popped;
     }
-
     int peek(){
-        if (start == -1){
-            exit(1);
-        }
+        if(start==-1) exit(1);
         return arr[start];
     }
     bool isEmpty(){
-        return (currSize == 0);
+        return(currSize==0);
     }
 };

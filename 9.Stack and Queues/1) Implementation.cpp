@@ -3,7 +3,6 @@ using namespace std;
 
 
 // Implement Stack using 1 queue
-
 class MyStack{
     queue<int>q;
 public:
@@ -28,7 +27,6 @@ public:
         return q.empty();
     }
 };
-
 
 
 // Implement Queue in O(1);
