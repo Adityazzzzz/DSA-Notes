@@ -28,6 +28,7 @@ vector<int> getNSE(vector<int>& arr){
     }
     return nse;
 }
+
 int sumSubarrayMins(vector<int>& arr){
     int n = arr.size();
     vector<int> psee = getPSE(arr);
