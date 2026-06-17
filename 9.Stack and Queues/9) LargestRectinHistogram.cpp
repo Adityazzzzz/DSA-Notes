@@ -12,7 +12,7 @@ int func(vector<int>& arr){
 
             int nse = i;
             int pse = s.empty()? -1 : s.top();
-            maxarea = max(maxarea, arr[ele] * (nse-pse-1))
+            maxarea = max( maxarea, (arr[ele]*(nse-pse-1)) )
         }
         s.push(i);
     }
@@ -20,10 +20,11 @@ int func(vector<int>& arr){
     // if any element left in stack
     while(!s.empty()){
         int nse = n;
-        int ele = s.top();s.pop();
+        int ele = s.top();
+        s.pop();
         int pse = s.empty()? -1 : s.top();
 
-        maxarea = max(maxarea, arr[ele] * (nse-pse-1))
+        maxarea = max( maxarea, (arr[ele]*(nse-pse-1)) )
     }
     return maxarea;
 
