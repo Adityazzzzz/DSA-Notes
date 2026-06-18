@@ -18,6 +18,7 @@ class StockSpanner{
         }
 
         ans = index - (st.empty() ? -1 : st.top().second)
+        
         st.({val,index});
         return ans;
     }
