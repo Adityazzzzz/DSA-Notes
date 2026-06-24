@@ -17,12 +17,13 @@ public:
 
         for(int i=posts.size()-1; i>=0 && count < 10; i--){
             if(posts[i].first == userId || follows[userId][posts[i].first]){
-                feed.push_back(posts[i].second),count++;
+                feed.push_back(posts[i].second);
+                count++;
             }
         }
         return feed;
     }
-    
+
     void follow(int followerId,int followeeId){
         follows[followerId][followeeId] = 1;
     }
