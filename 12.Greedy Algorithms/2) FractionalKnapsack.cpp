@@ -14,10 +14,11 @@ bool static comp(Item a,Item b){
 
 dd fractionalKnapsack(int W,Item arr[],int n){
     sort(arr,arr+n,comp);
+    
     int currW = 0; 
     dd ans = 0.0;
-    for (int i = 0;i < n;i++){
-        if (currW+arr[i].weight <= W){
+    for(int i=0;i<n;i++){
+        if(currW+arr[i].weight <= W){
             currW += arr[i].weight;
             ans += arr[i].value; 
         } 
