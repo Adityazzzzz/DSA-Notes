@@ -7,8 +7,8 @@ int findContentChildren(vector<int>& student,vector<int>& cookie){
 
     int studentIndex = 0; 
     int cookieIndex = 0;  
-    while (studentIndex < student.size() && cookieIndex < cookie.size()) {
-        if (cookie[cookieIndex] >= student[studentIndex]) {
+    while (studentIndex < student.size() && cookieIndex < cookie.size()){
+        if (cookie[cookieIndex] >= student[studentIndex]){
             studentIndex++; 
         }
         cookieIndex++; 
