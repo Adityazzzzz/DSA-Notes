@@ -2,7 +2,7 @@
 using namespace std;
 
 struct Job{
-    int id,dead,profit;
+    int id,deadline,profit;
 };
 bool cmp(Job a,Job b){
     return a.profit > b.profit;
@@ -12,7 +12,7 @@ vector<int> JobScheduling(Job arr[],int n){
     int maxi = 0;
     
     for(int i=0;i<n;i++){
-        maxi = max(maxi,arr[i].dead);
+        maxi = max(maxi,arr[i].deadline);
     }
 
     vector<int> slot(maxi+1,-1);
@@ -20,7 +20,7 @@ vector<int> JobScheduling(Job arr[],int n){
     int profit = 0;
 
     for(int i=0;i<n;i++){
-        for(int j=arr[i].dead;j>0;j--){
+        for(int j=arr[i].deadline;j>0;j--){
             if(slot[j] == -1){
                 slot[j] = arr[i].id;
                 cnt++;
