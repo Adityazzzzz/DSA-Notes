@@ -19,7 +19,7 @@ vector<int> nGE(vector<int>& nums){
 }
 //------------------------------------------------------------------------------------------------
 
-// Version 2 - Find NRE in hypothetical rotated arr
+// Version 2 - Find NGE in hypothetical rotated arr
 
 // tc: O(4N)
 vector<int> nGE(vector<int>& nums){
