@@ -15,7 +15,7 @@ public:
 
     void makeMostFrequentlyUsed(int k){
         auto &vec=(*(mp[k]));
-        int key=vec[0],value=vec[1],f=vec[2];
+        int key=vec[0], value=vec[1], f=vec[2];
 
         freq[f].erase(mp[key]);
         if(freq[f].empty()) freq.erase(f);
@@ -40,13 +40,16 @@ public:
             auto &vec=(*(mp[key]));
             vec[1]=value;
             makeMostFrequentlyUsed(key);
-        } else if(size<cap){
+        } 
+        else if(size<cap){
             size++;
             freq[1].push_front(vector<int>({key,value,1}));
             mp[key]=freq[1].begin();
-        } else{
-            auto &lru_list=freq.begin()->second;
-            int key_delete=lru_list.back()[0];
+        } 
+        else{
+            auto &lru_list = freq.begin()->second;
+            int key_delete = lru_list.back()[0];
+
             lru_list.pop_back();
             mp.erase(key_delete);
 
