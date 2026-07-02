@@ -1,13 +1,15 @@
 #include<iostream>
 using namespace std;
 
+// tc:O(n^2*log k)
+// sc:O(k)
 long long kthLargestSum(vector<int> &arr, int k){
     int n=arr.size();
     priority_queue<long long, vector<long long>, greater<long long>> pq;
     
-    for(int i=1;i <= n;i++){
+    for(int i=1;i<=n;i++){
         long long sum =0;
-        for(int j=i;j <= n;j++){
+        for(int j=i;j<=n;j++){
             sum += arr[j];
             
             if(pq.size() < k){
