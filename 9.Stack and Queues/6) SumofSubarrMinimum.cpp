@@ -39,7 +39,7 @@ int sumSubarrayMins(vector<int>& arr){
         long long left = i - psee[i];
         long long right = nse[i] - i;
 
-        ans =(ans + (arr[i] * left % MOD) * right) % MOD;
+        ans = ans + ((arr[i] * left % MOD) * right) % MOD;
     }
     return ans;
 }
