@@ -2,7 +2,7 @@
 using namespace std;
 
 
-class LRUCache {
+class LRUCache{
 public:
     class Node{
     public: 
@@ -17,13 +17,12 @@ public:
         }
     };
 
-    Node* head = new Node(-1, -1);
-    Node* tail = new Node(-1, -1);
-
+    Node* head = new Node(-1,-1);
+    Node* tail = new Node(-1,-1);
     int cap;
     unordered_map<int, Node*> mpp;
 
-    LRUCache(int capacity) {
+    LRUCache(int capacity){
         cap = capacity;
         head->next = tail;
         tail->prev = head;
@@ -42,11 +41,12 @@ public:
     void deleteNode(Node* delnode){
         Node* prevv = delnode->prev;
         Node* nextt = delnode->next;
+        
         prevv->next = nextt;
         nextt->prev = prevv;
     }
 
-    int get(int key) {
+    int get(int key){
         if(mpp.find(key) != mpp.end()){
             Node* resNode = mpp[key];
             int ans = resNode->val;
@@ -62,7 +62,7 @@ public:
         return -1;
     }
 
-    void put(int key, int value) {
+    void put(int key, int value){
         if(mpp.find(key) != mpp.end()){
             Node* curr = mpp[key];
             mpp.erase(key);
