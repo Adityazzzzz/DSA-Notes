@@ -16,13 +16,13 @@ class Node{
 };
 
 // TOP LEVEL VIEW
-vector<int> topView(Node* root){
-    vector<int> ans;
+vector<int>topView(Node* root){
+    vector<int>ans;
     if(root == NULL) return ans;
 
-    map<int, int> mpp;
-    queue<pair<Node*, int>> q;
-    q.push({root, 0});
+    map<int,int>mpp;
+    queue<pair<Node*,int>>q;
+    q.push({root,0});
 
     while(!q.empty()){
         auto it = q.front();
@@ -33,8 +33,8 @@ vector<int> topView(Node* root){
             
         if(mpp.find(index) == mpp.end()) mpp[index] = node->data; // imp
             
-        if(node->left != NULL) q.push({node->left, index - 1});
-        if(node->right != NULL)q.push({node->right, index + 1});
+        if(node->left != NULL) q.push({node->left,index-1});
+        if(node->right != NULL) q.push({node->right,index+1});
     }
 
     for(auto it : mpp){
@@ -45,13 +45,13 @@ vector<int> topView(Node* root){
 
 
 // BOTTOM LEVEL VIEW 
-vector<int> topView(Node* root){
-    vector<int> ans;
+vector<int>topView(Node* root){
+    vector<int>ans;
     if(root == NULL) return ans;
 
-    map<int, int> mpp;
-    queue<pair<Node*, int>> q;
-    q.push({root, 0});
+    map<int,int>mpp;
+    queue<pair<Node*,int>>q;
+    q.push({root,0});
 
     while(!q.empty()){
         auto it = q.front();
@@ -62,8 +62,8 @@ vector<int> topView(Node* root){
             
         mpp[index] = node->data; // imp
             
-        if(node->left != NULL) q.push({node->left, index - 1});
-        if(node->right != NULL)q.push({node->right, index + 1});
+        if(node->left != NULL) q.push({node->left,index-1});
+        if(node->right != NULL) q.push({node->right,index+1});
     }
 
     for(auto it : mpp){
@@ -74,11 +74,11 @@ vector<int> topView(Node* root){
 
 
 // RIGHT SIDE VIEW
-void recursion(Node* root, int level, vector<int> &res){
+void recursion(Node* root,int level,vector<int>&res){
     if(root==NULL) return;
     if(level == res.size()) res.push_back(root->val);
-    recursion(root->left, level+1, res);
-    recursion(root->right, level+1, res);
+    recursion(root->left,level+1,res);
+    recursion(root->right,level+1,res);
 }
 vector<int>rightside(Node* root){
     vector<int>res;

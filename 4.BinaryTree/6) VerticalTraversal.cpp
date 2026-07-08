@@ -38,7 +38,7 @@ vector<vectpr<int>>vertical(Node* root){
     for(auto it1 : mpp){
         vector<int>res;
         for(auto it2 : it1.second){
-            res.insert(res.end(),res.second.begin(),res.second.end());
+            res.insert(res.end(),it2.second.begin(),it2.second.end());
         }
         ans.push_back(res);
     }
