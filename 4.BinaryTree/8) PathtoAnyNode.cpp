@@ -15,7 +15,7 @@ class Node{
     }
 };
 
-bool getPath(Node* root, vector<int>&arr, int k){
+bool getPath(Node* root,vector<int>&arr,int k){
     if(!root) return false;
 
     arr.push_back(root->val);
@@ -25,9 +25,10 @@ bool getPath(Node* root, vector<int>&arr, int k){
     arr.pop_back();
     return false;
 }
-vector<int>solution(Node* A, int B){
+vector<int>solution(Node* A,int B){
     vector<int>arr;
     if(A==NULL) return arr;
-    getPath(A, arr, B);
+    
+    getPath(A,arr,B);
     return arr;
 }
