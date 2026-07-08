@@ -1,25 +1,25 @@
 #include<iostream>
 using namespace std;
 
-class Node {
+class Node{
     int val;
     Node *next;
-    Node(int x) : val(x), next(nullptr) {}
+    Node(int x) : val(x), next(nullptr){}
 };
 
-class Compare {
-    bool operator()(const pair<Node*, int> &a, const pair<Node*, int> &b) {
+class Compare{
+    bool operator()(const pair<Node*, int> &a, const pair<Node*, int> &b){
         return a.first->val > b.first->val;
     }
 };
 
-Node* mergeKLists(vector<Node*> &lists) {
+Node* mergeKLists(vector<Node*> &lists){
     priority_queue<pair<Node*, int>, vector<pair<Node*, int>>, Compare> minHeap;
     
     // Initialize heap with head of each list
     int k = lists.size();
-    for (int i = 0; i < k; i++) {
-        if (lists[i]) {
+    for(int i = 0; i < k; i++){
+        if(lists[i]){
             minHeap.emplace(lists[i], i);
         }
     }
@@ -27,7 +27,7 @@ Node* mergeKLists(vector<Node*> &lists) {
     Node dummy(0);
     Node *tail = &dummy;
     
-    while (!minHeap.empty()) {
+    while(!minHeap.empty()){
         auto [node, listIdx] = minHeap.top();
         minHeap.pop();
         
@@ -35,7 +35,7 @@ Node* mergeKLists(vector<Node*> &lists) {
         tail = tail->next;
         
         // Add next node from same list
-        if (node->next) {
+        if(node->next){
             minHeap.emplace(node->next, listIdx);
         }
     }
