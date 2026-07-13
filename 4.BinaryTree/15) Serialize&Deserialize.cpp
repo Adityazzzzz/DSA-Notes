@@ -16,18 +16,18 @@ class Node{
 };
 
 
-string serialize(Node* root) {
-    if (!root) return "";
+string serialize(Node* root){
+    if(!root) return "";
     string s = "";
     queue<Node*> q;
     q.push(root);
 
-    while (!q.empty()) {
+    while(!q.empty()){
         Node* temp = q.front();
         q.pop();
 
-        if (temp == NULL) s = s + "#,";
-        else {
+        if(temp == NULL) s = s + "#,";
+        else{
             s = s + to_string(temp->val) + ",";
             q.push(temp->left);
             q.push(temp->right);
@@ -36,8 +36,8 @@ string serialize(Node* root) {
     return s;
 }
 
-Node* deserialize(string data) {
-    if (data.empty())  return NULL;
+Node* deserialize(string data){
+    if(data.empty())  return NULL;
 
     stringstream s(data);
     string str;
@@ -48,18 +48,18 @@ Node* deserialize(string data) {
     queue<Node*> q;
     q.push(newnode);
 
-    while (!q.empty()) {
+    while(!q.empty()){
         Node* node = q.front();
         q.pop();
 
         getline(s, str, ',');
-        if (str != "#") {
+        if(str != "#"){
             Node* leftNode = new Node(stoi(str));
             node->left = leftNode;
             q.push(leftNode);
         }
         getline(s, str, ',');
-        if (str != "#") {
+        if(str != "#"){
             Node* rightNode = new Node(stoi(str));
             node->right = rightNode;
             q.push(rightNode);
