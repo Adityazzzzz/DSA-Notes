@@ -33,7 +33,7 @@ void mark(unordered_map<Node*,Node*>&parent,Node* root ){
     }
 }
 
-vector<int> distanceK(Node* root, Node* target, int k) {
+vector<int> distanceK(Node* root, Node* target, int k){
     unordered_map<Node*,Node*>parent;
     mark(parent,root);
 

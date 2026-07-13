@@ -42,6 +42,7 @@ int minTime(Node* root, int target) {
     while(!q.empty()){
         int size = q.size();
         bool burned = false;
+        
         for(int i=0;i<size;i++){
             Node* curr = q.front();
             q.pop();

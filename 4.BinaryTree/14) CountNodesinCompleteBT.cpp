@@ -15,16 +15,6 @@ class Node{
     }
 };
 
-int countnodes(Node* root){
-    if(root == NULL) return 0 ;
-
-    int lh = findheightLEFT(root);
-    int rh = findheightRIGHT(root);
-    if(lh==rh) return (1<<lh)-1; // 2^lh-1
-
-    return 1 + countnodes(root->left) + countnodes(root->right);
-}
-
 int findheightLEFT(Node* temp){
     int cnt=0;
     while(temp){
@@ -40,4 +30,14 @@ int findheightRIGHT(Node* temp){
         temp = temp->right;
     }
     return cnt;
+}
+
+int countnodes(Node* root){
+    if(root == NULL) return 0 ;
+
+    int lh = findheightLEFT(root);
+    int rh = findheightRIGHT(root);
+    if(lh==rh) return (1<<lh)-1; // 2^lh-1
+
+    return 1 + countnodes(root->left) + countnodes(root->right);
 }
