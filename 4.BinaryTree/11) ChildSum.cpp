@@ -2,42 +2,45 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
-    Node* right;
+    Node* left;
     Node* right;
 
-    public:
-    Node(int data,Node* left1,Node* right1){
-        data=data1;
-        left=left1;
-        right=right1;
+    Node(int val){
+        data = val;
+        left = nullptr;
+        right = nullptr;
+    }
+
+    Node(int val, Node* left1, Node* right1){
+        data = val;
+        left = left1;
+        right = right1;
     }
 };
 
+void changeTree(Node* root){
+    if(root == nullptr) return;
 
-void changeTree(TreeNode* root) {
-        if (root == NULL) return;
-        int childsum = 0;
-        if (root->left) childsum += root->left->val;
-        if (root->right) childsum += root->right->val;
+    int childSum = 0;
+    if(root->left) childSum += root->left->data;
+    if(root->right) childSum += root->right->data;
 
-        if (childsum >= root->val) {
-            root->val = childsum;
-        } 
-        else {
-            if (root->left) {
-                root->left->val = root->val;
-            } else if (root->right) {
-                root->right->val = root->val;
-            }
-        }
-        changeTree(root->left);
-        changeTree(root->right);
+    if(childSum >= root->data){
+        root->data = childSum;
+    } 
+    else{
+        if(root->left) root->left->data = root->data;
+        if(root->right) root->right->data = root->data;
+    }
 
-        int finalsum = 0;
-        if (root->left) finalsum += root->left->val;
-        if (root->right)  finalsum += root->right->val;
+    changeTree(root->left);
+    changeTree(root->right);
 
-        if (root->left || root->right) root->val = finalsum;
+    int total = 0;
+    if(root->left) total += root->left->data;
+    if(root->right) total += root->right->data;
+
+    if(root->left || root->right) root->data = total;
 }
