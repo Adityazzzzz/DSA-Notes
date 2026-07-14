@@ -4,22 +4,20 @@ using namespace std;
 // tc : O(2n)
 // sc : O(n)
 class StockSpanner{
-    stack<pair<int,int>>st;
-    int index = -1;
-
+public:
+    stack<pair<int, int>> st;
+    int index;
     StockSpanner(){
         index = -1;
-        st.clear();
     }
-    
-    int next(int val){
-        index = index + 1;
-        while(!st.empty() && st.top()<=val){
+    int next(int price){
+        index++;
+        while(!st.empty() && st.top().first <= price){
             st.pop();
         }
-        ans = index - (st.empty() ? -1 : st.top().second)
-        
-        st.push({val,index});
+
+        int ans = index - (st.empty() ? -1 : st.top().second);
+        st.push({price, index});
         return ans;
     }
-}
+};
