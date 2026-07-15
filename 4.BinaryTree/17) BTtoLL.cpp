@@ -17,7 +17,7 @@ class Node{
 
 // 1st way
 TreeNode* prev = NULL;
-void flatten(TreeNode* root) {
+void flatten(TreeNode* root){
     if(root==NULL) return;
 
     flatten(root->right);
@@ -31,29 +31,34 @@ void flatten(TreeNode* root) {
 
 // 2nd way
 TreeNode* prev = NULL;
-void flatten(TreeNode* root) {
+void flatten(TreeNode* root){
     if(root == NULL) return;
+
     stack<TreeNode*> st;
     st.push(root);  
-    while (!st.empty()) {  
+
+    while(!st.empty()){  
         TreeNode* cur = st.top(); 
         st.pop();  
-        if (cur->right != NULL) st.push(cur->right); 
-        if (cur->left != NULL)  st.push(cur->left); 
-        if (!st.empty()) cur->right = st.top();  
+
+        if(cur->right != NULL) st.push(cur->right); 
+        if(cur->left != NULL)  st.push(cur->left); 
+        if(!st.empty()) cur->right = st.top();  
         cur->left = NULL;  
     }
 }
 
 // 3rd way - leetcode
-void flatten(TreeNode* root) {
+void flatten(TreeNode* root){
     TreeNode* curr = root;
-    while (curr) {
-        if (curr->left) {
+    
+    while(curr){
+        if(curr->left){
             TreeNode* pre = curr->left;
-            while (pre->right) {
+            while(pre->right){
                 pre = pre->right;
             }
+
             pre->right = curr->right;
             curr->right = curr->left;
             curr->left = NULL;
