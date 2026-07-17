@@ -30,7 +30,7 @@ vector<vectpr<int>>vertical(Node* root){
         int x = it.second.first;
         int y = it.second.second;
 
-        mpp[x][y].insert(temp->val;)
+        mpp[x][y].insert(temp->val);
         if(temp->left) q.push({temp->left, {x-1,y+1}});
         if(temp->right) q.push({temp->right, {x+1,y+1}});
     }
