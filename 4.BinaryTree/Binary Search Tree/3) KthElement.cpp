@@ -17,41 +17,40 @@ class Node{
 
 
 
-void reverseInorder(TreeNode* node, int& counter, int k, int& kLargest) {
-    if (!node || counter >= k) return;
+void reverseInorder(TreeNode* node,int& counter,int k,int& kLargest){
+    if(!node || counter >= k) return;
     
-    reverseInorder(node->right, counter, k, kLargest);
+    reverseInorder(node->right,counter,k,kLargest);
     counter++;
-    if (counter == k) {
+    if(counter == k){
         kLargest = node->val;
         return;
     }
-    reverseInorder(node->left, counter, k, kLargest);
+    reverseInorder(node->left,counter,k,kLargest);
 }
 
-void inorder(TreeNode* node, int& counter, int k, int& kSmallest) {
-    if (!node || counter >= k) return;
+void inorder(TreeNode* node,int& counter,int k,int& kSmallest){
+    if(!node || counter >= k) return;
 
-    inorder(node->left, counter, k, kSmallest);
+    inorder(node->left,counter,k,kSmallest);
     counter++;
-    if (counter == k) {
+    if(counter == k){
         kSmallest = node->val;
         return;
     }
-    inorder(node->right, counter, k, kSmallest);
+    inorder(node->right,counter,k,kSmallest);
 }
 
-pair<int, int> findKth(TreeNode* root, int k) {
+pair<int,int> findKth(TreeNode* root,int k){
     int kSmallest = INT_MIN;
     int kLargest = INT_MIN;
 
     int counter = 0; 
-    inorder(root, counter, k, kSmallest);
-
+    inorder(root,counter,k,kSmallest);
     int counter2 = 0; 
-    reverseInorder(root, counter2, k, kLargest);
+    reverseInorder(root,counter2,k,kLargest);
 
-    return make_pair(kSmallest, kLargest);
+    return make_pair(kSmallest,kLargest);
 }
 
 
