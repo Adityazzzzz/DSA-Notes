@@ -19,8 +19,8 @@ class BSTiterator{
  private:
     stack<TreeNode*> stk;
 
-    void pushAll(TreeNode* node) {
-        while (node != NULL) {
+    void pushAll(TreeNode* node){
+        while(node != NULL){
             stk.push(node);
             node = node->left;
         }
@@ -32,9 +32,11 @@ class BSTiterator{
     bool hasNext(){
         return !stk.empty();
     }
+    
     int next(){
         TreeNode* node = stk.top();
         stk.pop();
+
         pushAll(node->right);
         return node->val;
     }
