@@ -7,7 +7,7 @@ int rottenOranges(vector<vector<int>>grid){
     int n = grid.size();
     int m = grid[0].size();
 
-    queue<pairpair<int,int>,int>>q;
+    queue<pair<pair<int,int>,int>>q;
     vector<vector<int>>vis;
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
