@@ -20,7 +20,7 @@ int wordladder(string startword, string targtword, vector<string>&wordlist){
             char original = word[i];
             for(char ch = 'a'; ch <= 'z'; ch++){
                 word[i] = ch;
-                
+
                 if(st.find(word) != st.end()){
                     st.erase(word);
                     q.push({word, steps + 1});
@@ -51,7 +51,7 @@ void dfs(string word, vector<string>&seq){
         char original = word[i];
         for(char ch = 'a'; ch <= 'z'; ch++){
             word[i] = ch;
-            if(mpp.find()!=mpp.end() && mpp[word]+1 == steps){
+            if(mpp.find(word)!=mpp.end() && mpp[word]+1 == steps){
                 seq.push_back(word);
                 dfs(word,seq);
                 seq.pop_back();
