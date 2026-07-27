@@ -2,7 +2,7 @@
 using namespace std;
 
 bool dfs(int node,int nodecolor,int color[],vector<int>&adj[]){
-    color[node] = col;
+    color[node] = nodecolor;
     for(auto it:adj[node]){
         if(color[it] == -1) dfs(it,!nodecolor,color,adj);
         else if(color[it] == nodecolor) return false;
