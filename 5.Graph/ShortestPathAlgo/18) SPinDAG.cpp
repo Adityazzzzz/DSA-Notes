@@ -1,54 +1,55 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void dfsTopoSort(int node, vector<pair<int,int>> adj[],int vis[], stack<int> &st) {
+void dfsTopoSort(int node,vector<pair<int,int>>adj[],vector<int>&vis,stack<int>&st){
     vis[node] = 1;
-    for(auto it : adj[node]) {
+    for(auto it : adj[node]){
         int v = it.first;
-        if(!vis[v]) {
-            opoSort(v,adj,vis,st);
+        if(!vis[v]){
+            dfsTopoSort(v,adj,vis,st);
         }
     }
     st.push(node);
 }
 
-vector<int> shortestPath( int N, int M, vector<vector<int>> edges){
-    vector<pair<int,int>> adj[N];
-    for(int i = 0;i<N;i++) {
+vector<int>shortestPath(int N,int M,vector<vector<int>>&edges){
+    vector<pair<int,int>>adj[N];
+    for(int i=0;i<M;i++){
         int u = edges[i][0];
         int v = edges[i][1];
         int wt = edges[i][2];
-        adj[u].push_back({v, wt});
+
+        adj[u].push_back({v,wt});
     }
 
-    // find the topo sort
-    int vis[N] = {0};
-    stack<int> st;
-    for(int i = 0;i<N;i++) {
-        if(!vis[i]) {
-            dfsTopoSort(i, adj, vis, st);
-        }
+    vector<int>vis(N,0);
+    stack<int>st;  // when doing topo sort using dfs, take stack
+    for(int i=0;i<N;i++){
+        if(!vis[i]) dfsTopoSort(i,adj,vis,st);
     }
 
-    // step 2 do the distance thing
-    vector<int> dist(N);
-    for(int i = 0;i<N;i++) dist[i] = 1e9;
-
-    // final 
-    dist[0] = 0; 
-    while(!st.empty()) {
+    vector<int>dist(N,1e9);
+    dist[0] = 0;
+    while(!st.empty()){
         int node = st.top();
         st.pop();
 
-        for(auto it : adj[node]) {
-            int v = it.first;
-            int wt = it.second;
+        if(dist[node] != 1e9){
 
-            if(dist[node] + wt < dist[v]) {
-                dist[v] = dist[node] + wt;
+            for(auto it : adj[node]){
+
+                int v = it.first;
+                int wt = it.second;
+
+                if(dist[node] + wt < dist[v]){
+                    dist[v] = dist[node] + wt;
+                }
             }
         }
     }
 
+    for(int i=0;i<N;i++){
+        if(dist[i] == 1e9) dist[i] = -1;
+    }
     return dist;
 }
