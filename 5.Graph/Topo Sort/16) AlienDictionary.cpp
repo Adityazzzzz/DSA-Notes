@@ -33,7 +33,7 @@ string findorder(string dict[],int N,int k){
         string s2 = dict[i+1];
 
         int len = min(s1.size(),s2.size());
-        for(int i = 0;i<len;i++){
+        for(int i=0;i<len;i++){
             if(s1[i] != s2[i]){
                 adj[s1[i]-'a'].push_back(s2[i]-'a'); // so that char becomes 0
                 break; 
