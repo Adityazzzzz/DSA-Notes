@@ -22,9 +22,9 @@ vector<int> shortestPath(int n,int m,vector<vector<int>>& edges){
         int dis = pq.top().first;
         q.pop();
 
-        for(auto it2 : adj[node]){
-            int nextnode = it2.first;
-            int edgeweight = it2.second;
+        for(auto it : adj[node]){
+            int nextnode = it.first;
+            int edgeweight = it.second;
 
             if(dis + edgeweight < dist[nextnode]){
                 dist[nextnode] = dis + edgeweight;
