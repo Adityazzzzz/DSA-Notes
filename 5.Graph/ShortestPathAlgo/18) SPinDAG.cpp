@@ -35,9 +35,7 @@ vector<int>shortestPath(int N,int M,vector<vector<int>>&edges){
         st.pop();
 
         if(dist[node] != 1e9){
-
             for(auto it : adj[node]){
-
                 int v = it.first;
                 int wt = it.second;
 
