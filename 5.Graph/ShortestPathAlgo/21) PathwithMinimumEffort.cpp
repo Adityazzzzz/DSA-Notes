@@ -17,7 +17,7 @@ int MinimumEffort(vector<vector<int>>& heights){
     int dr[4] = {-1,0,1,0};
     int dc[4] = {0,1,0,-1};
 
-    while(!pq.empty()) {
+    while(!pq.empty()){
         int diff = pq.top().first;
         int row = pq.top().second.first;
         int col = pq.top().second.second;
@@ -25,12 +25,13 @@ int MinimumEffort(vector<vector<int>>& heights){
 
         if(row==n-1 && col==m-1) return diff;
 
-        for(int i=0;i<4;i++) {
+        for(int i=0;i<4;i++){
             int nr = row + dr[i];
             int nc = col + dc[i];
 
             if(nr>=0 && nc>=0 && nr<n && nc<m){
-                int newEffort = max(abs(heights[row][col] - heights[nr][nc]),diff);
+                int newEffort = max(abs(heights[row][col] - heights[nr][nc]), diff);
+                
                 if(newEffort < dist[nr][nc]){
                     dist[nr][nc] = newEffort;
                     pq.push({newEffort,{nr,nc}})
