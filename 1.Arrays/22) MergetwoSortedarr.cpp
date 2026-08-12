@@ -9,7 +9,7 @@ using namespace std;
 //     int left=n-1;
 //     int right=0;      //                             (_ _ _ _ )    (_ _ _ _ _)
 //     while(left>=0 && right<m){        //                    |       |
-//         if(arr1[left]>arr2[right]){//                        left    right
+//         if(arr1[left]>arr2[right]){//                      left    right
 //             swap(arr1[left],arr2[right]);
 //             left--;
 //             right++;
@@ -26,10 +26,14 @@ void merge(int* nums1,int* nums2,int m,int n){
         
     while(j>=0){
         if(i>=0 && nums1[i]>nums2[j]){
-            nums1[k--] = nums1[i--];
+            nums1[k] = nums1[i];
+            k--;
+            i--;
         } 
         else{
-            nums1[k--] = nums2[j--];
+            nums1[k] = nums2[j];
+            k--;
+            j--;
         }
     }
 }
