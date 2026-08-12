@@ -10,7 +10,6 @@ step 2- linear search
 step 3- find just next to it
 */
 
-
 void nextPermutation(vector<int> &arr,int n){
     int idx=-1;
     for(int i=n-2;i>=0;i--){ // from second last element
@@ -27,13 +26,4 @@ void nextPermutation(vector<int> &arr,int n){
         }
     }
     reverse(arr.begin()+idx,arr.end());
-}
-
-
-int main(){
-    int n=10;
-    int arr[]={1,1,1,1,1,1,8,6,7,9};
-    
-    cout<<nextPermutation(arr,n)<<endl;;
-    return 0;
 }
