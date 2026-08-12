@@ -30,15 +30,3 @@ int secondsmallest(int *arr,int n){
     }
     return smin;
 }
-
-
-
-int main(){
-    int n=5;
-    int arr[]={1,3,5,7,9};
-    int slarge=secondlargest(arr,n);
-    int ssmall=secondsmallest(arr,n);
-
-    cout<<slarge<<" "<<ssmall<<endl;
-    return 0;
-}

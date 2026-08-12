@@ -87,13 +87,3 @@ vector<int> intersectionArr(int *arr1,int *arr2,int n){
     }
 
 }
-
-int main(){
-    int n=5;
-    int arr1[]={1,3,4,5,6};
-    int arr2[]={1,1,4,4,6};
-    
-    unionArr(arr1,arr2,n);
-    intersectionArr(arr1,arr2,n);
-    
-}

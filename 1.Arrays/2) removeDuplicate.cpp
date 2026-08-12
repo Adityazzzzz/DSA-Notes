@@ -11,15 +11,3 @@ int removeduplicate(int *arr,int n){
     }
     return i+1;
 }
-
-int main(){
-    int n=6;
-    int arr[]={1,1,3,5,7,9};
-    
-    N=removeduplicate(arr,n);
-    
-    for (int i = 0; i < N; i++) {
-        cout << arr[i] << " ";
-    }
-    return 0;
-}

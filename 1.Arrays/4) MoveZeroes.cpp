@@ -27,14 +27,3 @@ void move0toend(int *arr,int n){
         }        
     }
 }
-int main(){
-    int n=2;
-    int arr[]={1,2};
-    
-    move0toend(arr,n);
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << " ";
-    }
-
-
-}

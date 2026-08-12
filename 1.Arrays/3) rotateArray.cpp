@@ -26,21 +26,3 @@ void rotatebyD(int *arr, int n, int d){
 
     reverse(arr, arr + n); // 4 5 6 7 1 2 3
 }
-
-int main(){
-    int n = 5;
-    int arr[] = {1, 3, 5, 7, 9};
-
-    rotateby1(arr, n);
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-
-    int d = 3;
-    rotatebyD(arr, n, d);
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-}
