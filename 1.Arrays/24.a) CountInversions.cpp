@@ -16,11 +16,11 @@ int merge(int *arr,int low,int mid ,int high){ //.......................... 3
         }
         else{
             temp.push_back(arr[right]);
-            count= count+(mid-left+1); ////...................................... one extra line ..bss
+            count += (mid-left+1); ////...................................... one extra line ..bss
             right++;
         }
     }
-    while (left<=mid){
+    while(left<=mid){
         temp.push_back(arr[left]);
         left++;
     }

@@ -35,14 +35,15 @@ void merge(int *arr,int low,int mid ,int high){
     }
 }
 
-int countpairs(int *arr,int low,int mid ,int high){
+int countpairs(int *arr,int low,int mid,int high){
     int right=mid+1;
     int count=0;
+
     for(int i=low;i<=mid;i++){
         while(right<=high && arr[i] > 2*arr[right]){
             right++;
         }
-        count=count+(right-(mid+1));
+        count += (right-(mid+1));
     }
     return count;
 }
