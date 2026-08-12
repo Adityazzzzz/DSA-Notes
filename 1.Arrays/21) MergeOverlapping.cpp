@@ -41,7 +41,7 @@ vector<vector<int>>mergeoverlapping(vector<vector<int>>arr,int n){
             ans.push_back(arr[i]);
         }
         else{
-            ans.back()[1]=max(ans.back()[1],arr[i][1]);
+            ans.back()[1] = max(ans.back()[1],arr[i][1]);
         }
     }
     return ans;
