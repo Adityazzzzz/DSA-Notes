@@ -46,11 +46,3 @@ vector<vector<int>>mergeoverlapping(vector<vector<int>>arr,int n){
     }
     return ans;
 }
-
-
-int main(){
-    int n=10;
-    int arr[]={(1,3),(2,6),(8,10),(11,15),(9,10)};
-    cout<<countsubarr(arr,n)<<endl;;
-    return 0;
-}

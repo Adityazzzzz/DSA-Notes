@@ -19,28 +19,17 @@ using namespace std;
 //     sort(arr1,arr1+n);
 //     sort(arr2,arr2+m);
 //}
-void merge(int* nums1,int* nums2, int m,int n) {
-    int i = m - 1;
-    int j = n - 1;
-    int k = m + n - 1;
+void merge(int* nums1,int* nums2,int m,int n){
+    int i = m-1;
+    int j = n-1;
+    int k = m+n-1;
         
-    while (j >= 0) {
-        if (i >= 0 && nums1[i] > nums2[j]) {
+    while(j>=0){
+        if(i>=0 && nums1[i]>nums2[j]){
             nums1[k--] = nums1[i--];
-        } else {
+        } 
+        else{
             nums1[k--] = nums2[j--];
         }
     }
-}
-
-
-
-int main(){
-    int arr1[]={1,3,5,7};
-    int arr2[]={0,2,4,6,8};
-    merge(arr1,arr2,4,5);
-    for(int i=0;i<9;i++){
-        cout<<arr1[i]<<endl;
-    }
-    return 0;
 }
