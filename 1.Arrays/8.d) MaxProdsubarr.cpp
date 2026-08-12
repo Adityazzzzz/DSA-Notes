@@ -17,11 +17,3 @@ int maxprodsubarr(int *nums,int n){
     }
     return maxi;
 }
-
-
-int main(){
-    int n=10;
-    int arr[]={1,2,-3,4,-5,6,3,0,5,6};
-    cout<<maxprodsubarr(arr,n)<<endl;;
-    return 0;
-}
