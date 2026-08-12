@@ -1,13 +1,19 @@
 #include<iostream>
 using namespace std;
 
-int removeduplicate(int *arr,int n){
-    int i=0;
-    for(int j=i;j<n;j++){
-        if(arr[i]!=arr[j]){
-            arr[i+1]=arr[j];
-            i++;
-        }
+int findDuplicate(vector<int>&arr){
+    int slow = arr[0];
+    int fast = arr[0];
+
+    do{
+        slow = arr[slow];
+        fast = arr[arr[fast]];
+    }while(slow != fast)
+
+    fast = nums[0];
+    while(slow != fast){
+        slow = arr[slow];
+        fast = arr[fast]; 
     }
-    return i+1;
+    return slow;
 }

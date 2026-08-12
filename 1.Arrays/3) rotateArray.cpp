@@ -1,14 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void rotateby1(int *arr, int n)
-{
+void rotateby1(int *arr,int n){
     int temp = arr[0];
-    for (int i = 0; i < n - 1; i++)
-    {
-        arr[i] = arr[i + 1];
+    for (int i=0;i<n-1;i++){
+        arr[i] = arr[i+1];
     }
-    arr[n - 1] = temp;
+    arr[n-1] = temp;
 }
 
 // brute solution:
@@ -19,10 +17,10 @@ void rotateby1(int *arr, int n)
 //    for(i=d -> <n) arr[i-d]=arr[i];         arr= 4 5 6 7 _ _ _
 //    for(i=n-d -> <n) arr[i]=temp[i-(n-d)];     arr= 4 5 6 7 1 2 3
 // }
-void rotatebyD(int *arr, int n, int d){
+void rotatebyD(int *arr,int n,int d){
     d = d % n;
-    reverse(arr, arr + d);     // 3 2 1 4 5 6 7
-    reverse(arr + d, arr + n); // 3 2 1 7 6 5 4
+    reverse(arr,arr+d);     // 3 2 1 4 5 6 7
+    reverse(arr+d,arr+n); // 3 2 1 7 6 5 4
 
-    reverse(arr, arr + n); // 4 5 6 7 1 2 3
+    reverse(arr,arr+n); // 4 5 6 7 1 2 3
 }
