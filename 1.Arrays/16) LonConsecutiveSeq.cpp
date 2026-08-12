@@ -51,7 +51,7 @@ int longestSequence(int *arr,int arr){
 int longestConsecutive(vector<int>& nums){
     int n = nums.size();
     int cnt1 = 1;
-    int cnt2 = 0;
+    int ans = 0;
     if(n==0) return 0;
 
     sort(nums.begin(),nums.end());
@@ -60,10 +60,10 @@ int longestConsecutive(vector<int>& nums){
         if(nums[i] != nums[i-1] ){
             if(nums[i]==nums[i-1]+1) cnt1++;
             else{
-                cnt2 = max(cnt1,cnt2);
+                ans = max(cnt1,ans);
                 cnt1 = 1;
             }
         }       
     }
-    return max(cnt1,cnt2);
+    return max(cnt1,ans);
 }
