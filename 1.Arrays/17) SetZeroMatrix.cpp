@@ -24,7 +24,6 @@ for(i=0 -> n)
 }
 */
 
-
 // BETTER SOLU:   tc: O(2*n*n)  sc:O(n+n)
 /*
 int row[]={0}, int col[]={0}
@@ -39,7 +38,6 @@ for(i=0 -> n)
         if(row[i]==1 || col[j]==1) arr[i][j]=0;         
 }
 */
-
 
 // O(n+m)
 vector<vector<int>>zeromatrix(vector<vector<int>> &matrix,int n){
@@ -63,18 +61,10 @@ vector<vector<int>>zeromatrix(vector<vector<int>> &matrix,int n){
             }
         }
     }
-    if(matrix[0][0]==0) {
+    if(matrix[0][0]==0){
         for(int j=0;j<m;j++) matrix[0][j]=0;
     }
     if(col0==0){
         for(int i=0;i<n;i++) matrix[i][0]=0;
     }
-}
-
-
-
-int main(){
-    // input a 2D matrix 
-    cout<<zeromatrix(arr,n)<<endl;;
-    return 0;
 }
