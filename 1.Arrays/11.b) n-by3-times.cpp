@@ -43,8 +43,8 @@ int majorityelement(int arr[],int n ){
         if(arr[i]==ele1) cnt1++;
         if(arr[i]==ele2) cnt2++;
     }
-    
-    int mm=int(n/3) +1;
+
+    int mm = int(n/3)+1;
     if(cnt1 > mm) ans.push_back(ele1);
     if(cnt2 > mm) ans.push_back(ele2);
 
