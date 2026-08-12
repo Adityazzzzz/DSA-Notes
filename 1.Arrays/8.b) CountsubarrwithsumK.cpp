@@ -15,11 +15,3 @@ int countsubarr(int *arr,int n,int k){
     }
     return count;  
 }
-
-
-int main(){
-    int n=10;
-    int arr[]={1,2,3,4,5,6,3,2,5,6};
-    cout<<countsubarr(arr,n,6)<<endl;;
-    return 0;
-}
