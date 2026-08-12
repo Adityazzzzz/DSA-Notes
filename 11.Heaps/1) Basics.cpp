@@ -21,20 +21,20 @@ public:
                 swap(arr[parent], arr[idx]);
                 idx = parent;
             } 
-            else {
+            else{
                 return;
             }
         }
     }
 
-    void deletefromHeap() {
-        if (size == 0) return;
+    void deletefromHeap(){
+        if(size == 0) return;
         arr[1] = arr[size];
         size--;
 
         // take root node to its correct position
         int i = 1;
-        while (i < size) {
+        while(i < size){
             int left = 2*i;
             int right = 2*i + 1;
 
@@ -46,7 +46,7 @@ public:
                 swap(arr[i], arr[right]);
                 i = right;
             } 
-            else {
+            else{
                 return;
             }
         }
