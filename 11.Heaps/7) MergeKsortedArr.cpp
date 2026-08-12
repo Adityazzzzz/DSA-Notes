@@ -8,13 +8,13 @@ vector<int> mergeKSortedArrays(vector<vector<int>> &arrays){
     priority_queue<T,vector<T>,greater<T>> minHeap;
     
     int k = arrays.size();
-    for(int i = 0; i < k; i++){
+    for(int i=0;i<k;i++){
         if(!arrays[i].empty()){
             minHeap.emplace(arrays[i][0],i,0);
         }
     }
     
-    while (!minHeap.empty()){
+    while(!minHeap.empty()){
         auto [val,arrIdx,elemIdx] = minHeap.top();
         minHeap.pop();
         
