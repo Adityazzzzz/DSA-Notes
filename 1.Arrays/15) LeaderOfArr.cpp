@@ -11,10 +11,3 @@ vector<int>leaderofarr(int *arr,int arr){
     }
     // sort or reverse ans vector acc to ques
 }
-
-int main(){
-    int n=10;
-    int arr[]={1,1,1,1,1,1,8,6,7,9};
-    cout<<leaderofarr(arr,n)<<endl;;
-    return 0;
-}

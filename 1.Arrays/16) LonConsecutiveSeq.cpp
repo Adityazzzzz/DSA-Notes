@@ -48,15 +48,15 @@ int longestSequence(int *arr,int arr){
 //     return longest;
 // }
 
-int longestConsecutive(vector<int>& nums) {
+int longestConsecutive(vector<int>& nums){
     int n = nums.size();
     int cnt1 = 1;
     int cnt2 = 0;
     if(n==0) return 0;
 
-    sort(nums.begin(), nums.end());
+    sort(nums.begin(),nums.end());
 
-    for(int i = 1 ; i < n ; i++){
+    for(int i=1;i<n;i++){
         if(nums[i] != nums[i-1] ){
             if(nums[i]==nums[i-1]+1) cnt1++;
             else{
@@ -66,12 +66,4 @@ int longestConsecutive(vector<int>& nums) {
         }       
     }
     return max(cnt1,cnt2);
-}
-
-int main(){
-    int n=10;
-    int arr[]={1,1,1,1,1,1,8,6,7,9};
-    
-    cout<<longestSequence(arr,n)<<endl;;
-    return 0;
 }
