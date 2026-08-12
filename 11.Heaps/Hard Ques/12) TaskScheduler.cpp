@@ -34,7 +34,7 @@ int leastInterval(vector<char>& tasks,int n){
         }
 
         if(maxHeap.empty()) break;
-        time +=(cycle - i);
+        time += (cycle - i);
     }
     return time;
 }
