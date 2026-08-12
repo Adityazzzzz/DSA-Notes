@@ -33,11 +33,3 @@ vector<vector<int>>4sum(vector<int> &arr,int n,int target){
         }
     }
 }
-
-int main(){
-    int n=5;
-    int arr[]={1,8,6,7,9};
-    
-    cout<<3sum(arr,n,17)<<endl;;
-    return 0;
-}

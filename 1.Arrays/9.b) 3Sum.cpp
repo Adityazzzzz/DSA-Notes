@@ -24,17 +24,18 @@ vector<vector<int>>3sum(int n,vector<int> &arr){
 */
 
 vector<vector<int>>3sum(int n,vector<int> &arr){
-
     vector<vector<int>>ans;
     sort(arr.begin(),arr.end());
+
     for(int i=0;i<n;i++){
         if(i>=0 && arr[i]==arr[i-1]){
             continue;
         }
+
         int j=i+1;
         int k=n-1;
         while(j<k){
-            int sum=arr[i] + arr[j] +arr[k];
+            int sum = arr[i] + arr[j] + arr[k];
             if(sum<0){
                 j++;
             }
@@ -51,12 +52,4 @@ vector<vector<int>>3sum(int n,vector<int> &arr){
             }
         }
     }   
-}
-
-int main(){
-    int n=5;
-    int arr[]={1,8,6,7,9};
-    
-    cout<<3sum(arr,n,17)<<endl;;
-    return 0;
 }
