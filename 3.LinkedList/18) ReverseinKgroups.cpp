@@ -8,65 +8,61 @@ class Node{
     Node* back; 
 
     public:
-    Node(int data1, Node* next1, Node* back1){
+    Node(int data1,Node* next1,Node* back1){
         data=data1;
         next=next1;
         back= back1;
     }
 };
 
-class Solution {
-private:
-    Node* findkthNode(Node* temp, int k) {
+Node* findkthNode(Node* temp,int k){
+    k--;
+    while(temp!=NULL && k>0){
         k--;
-        while (temp != NULL && k > 0) {
-            k--;
-            temp = temp->next;
+        temp = temp->next;
+    }
+    return temp;
+}
+
+Node* reverseLL(Node* head){
+    if(head == NULL || head->next == NULL) return head;
+
+    Node* newHead = reverseLL(head->next);
+    Node* front = head->next;
+
+    front->next = head;
+    head->next = NULL;
+    return newHead;
+}
+
+Node* reverseKGroup(Node* head,int k){
+    Node* temp = head;
+    Node* prev = NULL;
+
+    while(temp != NULL){
+        Node* kthnode = findkthNode(temp,k);
+        if(kthnode == NULL){
+            if(prev) prev->next = temp;
+            break;
         }
-        return temp;
+
+        Node* nextNode = kthnode->next;
+        kthnode->next = NULL;
+
+        // reverse current block
+        Node* newHead = reverseLL(temp);
+
+        // first group
+        if(temp == head) head = newHead;
+        else prev->next = newHead;
+
+        prev = temp;       // 'temp' is now tail of reversed block
+        temp = nextNode;   // move to next group
     }
-
-    Node* reverseLL(Node* head) {
-        if (head == NULL || head->next == NULL) return head;
-
-        Node* newHead = reverseLL(head->next);
-        Node* front = head->next;
-
-        front->next = head;
-        head->next = NULL;
-        return newHead;
-    }
-
-public:
-    Node* reverseKGroup(Node* head, int k) {
-        Node* temp = head;
-        Node* prev = NULL;
-
-        while (temp != NULL) {
-            Node* kthnode = findkthNode(temp, k);
-            if (kthnode == NULL) {
-                if (prev) prev->next = temp;
-                break;
-            }
-
-            Node* nextNode = kthnode->next;
-            kthnode->next = NULL;
-
-            // reverse current block
-            Node* newHead = reverseLL(temp);
-
-            // first group
-            if (temp == head) head = newHead;
-            else prev->next = newHead;
-
-            prev = temp;       // 'temp' is now tail of reversed block
-            temp = nextNode;   // move to next group
-        }
-        return head;
-    }
-};
+    return head;
+}
 
 int main(){
-    vector<int>arr = {2,5,8,7};
+    vector<int>arr ={2,5,8,7};
     Node* head= convertArrtoDLL(arr);
 }
