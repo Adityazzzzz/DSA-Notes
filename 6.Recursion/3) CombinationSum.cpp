@@ -35,9 +35,9 @@ void subseq(int index,int target,vector<int>&arr,vector<vector<int>>&ans,vector<
     }
 
     for(int i=index;i<arr.size();i++){
-        
         if(i>index && arr[i]==arr[i-1]) continue;
         if(arr[index]>target) break;
+        
         ds.push_back(arr[index]);
         subseq(index+1,target-arr[index],arr,ans,ds);
         ds.pop_back();
