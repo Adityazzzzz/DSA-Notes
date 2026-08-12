@@ -35,10 +35,3 @@ vector<vector<int>>pascalTri(int n){
     }
     return ans;   
 }
-
-int main(){
-    int n=10;
-    int r=3;
-    cout<<combination(n-1,r-1)<<endl;;
-    return 0;
-}
