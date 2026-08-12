@@ -13,7 +13,7 @@ void solve(int i,int j,vector<vector<int>>& m,int n,vector<string>& ans,string m
         int ni = i + di[ind];
         int nj = j + dj[ind];
 
-        if(ni >= 0 && ni < n && nj >= 0 && nj < n && !vis[ni][nj] && m[ni][nj] == 1){
+        if(ni>=0 && ni<n && nj>=0 && nj<n && !vis[ni][nj] && m[ni][nj] == 1){
             solve(ni,nj,m,n,ans,move + dir[ind],vis,di,dj);
         }
     }
@@ -21,15 +21,11 @@ void solve(int i,int j,vector<vector<int>>& m,int n,vector<string>& ans,string m
 }
 
 vector<string> findPath(vector<vector<int>>& m,int n){
-
     vector<string> ans;
     vector<vector<int>> vis(n,vector<int>(n,0));
-
-    int di[] ={1,0,0,-1};  // D L R U
+    int di[] ={1,0,0,-1};
     int dj[] ={0,-1,1,0};
 
-    if(m[0][0] == 1)
-        solve(0,0,m,n,ans,"",vis,di,dj);
-
+    if(m[0][0] == 1) solve(0,0,m,n,ans,"",vis,di,dj);
     return ans;
 }
