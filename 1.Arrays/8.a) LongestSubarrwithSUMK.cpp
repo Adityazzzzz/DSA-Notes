@@ -64,16 +64,7 @@ int longestSubArr(vector<long long> &arr,long long n,long long k){
         }
         right++;
         
-        if(sum==k) maxl=max ( maxl, (long long)right-left+1 );
+        if(sum==k) maxl = max(maxl,(long long)right-left+1);
     }
     return maxl; 
-}
-
-int main(){
-    long long n=9;
-    vector<long long> arr={1,1,2,2,3,3,5,6,6};
-    
-    cout<<longestSubArr(arr,n,6)<<endl;;
-
-    return 0;
 }
