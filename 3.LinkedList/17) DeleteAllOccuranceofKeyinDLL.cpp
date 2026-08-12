@@ -50,7 +50,7 @@ Node* findTail(Node* head){
     while(temp->next != NULL) temp = temp->next;
     return temp;
 }
-vector<pair<int,int>> pairsEqualtoSum(Node* head, int sum){
+vector<pair<int,int>> pairsEqualtoSum(Node* head,int sum){
     vector<pair<int,int>>ans;
     if(head == NULL) return ans;
 
