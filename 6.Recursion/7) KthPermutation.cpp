@@ -8,9 +8,11 @@ string getPermutation(int n,int k){
         fact = fact * i;
         numbers.push_back(i);
     }
+
     numbers.push_back(n);
     string ans = "";
     k = k - 1;
+
     while(true){
         int index = k / fact;
         ans = ans + to_string(numbers[index]);
