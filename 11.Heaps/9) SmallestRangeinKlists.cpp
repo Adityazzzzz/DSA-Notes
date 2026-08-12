@@ -2,29 +2,29 @@
 using namespace std;
 
 vector<int> smallestRange(vector<vector<int>>& nums){
-    vector<int> ans(2, INT_MAX);
+    vector<int> ans(2,INT_MAX);
     int minRange = INT_MAX;
     
-    using T = tuple<int, int, int>;  
-    priority_queue<T, vector<T>, greater<T>> minHeap;
+    using T = tuple<int,int,int>;  
+    priority_queue<T,vector<T>,greater<T>> minHeap;
     int maxVal = INT_MIN;
     
     int k = nums.size();
-    for(int i = 0; i < k; i++){
+    for(int i=0;i<k;i++){
         if(!nums[i].empty()){
-            minHeap.emplace(nums[i][0], i, 0);
-            maxVal = max(maxVal, nums[i][0]);
+            minHeap.emplace(nums[i][0],i,0);
+            maxVal = max(maxVal,nums[i][0]);
         }
     }
     
     while(minHeap.size() == k){
-        auto [minVal, listIdx, elemIdx] = minHeap.top();
+        auto [minVal,listIdx,elemIdx] = minHeap.top();
         minHeap.pop();
         
         // Update smallest range
         if(maxVal-minVal < minRange){
             minRange = maxVal - minVal;
-            ans ={minVal, maxVal};
+            ans ={minVal,maxVal};
         }
         
         // Push next from same list
