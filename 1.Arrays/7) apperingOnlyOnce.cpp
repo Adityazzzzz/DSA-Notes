@@ -21,12 +21,3 @@ int onlyonce(int *arr,int n){
     }
     return xor1;
 }
-int main(){
-    int n=9;
-    int arr[]={1,1,2,2,3,3,5,6,6};
-    
-    cout<<onlyonce(arr,n)<<endl;;
-    
-    
-    return 0;
-}

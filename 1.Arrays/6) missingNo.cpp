@@ -17,13 +17,3 @@ int missingNo(int *arr,int n){
 //  We can total sum the sum of all elements in arr 
 // w.k.t sum2= sum of n natural numbers
 //  final=sum2-sum;
-
-int main(){
-    int n=5;
-    int arr[]={1,2,3,5,6};
-    
-    cout<<missingNo(arr,n)<<endl;;
-    
-    
-    return 0;
-}
