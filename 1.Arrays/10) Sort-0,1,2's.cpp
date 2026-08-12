@@ -17,8 +17,8 @@ Dutch national flag algorithm
 void sorted(int arr[],int n){
     int low=0, mid=0;
     int high=n-1;
+    
     while(mid<=high){
-
         if(arr[mid]==0){
             swap(arr[mid],arr[low]);
             low++;
@@ -32,12 +32,4 @@ void sorted(int arr[],int n){
             high--;
         }
     }                                               
-}
-
-int main(){
-    int n=12;
-    int arr[]={0,1,1,0,2,0,2,2,1,1,0,2};
-    
-    cout<<sorted(arr,n)<<endl;;
-    return 0;
 }
