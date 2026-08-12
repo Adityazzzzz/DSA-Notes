@@ -27,7 +27,7 @@ int countNodes(struct Node* root){
     return ans;
 }
 
-bool isCBT(struct Node* root, int index, int cnt){
+bool isCBT(struct Node* root,int index,int cnt){
     if(root == NULL) return true;
     if(index >= cnt) return false;
     else{
@@ -54,14 +54,14 @@ bool isMaxOrder(struct Node* root){
 bool isHeap(struct Node* root){
     int index = 0;
     int totalCount = countNodes(root);
-    if(isCBT(root, index, totalCount) && isMaxOrder(root)) return true;
+    if(isCBT(root,index,totalCount) && isMaxOrder(root)) return true;
     else return false;
 }
 //---------------------------------------------------------------------------------------------------
 
 // min cost of n ropes
-long long minCost(long long arr[], long long n){
-    priority_queue<long long, vector<long long>, greater<long long>> pq;
+long long minCost(long long arr[],long long n){
+    priority_queue<long long,vector<long long>,greater<long long>> pq;
     for(long long i=0;i<n;i++){
         pq.push(arr[i]);
     }
