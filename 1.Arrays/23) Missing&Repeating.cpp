@@ -2,7 +2,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 // OPTIMAL SOLU 1:
 // tc: O(N) and sc: O(1);
 int miss&rep(int *arr,int n){
@@ -17,9 +16,11 @@ int miss&rep(int *arr,int n){
 
     long long val1=S1-Sn;               //     (x-y) =..
     long long val2=S2-S2n;              // (x^2 - y^2) =..
-    val2=val2/val1;
-    long long x=(val1 + val2)/2;
-    long long y=x-val1;
+
+    val2 = val2/val1;
+
+    long long x = (val1 + val2)/2;
+    long long y = x-val1;
     return {(int)x , (int)y};
 }
 
@@ -56,13 +57,4 @@ int miss&rep(int *arr,int n){
     }
     if(cnt==2) return {zero,one};
     else return {one,zero};
-}
-//----------------------------------------------------------------
-
-int main(){
-    int n=6;
-    int arr[]={1,1,2,3,5,6};
-
-    cout<<miss&rep(arr,6)<<endl;;
-    return 0;
 }

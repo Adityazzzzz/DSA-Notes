@@ -66,11 +66,3 @@ int mergesort(int *arr,int low,int high){
 void countreverse(int *arr,int n){
     return mergesort(arr,0,n-1);
 }
-
-
-
-int main(){
-    int n=5;
-    int arr[]={2,3,6,8,1};
-    cout<<countreverse(arr,n);
-}

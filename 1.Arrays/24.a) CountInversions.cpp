@@ -51,9 +51,3 @@ int mergesort(int *arr,int low,int high){ //.......................... 2
 int countinversions(int *arr,int n){ //.......................... 1
     return mergesort(arr,0,n-1);
 }
-
-int main(){
-    int n=5;
-    int arr[]={2,3,6,8,1};
-    cout<<countinversions(arr,n);
-}
