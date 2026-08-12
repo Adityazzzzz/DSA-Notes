@@ -9,8 +9,8 @@ vector<vector<int>>spiralmatrix(vector<vector<int>> &arr,int n) {
     int row=arr.size();
     int col=arr[0].size();
 
-    int left=0, right=col-1;
-    int top=0, bottom= row-1;
+    int left=0,right=col-1;
+    int top=0,bottom=row-1;
     vector<int>ans;
 
     while(top<=bottom && left<=right){
@@ -28,7 +28,7 @@ vector<vector<int>>spiralmatrix(vector<vector<int>> &arr,int n) {
             for(int i=right;i>=left;i--){
                 ans.push_back(arr[bottom][i]);
             }
-            bottom--;++
+            bottom--;
         }
         if(left<=right){
             for(int i=bottom;i>=top;i--){
@@ -38,10 +38,4 @@ vector<vector<int>>spiralmatrix(vector<vector<int>> &arr,int n) {
         }
     }
     return ans;
-}
-
-int main(){
-    // input a 2D matrix 
-    cout<<spiralmatrix(arr,n)<<endl;;
-    return 0;
 }
