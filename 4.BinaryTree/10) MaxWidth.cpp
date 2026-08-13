@@ -34,10 +34,10 @@ int widthOfBinaryTree(TreeNode* root){
             if(i==0) first = it;
             if(i==size-1) last = it;
 
-            if(temp->left) q.push({temp->left,it*2 +1});
-            if(temp->right) q.push({temp->right,it*2 +2});
+            if(temp->left) q.push({temp->left,it*2+1});
+            if(temp->right) q.push({temp->right,it*2+2});
         }
-        ans = max(ans,last - first + 1);
+        ans = max(ans,last-first+1);
     }
     return ans;
 }
