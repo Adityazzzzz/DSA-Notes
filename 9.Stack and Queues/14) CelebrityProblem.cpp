@@ -3,7 +3,7 @@ using namespace std;
 
 int func(vector<vector<int>>& matrix){
     int n = matrix.size();
-    int top = 0, down = n-1;
+    int top=0,down=n-1;
 
     while(top < down){
         if(matrix[top][down] == 1) top++;
@@ -13,8 +13,8 @@ int func(vector<vector<int>>& matrix){
     int candidate = top;
 
     for(int i=0;i<n;i++){
-        if(i==candidate) continue;
-        if(matrix[candidate][i]==1 || matrix[i][candidate]==0){
+        if(i==top) continue;
+        if(matrix[top][i]==1 || matrix[i][top]==0){
             return -1;
         }
     }
