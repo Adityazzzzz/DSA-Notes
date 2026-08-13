@@ -16,7 +16,7 @@ class Node{
 };
 
 
-void mark(unordered_map<Node*,Node*>&parent,Node* root ){
+void mark(unordered_map<Node*,Node*>&parent,Node* root){
     queue<Node*>q;
     q.push(root);
     while(!q.empty()){
@@ -33,7 +33,7 @@ void mark(unordered_map<Node*,Node*>&parent,Node* root ){
     }
 }
 
-vector<int> distanceK(Node* root, Node* target, int k){
+vector<int> distanceK(Node* root,Node* target,int k){
     unordered_map<Node*,Node*>parent;
     mark(parent,root);
 
