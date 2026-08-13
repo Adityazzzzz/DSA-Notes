@@ -5,8 +5,9 @@ using namespace std;
 // sc : O(n)
 class StockSpanner{
 public:
-    stack<pair<int, int>> st;
+    stack<pair<int,int>> st;
     int index;
+    
     StockSpanner(){
         index = -1;
     }
@@ -16,8 +17,9 @@ public:
             st.pop();
         }
 
-        int ans = index - (st.empty() ? -1 : st.top().second);
-        st.push({price, index});
+        int ans = index - (st.empty() ? -1:st.top().second);
+        st.push({price,index});
+
         return ans;
     }
 };
