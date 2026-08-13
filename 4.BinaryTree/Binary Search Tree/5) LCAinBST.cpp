@@ -15,14 +15,14 @@ class Node{
     }
 };
 
-Node* lcainBST(Node* root, Node* p, Node* q){
+Node* lcainBST(Node* root,Node* p,Node* q){
     if(root == NULL) return NULL;
     int curr = root->val;
 
-    if(curr < p->val   &&   curr < q->val){
+    if(curr < p->val && curr < q->val){
         return lcainBST(root->left,p,q);
     }
-    if(curr > p->val   &&   curr > q->val){
+    if(curr > p->val && curr > q->val){
         return lcainBST(root->right,p,q);
     }
     return root;
