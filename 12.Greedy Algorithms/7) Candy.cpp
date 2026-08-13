@@ -11,7 +11,7 @@ int candy(vector<int>& ratings){
         }
     }
 
-    for(int i = n-2;i >= 0;i--){
+    for(int i=n-2;i>=0;i--){
         if(ratings[i] > ratings[i+1]){
             candy[i] = max(candy[i],candy[i+1]+1);
         }
