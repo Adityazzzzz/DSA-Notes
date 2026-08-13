@@ -10,13 +10,11 @@ int func(vector<vector<int>>& matrix){
         else down--;
     }
 
-    int candidate = top;
-
     for(int i=0;i<n;i++){
         if(i==top) continue;
         if(matrix[top][i]==1 || matrix[i][top]==0){
             return -1;
         }
     }
-    return candidate;
+    return top;
 }
