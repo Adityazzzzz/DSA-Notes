@@ -5,7 +5,7 @@ struct Node{
     int data;
     Node* left;
     Node* right;
-    Node(int val) : data(val), left(nullptr), right(nullptr){}
+    Node(int val) : data(val),left(nullptr),right(nullptr){}
 };
 
 class Solution{
@@ -15,7 +15,7 @@ public:
         return !root->left && !root->right;
     }
 
-    void addLeftBoundary(Node* root, vector<int>& res){
+    void addLeftBoundary(Node* root,vector<int>& res){
         Node* curr = root->left;
         while(curr){
             if(!isLeaf(curr)) res.push_back(curr->data);
@@ -24,7 +24,7 @@ public:
         }
     }
 
-    void addRightBoundary(Node* root, vector<int>& res){
+    void addRightBoundary(Node* root,vector<int>& res){
         Node* curr = root->right;
         vector<int> temp;
         while(curr){
@@ -38,25 +38,23 @@ public:
         }
     }
 
-    void addLeaves(Node* root, vector<int>& res){
+    void addLeaves(Node* root,vector<int>& res){
         if(isLeaf(root)){
             res.push_back(root->data);
             return;
         }
-        if(root->left)   addLeaves(root->left, res);
-        if(root->right)  addLeaves(root->right, res);
+        if(root->left)   addLeaves(root->left,res);
+        if(root->right)  addLeaves(root->right,res);
     }
-
-
 
     vector<int> printBoundary(Node* root){
         vector<int> res;
         if(!root) return res;
         if(!isLeaf(root)) res.push_back(root->data);
 
-        addLeftBoundary(root, res);
-        addLeaves(root, res);
-        addRightBoundary(root, res);
+        addLeftBoundary(root,res);
+        addLeaves(root,res);
+        addRightBoundary(root,res);
         return res;
     }
 };
