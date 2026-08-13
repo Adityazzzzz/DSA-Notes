@@ -26,7 +26,7 @@ int findPlatform(vector<int>& arr,vector<int>& dep){
     while(i < arr.size()){ 
         if(arr[i] <= dep[j]){ 
             plat++;
-            ans = max(ans, plat);
+            ans = max(ans,plat);
             i++;
         }
         else{ 
