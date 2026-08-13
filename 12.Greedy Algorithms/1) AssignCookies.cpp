@@ -5,13 +5,13 @@ int findContentChildren(vector<int>& student,vector<int>& cookie){
     sort(student.begin(),student.end());
     sort(cookie.begin(),cookie.end());
 
-    int studentIndex = 0; 
-    int cookieIndex = 0;  
-    while (studentIndex < student.size() && cookieIndex < cookie.size()){
-        if (cookie[cookieIndex] >= student[studentIndex]){
-            studentIndex++; 
+    int sIdx = 0; 
+    int cIdx = 0;  
+    while(sIdx < student.size() && cIdx < cookie.size()){
+        if(cookie[cIdx] >= student[sIdx]){
+            sIdx++; 
         }
-        cookieIndex++; 
+        cIdx++; 
     }
-    return studentIndex;
+    return sIdx;
 }
