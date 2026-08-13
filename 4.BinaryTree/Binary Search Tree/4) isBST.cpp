@@ -16,11 +16,11 @@ class Node{
 };
 
 bool isValid(Node* root){
-    return isValidBST(root, LLONG_MIN, LLONG_MAX);
+    return isValidBST(root,LLONG_MIN,LLONG_MAX);
 }
-bool isValidBST(Node* root, long long minval, long long maxval){
+bool isValidBST(Node* root,long long minval,long long maxval){
     if(!root) return true;
     if(root->val >=maxval || root->val <= minval) return false;
     
-    return isValidBST(root->left,minval,root->val) && isValidBST(root->right,root->val,maxval)
+    return isValidBST(root->left,minval,root->val) && isValidBST(root->right,root->val,maxval);
 }
