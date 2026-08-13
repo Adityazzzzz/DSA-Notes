@@ -15,16 +15,16 @@ class Node{
     }
 };
 
-Node* searching(Node* root, int k){
+Node* searching(Node* root,int k){
     Node* temp = root;
-    while(temp != NULL  &&   temp->val != k){
+    while(temp != NULL && temp->val != k){
         temp = (temp->val<k) ? temp->left : temp->right;
     }
     return temp;
 }
 
 // ceil value searching in BST
-int findCeil(TreeNode* temp, int key){
+int findCeil(TreeNode* temp,int key){
     int ceil = -1; 
     while(temp){
         if(temp->val == key){
@@ -43,7 +43,7 @@ int findCeil(TreeNode* temp, int key){
 
 
 // floor value
-int findfloor(TreeNode* temp, int key){
+int findfloor(TreeNode* temp,int key){
     int floor = -1; 
     while(temp){
         if(temp->val == key){
