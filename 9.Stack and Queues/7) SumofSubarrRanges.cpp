@@ -65,7 +65,7 @@ long long sumSubarrayRanges(vector<int>& nums){
     long long mn = 0, mx = 0;
 
     for(int i=0;i<n;i++){
-    long long left = i - psee[i];
+        long long left = i - psee[i];
         long long right = nse[i] - i;
         
         mn += 1LL * nums[i] * left * right;
