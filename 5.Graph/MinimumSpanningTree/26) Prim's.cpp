@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-int spanningTree(int V, vector<vector<int>> adj) {
-    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+int spanningTree(int V,vector<vector<int>> adj) {
+    priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
 
-    vector<int> vis(V, 0);
-    // {wt, node}
-    pq.push({0, 0});
+    vector<int> vis(V,0);
+    // {wt,node}
+    pq.push({0,0});
     int sum = 0;
 
     while(!pq.empty()){
@@ -22,7 +22,7 @@ int spanningTree(int V, vector<vector<int>> adj) {
         for(auto it: adj[node]) {
             int adjNode = it[0];
             int edW = it[1];
-            if(!vis[adjNode]) pq.push({edW, adjNode});
+            if(!vis[adjNode]) pq.push({edW,adjNode});
         }
     }
     return sum;
