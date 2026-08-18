@@ -10,7 +10,7 @@ void dfs(int node, int parent, vector<int>&vis, vector<int>adj[],int time[],int 
     time[node] = low[node] = timer;
     timer++;
 
-    for(auto it : adj[node]){
+    for(auto it:adj[node]){
         if(it==parent) continue;
         if(vis[it]==0){
             dfs(it,node,vis,adj,time,low,bridges);
