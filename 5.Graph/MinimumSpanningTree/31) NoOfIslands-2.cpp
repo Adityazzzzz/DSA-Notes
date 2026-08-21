@@ -51,18 +51,17 @@ public:
 
 }
 
-vector<int> numOfIslands(int n, int m, vector<vector<int>> &operators) {
+vector<int> numOfIslands(int n,int m,vector<vector<int>> &operators){
     DisjointSet ds(n * m);
 
-    vector<vector<int>> vis(n, vector<int>(m, 0));
+    vector<vector<int>> vis(n,vector<int>(m,0));
     int cnt = 0;
 
     vector<int> ans;
+    int dr[] = {-1,0,1,0};
+    int dc[] = {0,1,0,-1};
 
-    int dr[] = {-1, 0, 1, 0};
-    int dc[] = {0, 1, 0, -1};
-
-    for (auto it : operators) {
+    for(auto it : operators){
         int row = it[0];
         int col = it[1];
         if(vis[row][col] == 1){
@@ -74,11 +73,11 @@ vector<int> numOfIslands(int n, int m, vector<vector<int>> &operators) {
 
         int nodeNo = row * m + col;// imp
 
-        for(int i = 0; i < 4; i++){
+        for(int i=0;i<4;i++){
             int nr = row + dr[i];
             int nc = col + dc[i];
                 
-            if(nr >= 0 && nr < n   &&    nc >= 0 && nc < m    &&    vis[nr][nc] == 1){
+            if(nr>=0 && nr<n  &&  nc>=0 && nc<m  &&  vis[nr][nc]==1){
                 int adjNode = nr * m + nc;
                 if(ds.findPar(nodeNo) != ds.findPar(adjNode)){
                     cnt--;
