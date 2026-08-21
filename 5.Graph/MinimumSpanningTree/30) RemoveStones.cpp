@@ -51,31 +51,33 @@ public:
 
 }
 
-int maxRemove(vector<vector<int>>& stones, int n) {
+int maxRemove(vector<vector<int>>& stones,int n){
     int maxRow = 0;
     int maxCol = 0;
-    for (auto it : stones) {
-        maxRow = max(maxRow, it[0]);
-        maxCol = max(maxCol, it[1]);
+    for(auto it : stones){
+        maxRow = max(maxRow,it[0]);
+        maxCol = max(maxCol,it[1]);
     }
 
     DisjointSet ds(maxRow + maxCol + 2);
 
-    unordered_map<int, int> mpp;
+    unordered_map<int,int>mpp;
 
-    for (auto it : stones) {
+    for(auto it : stones){
         int nodeRow = it[0];
         int nodeCol = it[1] + maxRow + 1;
-        ds.unionBySize(nodeRow, nodeCol);
+
+        ds.unionBySize(nodeRow,nodeCol);
+
         mpp[nodeRow] = 1;
         mpp[nodeCol] = 1;
     }
 
     int cnt = 0;
-    for (auto it : mpp) {
-        if (ds.findPar(it.first) == it.first) {
+    for(auto it:mpp){
+        if(ds.findPar(it.first) == it.first){
             cnt++;
         }
     }
-    return n-cnt;
+    return n - cnt;
 }
