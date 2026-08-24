@@ -106,13 +106,13 @@ func(int index,vector<int>&dp){
 }
 // dp to tabulation
 func(int index){
-    vector<int>dp;
+    vector<int>dp(n,0);
     dp[0] = arr[0];
     for(int i=1;i<n;i++){
         int pick = arr[index] + dp[n-2];
         int notpick = 0 + dp[n-1];
 
-        dp[i] = max(pic,notpick);
+        dp[i] = max(pick,notpick);
     }
     return dp[n-1];
 }
