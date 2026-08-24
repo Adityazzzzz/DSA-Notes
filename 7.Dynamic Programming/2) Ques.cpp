@@ -124,7 +124,7 @@ func(int index){
 
     for(int i=1;i<n;i++){
         int pick = arr[i]
-        if(pick>1) pick+=prev2;
+        if(pick>1) pick += prev2;
         int notpick = 0 + prev;
 
         int curr = max(pic,notpick);
@@ -143,7 +143,7 @@ func(int index){
     int prev2 = 0;
     for(int i=1;i<n;i++){
         int pick = arr[i]
-        if(pick>1) pick+=prev2;
+        if(pick>1) pick += prev2;
         int notpick = 0 + prev;
 
         int curr = max(pic,notpick);
