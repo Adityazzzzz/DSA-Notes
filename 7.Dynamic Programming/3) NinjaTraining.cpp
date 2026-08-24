@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int func(int day, int last, vector<vector<int>&points,vector<vector<int>&dp){
+int func(int day,int last,vector<vector<int>&points,vector<vector<int>&dp){
     if(day==0){
         int maxi = 0;
         for(int i=0;i<2;i++){
@@ -61,7 +61,7 @@ int ninjatraining(int n,vector<vector<int>&points){
 
             for(task=0;task<3;task++){
                 if(task != last){
-                    temp[last] = max(temp[last], points[day][task] + prev[task]);
+                    temp[last] = max(temp[last],points[day][task] + prev[task]);
                 }
             }
         }
