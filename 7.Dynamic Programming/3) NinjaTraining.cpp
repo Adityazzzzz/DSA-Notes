@@ -4,8 +4,10 @@ using namespace std;
 int func(int day,int last,vector<vector<int>&points,vector<vector<int>&dp){
     if(day==0){
         int maxi = 0;
-        for(int i=0;i<2;i++){
-            if(i!=last) maxi = max(maxi,points[0][i]);
+        for(int i=0;i<3;i++){
+            if(i!=last){
+                maxi = max(maxi,points[0][i]);
+            }
         }
         return maxi;
     }
@@ -31,12 +33,12 @@ int ninjatraining(int n,vector<vector<int>&points){
     dp[0][2] = max(points[0][0],points[0][1]);
     dp[0][3] = max(points[0][0],max(points[0][1],points[0][2]));
 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<4;j++){
-          
-            for(task=0;task<3;task++){
+    for(int day=1;day<n;day++){
+        for(int last=0;last<4;last++){
+            for(int task=0;task<3;task++){
                 if(task != last){
                     int score = points[day][task] + dp[day-1][task];
+                    
                     dp[day][last] = max(dp[day][last],score);
                 }
             }
@@ -54,12 +56,10 @@ int ninjatraining(int n,vector<vector<int>&points){
     prev[2] = max(points[0][0],points[0][1]);
     prev[3] = max(points[0][0],max(points[0][1],points[0][2]));
 
-    for(int day=0;day<n;day++){
-        vector<int>temp(4,0);
+    for(int day=1;day<n;day++){
+        vector<int> temp(4,0);
         for(int last=0;last<4;last++){
-            temp[last] = 0;
-
-            for(task=0;task<3;task++){
+            for(int task=0;task<3;task++){
                 if(task != last){
                     temp[last] = max(temp[last],points[day][task] + prev[task]);
                 }
@@ -67,5 +67,5 @@ int ninjatraining(int n,vector<vector<int>&points){
         }
         prev = temp;
     }
-    return prev[3]; 
+    return prev[3];
 }
