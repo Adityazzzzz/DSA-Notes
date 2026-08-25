@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 bool subsetSumToK(int n,int k,vector<int> &arr){
