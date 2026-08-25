@@ -1,30 +1,29 @@
 #include<iostream>
 using namespace std;
 
-int f(int i,int j,vector<vector<int>>& triangle,int n){
-    if(i == n-1){
-        return triangle[n-1][j];
-    }
+int f(int i,int j,vector<vector<int>>& grid,int n){
+    if(i==n-1) return grid[n-1][j];
+
     if(dp[i][j] == -1) return dp[i][j];
 
-    int down = triangle[i][j] + f(i+1,j,triangle,n);
-    int diagonal = triangle[i][j] + f(i+1,j+1,triangle,n);
+    int down = f(i+1,j,grid,n);
+    int diagonal = f(i+1,j+1,grid,n);
 
-    return dp[i][j] =min(down,diagonal);
+    return dp[i][j] = grid[i][j] + min(down,diagonal);
 }
 // ------------------------------------------------------------------------------------------------
 // tabulation
-int f(int i,int j,vector<vector<int>>& triangle,int n){
+int f(int i,int j,vector<vector<int>>& grid,int n){
     int dp[n][n] = {0};
 
     for(int j=0;j<n;j++){
-        dp[n-1][j] = triangle[n-1][j];
+        dp[n-1][j] = grid[n-1][j];
     }
 
     for(int i=n-2;i>=0;i--){
         for(int j=0;j<=i;j++){
-            int down = triangle[i][j] + dp[i+1][j];
-            int diagonal = triangle[i][j] + dp[i+1][j+1];
+            int down = grid[i][j] + dp[i+1][j];
+            int diagonal = grid[i][j] + dp[i+1][j+1];
 
             dp[i][j] = min(down,diagonal);
         }
@@ -33,18 +32,18 @@ int f(int i,int j,vector<vector<int>>& triangle,int n){
 }
 //-------------------------------------------------------------------------------------------------
 // space optimization
-int f(vector<vector<int>>& triangle,int n){
+int f(vector<vector<int>>& grid,int n){
     vector<int>front(n,0);
 
     for(int j=0;j<n;j++){
-        front[j] = triangle[n-1][j];
+        front[j] = grid[n-1][j];
     }
 
     for(int i=n-2;i>=0;i--){
         vector<int>curr(n,0);
         for(int j=0;j<=i;j++){
-            int down = triangle[i][j] + front[j];
-            int diagonal = triangle[i][j] + front[j+1];
+            int down = grid[i][j] + front[j];
+            int diagonal = grid[i][j] + front[j+1];
 
             curr[j] = min(down,diagonal);
         }
