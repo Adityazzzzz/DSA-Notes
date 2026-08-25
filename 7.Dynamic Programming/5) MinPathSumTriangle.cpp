@@ -15,7 +15,6 @@ int f(int i,int j,vector<vector<int>>& grid,int n){
 // tabulation
 int f(int i,int j,vector<vector<int>>& grid,int n){
     int dp[n][n] = {0};
-
     for(int j=0;j<n;j++){
         dp[n-1][j] = grid[n-1][j];
     }
