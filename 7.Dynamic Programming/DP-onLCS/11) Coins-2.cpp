@@ -1,59 +1,51 @@
 #include<iostream>
 using namespcae std
 
-long long f(int ind,int T,int &arr){
-    if(ind == 0) {
-        return (T % arr[0] == 0);
-    }
-    if(dp[ind][T] != -1) return dp[ind][T];
+long long f(int ind,int k,int &arr){
+    if(ind==0) return (k % arr[0] == 0);
+    if(dp[ind][k]!=-1) return dp[ind][k];
 
-    long long notTake = f(ind-1,T,arr);
+    long long notTake = f(ind-1,k,arr);
     long long take = 0;
-    if(a[ind] <= T) take = f(ind,T-arr[ind],arr);
+    if(a[ind]<=k) take = f(ind,k-arr[ind],arr);
 
-    return dp[ind][T] = take + notTake;
+    return dp[ind][k] = take + notTake;
 }
 
-
 // tabulation --------------------------------------------------------------------------------------
-long long countWaysToMakeChange(int denominations[], int n, int value){
-
-    vector<vector<long long>> dp(n, vector<long long>(value + 1, 0));
-    for(int T=0;T<=value;T++){
-        dp[0][T] = (T%a[0] == 0);
+long long countWaysToMakeChange(int arr[],int n,int k){
+    vector<vector<long long>> dp(n,vector<long long>(k+1,0));
+    for(int i=0;i<=k;i++){
+        dp[0][i] = (i % arr[0] == 0);
     }
 
-    for(int ind = 1; ind < n; ind++) {
-        for(int T = 0; T <= value; T++) {
-            long long notTake = dp[ind - 1][T];
+    for(int ind=1;ind<n;ind++){
+        for(int tar=0;tar<=k;tar++){
+            long long notTake = dp[ind-1][tar];
             long long take = 0;
-            if(a[ind] <= T) take = dp[ind][T - a[ind]];
+            if(arr[ind]<=tar) take = dp[ind][tar-arr[ind]];
 
-            dp[ind][T] = take + notTake;
+            dp[ind][tar] = take + notTake;
         }
     }
-
-    return dp[n - 1][value];
+    return dp[n-1][k];
 }
 
 // space optimization -----------------------------------------------------------------------------------
-long long countWaysToMakeChange(int denominations[], int n, int value){
-
-    vector<int>prev(value+1,0),curr(value+1,0)
-    for(int T=0;T<=value;T++){
-        prev[T] = (T%a[0] == 0);
+long long countWaysToMakeChange(int arr[],int n,int k){
+    vector<int>prev(k+1,0),curr(k+1,0)
+    for(int i=0;i<=k;i++){
+        prev[i] = (i % arr[0] == 0);
     }
 
-    for(int ind = 1; ind < n; ind++) {
-        for(int T = 0; T <= value; T++) {
-            long long notTake = prev[T];
+    for(int ind=1;ind<n;ind++){
+        for(int tar=0;tar<=k;tar++){
+            long long notTake = prev[tar];
             long long take = 0;
-            if(a[ind] <= T) take = curr[T - a[ind]];
-            
-            curr[T] = take + notTake;
-        }
-        prev = curr;
-    }
+            if(arr[ind]<=tar) take = curr[tar-arr[ind]];
 
-    return prev[value];
+            curr[tar] = take + notTake;
+        }
+    }
+    return prev[k];
 }
