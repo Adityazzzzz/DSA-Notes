@@ -48,20 +48,22 @@ bool subsetSumToK(int n,int k,vector<int>& arr){
 
 // space optimization
 bool func(int n,int k,vector<int> &arr){
-    vector<bool> prev(k+1,0),cur(k+1,0);
-    prev[0] = cur[0] = true;
+    vector<bool>prev(k+1,0);
+    prev[0] = true;
     prev[arr[0]] = true;
 
     for(int ind=1;ind<n;ind++){
+        vector<bool>curr(k+1,0);
+        curr[0] = true;
         for(int tar=1;tar<=k;tar++){
-            bool notTake = prev[tar];
 
+            bool notTake = prev[tar];
             bool take = false;
             if(arr[ind] <= tar) take = prev[tar-arr[ind]];
 
-            cur[tar] = take | notTake;
+            curr[tar] = take | notTake;
         }
-        prev = cur;
+        prev = curr;
     }
     return prev[k];
 }
