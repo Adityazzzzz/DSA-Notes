@@ -16,7 +16,7 @@ long long f(int ind,int k,int &arr){
 long long countWaysToMakeChange(int arr[],int n,int k){
     vector<vector<long long>> dp(n,vector<long long>(k+1,0));
     for(int i=0;i<=k;i++){
-        dp[0][i] = (i % arr[0] == 0);
+        if(i % arr[0] == 0) dp[0][i] = 1;
     }
 
     for(int ind=1;ind<n;ind++){
