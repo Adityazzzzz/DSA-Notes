@@ -13,7 +13,7 @@ int f(int ind,int sum,vector<int> &arr){
     return dp[ind][sum] = notpick + pick;
 }
 
-// tabulation --------------------------------------------------------------------------------------
+// tabulation -----------------------------------------------------------------------------------
 int f(vector<int> &arr,int tar){
     int n = arr.size();
     vector<vector<int>> dp(n,vector<int>(tar+1,0))
@@ -36,7 +36,7 @@ int f(vector<int> &arr,int tar){
 }
 
 
-// space optimization -----------------------------------------------------------------------------------
+// space optimization------------------------------------------------------------------------------
 int f(vector<int> &arr,int tar){
     int n = arr.size();
     vector<int>prev(tar+1,0);
