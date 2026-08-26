@@ -6,11 +6,11 @@ int f(int ind,int sum,vector<int> &arr){
     if(ind == 0) return (arr[0]==sum);
     if(dp[ind,sum] != -1) return dp[ind][sum];
 
-    int notpick = f(ind-1,sum,arr);
-    int pick = 0;
-    if(arr[ind] <= sum) pick = f(ind-1,sum-arr[ind],arr);
+    int notTake = f(ind-1,sum,arr);
+    int take = 0;
+    if(arr[ind] <= sum) take = f(ind-1,sum-arr[ind],arr);
 
-    return dp[ind][sum] = notpick + pick;
+    return dp[ind][sum] = notTake + take;
 }
 
 // tabulation -----------------------------------------------------------------------------------
@@ -18,25 +18,25 @@ int f(vector<int> &arr,int tar){
     int n = arr.size();
     vector<vector<int>> dp(n,vector<int>(tar+1,0))
 
-    for(int i=0;i<n-1;i++) dp[i][0] = 1;
+    for(int i=0;i<n-1;i++){
+        dp[i][0] = 1;
+    }
     if(arr[0]<=tar) dp[0][arr[0]] = 1;
 
     for(int ind=1;ind<n-1;ind++){
         for(int sum=0;sum<=tar;sum++){
-            int notpick = dp[ind-1][sum];
-            int pick = 0;
-            if(arr[ind] <= sum) pick = dp[ind-1][sum-arr[ind]];
+            int notTake = dp[ind-1][sum];
+            int take = 0;
+            if(arr[ind] <= sum) take = dp[ind-1][sum-arr[ind]];
 
-            dp[ind][sum] = pick + notpick;
-
+            dp[ind][sum] = take + notTake;
         }
     }
-    
     return dp[n-1][tar];
 }
 
 
-// space optimization------------------------------------------------------------------------------
+// space optimization------------------------------------------------------------------------
 int f(vector<int> &arr,int tar){
     int n = arr.size();
     vector<int>prev(tar+1,0);
@@ -48,11 +48,11 @@ int f(vector<int> &arr,int tar){
 
     for(int ind=1;ind<n-1;ind++){
         for(int sum=0;sum<=tar;sum++){
-            int notpick = prev[sum];
-            int pick = 0;
-            if(arr[ind] <= sum) pick = prev[sum-arr[ind]];
+            int notTake = prev[sum];
+            int take = 0;
+            if(arr[ind] <= sum) take = prev[sum-arr[ind]];
 
-            curr[sum] = pick + notpick;
+            curr[sum] = take + notTake;
         }
         prev = curr;
     }
@@ -76,9 +76,9 @@ int f(int ind,int sum,vector<int> &arr){
     }
 
     if(dp[ind,sum] != -1) return dp[ind][sum];
-    int notpick = f(ind-1,sum,arr);
-    int pick = 0;
-    if(arr[ind] <= sum) pick = f(ind-1,sum-arr[ind],arr);
+    int notTake = f(ind-1,sum,arr);
+    int take = 0;
+    if(arr[ind] <= sum) take = f(ind-1,sum-arr[ind],arr);
 
-    return dp[ind][sum] = notpick + pick;
+    return dp[ind][sum] = notTake + take;
 }
