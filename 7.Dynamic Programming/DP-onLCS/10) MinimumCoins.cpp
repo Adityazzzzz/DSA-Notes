@@ -6,7 +6,7 @@ int f(int ind,int k,vector<int> &nums){
         if(k % nums[0] == 0) return k/nums[0];
         return 1e9;
     }
-    if(dp[ind][k] != -1) return dp[ind][k];
+    if(dp[ind][k]!=-1) return dp[ind][k];
 
     int notTake = 0 + f(ind-1,k,nums);
     int take = INT_MAX;
