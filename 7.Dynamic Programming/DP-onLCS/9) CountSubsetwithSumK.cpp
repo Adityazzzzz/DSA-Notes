@@ -8,7 +8,7 @@ int f(int ind,int sum,vector<int> &arr){
 
     int notTake = f(ind-1,sum,arr);
     int take = 0;
-    if(arr[ind] <= sum) take = f(ind-1,sum-arr[ind],arr);
+    if(arr[ind]<=sum) take = f(ind-1,sum-arr[ind],arr);
 
     return dp[ind][sum] = notTake + take;
 }
@@ -27,7 +27,7 @@ int f(vector<int> &arr,int tar){
         for(int sum=0;sum<=tar;sum++){
             int notTake = dp[ind-1][sum];
             int take = 0;
-            if(arr[ind] <= sum) take = dp[ind-1][sum-arr[ind]];
+            if(arr[ind]<=sum) take = dp[ind-1][sum-arr[ind]];
 
             dp[ind][sum] = take + notTake;
         }
@@ -49,7 +49,7 @@ int f(vector<int> &arr,int tar){
         for(int sum=0;sum<=tar;sum++){
             int notTake = prev[sum];
             int take = 0;
-            if(arr[ind] <= sum) take = prev[sum-arr[ind]];
+            if(arr[ind]<=sum) take = prev[sum-arr[ind]];
 
             curr[sum] = take + notTake;
         }
