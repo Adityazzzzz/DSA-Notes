@@ -4,7 +4,7 @@ using namespcae std
 int f(int ind,int sum,vector<int> &arr){
     if(sum == 0) return 1;
     if(ind == 0) return (arr[0]==sum);
-    if(dp[ind,sum] != -1) return dp[ind][sum];
+    if(dp[ind,sum]!=-1) return dp[ind][sum];
 
     int notTake = f(ind-1,sum,arr);
     int take = 0;

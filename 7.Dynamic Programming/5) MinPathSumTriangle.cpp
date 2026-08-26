@@ -57,8 +57,8 @@ call functions by
 maxi = max(maxi,f(n-1,j,matrix));
 
 int f(int i,int j,vector<vector<int>> &matrix){
-    if (j<0 || j>=matrix[0].size()) return -1e8;
-    if (i == 0) return matrix[0][j];
+    if(j<0 || j>=matrix[0].size()) return -1e8;
+    if(i == 0) return matrix[0][j];
     if(dp[i][j] == -1) return dp[i][j];
 
     int u = matrix[i][j] + f(i-1,j,matrix);
