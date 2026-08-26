@@ -28,7 +28,7 @@ bool func(int ind,int tar,vector<int>& arr,vector<vector<int>>& dp){
 
 // tabulation
 bool subsetSumToK(int n,int k,vector<int>& arr){
-    vector<vector<bool>> dp(n,vector<bool>(k + 1,false));
+    vector<vector<bool>> dp(n,vector<bool>(k+1,false));
     for(int i=0;i<n;i++){
         dp[i][0] = true;
     }
