@@ -43,7 +43,7 @@ int f(vector<int> &arr,int tar){
     prev[0] = 1;
     curr[0] = 1;
 
-    if(arr[0] <= tar) prev[arr[0]] = 1;
+    if(arr[0]<=tar) prev[arr[0]] = 1;
 
     for(int ind=1;ind<n-1;ind++){
         for(int sum=0;sum<=tar;sum++){
@@ -55,7 +55,6 @@ int f(vector<int> &arr,int tar){
         }
         prev = curr;
     }
-    
     return prev[tar];
 }
 
