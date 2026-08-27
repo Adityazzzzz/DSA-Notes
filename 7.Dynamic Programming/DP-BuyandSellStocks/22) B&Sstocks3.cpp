@@ -13,7 +13,7 @@ int f(int i,int buy,int cap,vector<int>&prices,vector<vector<vector<int>>>&dp){
     return dp[i][buy][cap] =  profit;
 }
 
-// tabulation
+// tabulation --------------------------------------------------------------------------------
 int maxProfit(vector<int>& prices,int n){
     vector<vector<vector<int>>> dp(n+1,vector<vector<int>>(2,vector<int>(3,0)));
 
@@ -27,6 +27,28 @@ int maxProfit(vector<int>& prices,int n){
                 else{
                     dp[ind][buy][cap] = max(prices[ind] + dp[ind+1][1][cap-1],
                                             0 + dp[ind+1][0][cap])
+                }
+            }
+        }
+    }
+    return dp[0][1][2];
+}
+
+// space optimization -----------------------------------------------------------------------
+int maxProfit(vector<int>& prices,int n){
+    vector<vector<int>> after(2,vector<int>(3,0));
+    vector<vector<int>> curr(2,vector<int>(3,0));
+
+    for(int ind=n-1;ind>=0;ind--){
+        for(int buy=0;buy<=1;buy++){
+            for(int cap=1;cap<=2;cap++){
+                if(buy == 1){
+                    curr[buy][cap] = max(-prices[ind] + after[0][cap],
+                                            0 + after[1][cap]);
+                }
+                else{
+                    curr[buy][cap] = max(prices[ind] + after[1][cap-1],
+                                            0 + after[0][cap])
                 }
             }
         }
