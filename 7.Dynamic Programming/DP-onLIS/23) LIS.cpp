@@ -6,14 +6,18 @@ int f(ind ind,int prevInd, int arr[],int n, vector<vector<int>>&dp){
     if(ind==m) return 0;
     if(dp[ind][prevInd+1] != -1) return dp[ind][prevInd+1];
 
-    int len = 0 + f(i+1,prevInd,arr,n);
-    if(prevInd==-1 || arr[ind]>arr[prevInd]) len = max(len, 1+f(ind+1,ind,arr,n));  
+    int len = f(ind+1,prevInd,arr,n);
+    if(prevInd==-1 || arr[ind]>arr[prevInd]){
+        len = max(len, 1 + f(ind+1,ind,arr,n));
+    }
 
     return dp[ind][prevInd+1]=len;
 }
+
 // tabulation
 int lis(int arr[],int n){
     vector<vector<int>>dp(n+1,vector<int>(n+1,0));
+    
     for(int ind=n-1;ind>=0;ind--){
         for(int prevInd = ind-1;prevInd>=-1;prevInd--){
             int len = 0 + dp[i+1][prevInd+1];

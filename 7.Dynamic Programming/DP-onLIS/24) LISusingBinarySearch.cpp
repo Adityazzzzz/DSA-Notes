@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 int lis(int arr[],int n){
     vector<int>temp;
     temp.push_back(arr[0]);
