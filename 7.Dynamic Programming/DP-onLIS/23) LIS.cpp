@@ -2,13 +2,13 @@
 using namespace std;
 
 // longest length
-int f(ind ind,int prevInd, int arr[],int n, vector<vector<int>>&dp){
-    if(ind==m) return 0;
+int f(ind ind,int prevInd,int arr[],int n,vector<vector<int>>&dp){
+    if(ind==n) return 0;
     if(dp[ind][prevInd+1] != -1) return dp[ind][prevInd+1];
 
     int len = f(ind+1,prevInd,arr,n);
     if(prevInd==-1 || arr[ind]>arr[prevInd]){
-        len = max(len, 1 + f(ind+1,ind,arr,n));
+        len = max(len,1 + f(ind+1,ind,arr,n));
     }
 
     return dp[ind][prevInd+1]=len;
@@ -21,7 +21,7 @@ int lis(int arr[],int n){
     for(int ind=n-1;ind>=0;ind--){
         for(int prevInd = ind-1;prevInd>=-1;prevInd--){
             int len = 0 + dp[i+1][prevInd+1];
-            if(prevInd==-1 || arr[ind]>arr[prevInd]) len = max(len, 1+dp[ind+1][ind+1]);
+            if(prevInd==-1 || arr[ind]>arr[prevInd]) len = max(len,1+dp[ind+1][ind+1]);
 
             dp[ind][prevInd+1] = len;
         }
@@ -32,16 +32,16 @@ int lis(int arr[],int n){
 
 // print LIS
 // its TLE but needed to print 
-int longestIncreasingSubsequence(int arr[], int n){
-    vector<int> dp(n, 1);
+int longestIncreasingSubsequence(int arr[],int n){
+    vector<int> dp(n,1);
     int maxi = 1;
-    for(int i = 0; i < n; i++) {
-        for(int prev = 0; prev < i; prev++) {
-            if(arr[prev] < arr[i]) {
-                dp[i] = max(dp[i], 1 + dp[prev]);
+    for(int i=0;i<n;i++){
+        for(int prev=0;prev<i;prev++){
+            if(arr[prev]<arr[i]){
+                dp[i] = max(dp[i],1+dp[prev]);
             }
         }
-        maxi = max(maxi, dp[i]);
+        maxi = max(maxi,dp[i]);
     }
     return maxi;
 }
@@ -51,15 +51,14 @@ int printlongestIncreasingSubsequence(int arr[],int n){
     int maxi = 1;
     int lastInd = 0;
 
-    for(int i = 0; i < n; i++) {
+    for(int i=0;i<n;i++){
         hasharr[i]=i;
-        for(int prev = 0; prev < i; prev++) {
-            if(arr[prev] < arr[i] && (1+dp[prev])>dp[i]){
+        for(int prev=0;prev<i;prev++){
+            if(arr[prev]<arr[i] && (1+dp[prev])>dp[i]){
                 dp[i] = 1+dp[i];
                 has[i] = prev;
             }
         }
-        
         if(dp[i]>maxi){
             maxi=dp[i];
             lastInd==i;
