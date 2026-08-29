@@ -14,18 +14,18 @@ class Node{
     }
 }
 
-int countDistinctSubsts(string s){
+int countDistinctSubsts(string word){
     int cnt=0;
     Node* root = new Node();
 
-    for(int i=0;i<s.size();i++){
+    for(int i=0;i<word.size();i++){
         Node* temp = root;
-        for(int j=i;j<s.size();j++){
-            if(!temp->containskey(s[i])){
+        for(int j=i;j<word.size();j++){
+            if(temp->containskey(word[i]) == false){
+                node->put(word[i],new Node());
                 cnt++;
-                node->put(s[i],new Node());
             }
-            node = node->get(s[i]);
+            node = node->get(word[i]);
         }
     }
     return cnt+1; // +1 for ""
