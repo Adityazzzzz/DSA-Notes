@@ -17,8 +17,8 @@ int printlongestIncreasingSubsequence(int arr[],int n){
             }
         }
         if(dp[i] > maxi){
-            maxi=dp[i];
-            lastInd==i;
+            maxi = dp[i];
+            lastInd = i;
         }
     }
 
