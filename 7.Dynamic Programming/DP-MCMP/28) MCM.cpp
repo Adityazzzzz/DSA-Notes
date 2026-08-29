@@ -12,13 +12,12 @@ int solve(vector<int>& arr,int i,int j,vector<vector<int>>& dp){
         int costMultiply = arr[i-1] * arr[k] * arr[j];
 
         int total = cost1 + cost2 + costMultiply;
-
         minCost = min(minCost,total);
     }
     return dp[i][j] = minCost;
 }
 
-// tavulation ---------------------------------------------------------------------------------------------
+// tabulation --------------------------------------------------------------------------------
 int matrixMultiplication(vector<int>& nums){
     int n = nums.size();
     vector<vector<int>> dp(n,vector<int>(n,INT_MAX));
