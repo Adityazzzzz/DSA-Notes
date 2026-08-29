@@ -8,25 +8,27 @@ int printlongestIncreasingSubsequence(int arr[],int n){
 
     sort(arr.begin(),arr.end()); // extra line
 
-    for(int i = 0; i < n; i++){
+    for(int i=0;i<n;i++){
         hasharr[i]=i;
-        for(int prev = 0; prev < i; prev++) {
-            if(arr[prev] % arr[prev]==0 && (1+dp[prev])>dp[i]){
-                dp[i] = 1+dp[i];
+        for(int prev=0;prev<i;prev++) {
+            if(arr[prev] % arr[prev]==0 && (1+dp[prev]) > dp[i]){
+                dp[i] = 1 + dp[i];
                 hasharr[i] = prev;
             }
         }
-        if(dp[i]>maxi){
+        if(dp[i] > maxi){
             maxi=dp[i];
             lastInd==i;
         }
     }
+
     vector<int>temp;
     temp.push_back(arr[lastInd]);
     while(hasharr[lastInd] != lastInd){
         lastInd = hasharr[lastInd];
         temp.push_back(arr[lastInd]);
     }
+
     reverse(temp.begin(),temp.end());
     return temp;
 }
