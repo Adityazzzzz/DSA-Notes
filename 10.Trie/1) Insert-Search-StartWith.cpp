@@ -2,8 +2,15 @@
 using namespace std;
 
 class Node{
-    Node* links[];
+    Node* links[26];
     bool flag = false;
+public:
+    Node(){
+        for(int i=0;i<26;i++){
+            links[i] = NULL;
+        }
+        flag = false;
+    }
     bool containsKey(char ch){
         return (links[ch-'a'] != NULL);
     }
