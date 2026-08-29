@@ -1,54 +1,53 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node {
+struct Node{
     Node* links[26];
     int cntEndWith = 0;
     int cntPrefix = 0;
-
-    bool containsKey(char ch) {
-        return (links[ch - 'a'] != NULL);
+public:
+    Node(){
+        for(int i=0;i<26;i++){
+            links[i] = NULL;
+        }
+        flag = false;
     }
-
-    Node* get(char ch) {
-        return links[ch - 'a'];
+    bool containsKey(char ch){
+        return(links[ch-'a'] != NULL);
     }
-
-    void put(char ch, Node* node) {
-        links[ch - 'a'] = node;
+    Node* get(char ch){
+        return links[ch-'a'];
     }
-
-    void increaseEnd() {
+    void put(char ch,Node* node){
+        links[ch-'a'] = node;
+    }
+    void increaseEnd(){
         cntEndWith++;
     }
-
-    void increasePrefix() {
+    void increasePrefix(){
         cntPrefix++;
     }
-
-    void deleteEnd() {
+    void deleteEnd(){
         cntEndWith--;
     }
-    
-    void reducePrefix() {
+    void deletePrefix(){
         cntPrefix--;
     }
 };
 
-class Trie {
+class Trie{
 private:
     Node* root;
-
 public:
-    Trie() {
+    Trie(){
         root = new Node();
     }
 
-    void insert(string word) {
+    void insert(string word){
         Node* node = root;
-        for (int i = 0; i < word.size(); i++) {
-            if (!node->containsKey(word[i])) {
-                node->put(word[i], new Node());
+        for(int i=0;i<word.size();i++){
+            if(!node->containsKey(word[i])){
+                node->put(word[i],new Node());
             }
             node = node->get(word[i]);
             node->increasePrefix();
@@ -56,13 +55,13 @@ public:
         node->increaseEnd();
     }
 
-    int countWordsEqualTo(string word) {
+    int countWordsEqualTo(string word){
         Node* node = root;
-        for (int i = 0; i < word.size(); i++) {
-            if (node->containsKey(word[i])) {
+        for(int i=0;i<word.size();i++){
+            if(node->containsKey(word[i])){
                 node = node->get(word[i]);
             }
-            else {
+            else{
                 return 0;
             }
         }
@@ -72,25 +71,25 @@ public:
 
     int countWordsStartingWith(string word){
         Node* node = root;
-        for (int i = 0; i < word.size(); i++){
-            if (node->containsKey(word[i])){
+        for(int i=0;i<word.size();i++){
+            if(node->containsKey(word[i])){
                 node = node->get(word[i]);
             } 
-            else {
+            else{
                 return 0;
             }
         }
         return node->cntPrefix;
     }
 
-    void erase(string word) {
+    void erase(string word){
         Node* node = root;
-        for (int i = 0; i < word.size(); i++){
-            if (node->containsKey(word[i])){
+        for(int i=0;i<word.size();i++){
+            if(node->containsKey(word[i])){
                 node = node->get(word[i]);
-                node->reducePrefix();
+                node->deletePrefix();
             } 
-            else {
+            else{
                 return;
             }
         }
