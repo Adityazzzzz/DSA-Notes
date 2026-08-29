@@ -31,12 +31,10 @@ public:
 class Trie{
 private:
     Node* root;
-
 public:
     Trie(){
         root = new Node();
     }
-    
     // O(len)
     void insert(string word){
         Node* temp = root;
@@ -44,12 +42,10 @@ public:
             if(temp->containsKey(word[i]) == false){
                 temp->put(word[i],new Node());
             }
-            // move to reference trie
             temp = temp->get(word[i]);
         }
         temp->setEnd();
     }
-
     // O(len)
     bool search(string word){
         Node* temp = root;
@@ -61,7 +57,6 @@ public:
         }
         return temp->isEnd();
     }
-
     // O(len)
     bool startWith(string prefix){  
         Node* temp = root;
