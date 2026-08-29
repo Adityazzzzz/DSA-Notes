@@ -88,9 +88,6 @@ public:
             if(node->containsKey(word[i])){
                 node = node->get(word[i]);
                 node->deletePrefix();
-            } 
-            else{
-                return;
             }
         }
         node->deleteEnd();
