@@ -5,7 +5,7 @@ using namespace std;
 // sc - O(V+2E) + O(3N)
 
 int timer = 1;
-void dfs(int node, int parent, vector<int>&vis, vector<int>adj[],int time[],int low[], vector<vector<int>>&bridges){
+void dfs(int node,int parent,vector<int>&vis,vector<int>adj[],int time[],int low[],vector<vector<int>>&bridges){
     vis[node] = 1;
     time[node] = low[node] = timer;
     timer++;
