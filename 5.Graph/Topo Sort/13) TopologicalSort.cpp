@@ -32,7 +32,7 @@ vecor<int>toposort(int V,vector<int>adj[]){
 vecor<int>toposort(int V,vector<int>adj[]){
     int degree[V]={0};
     for(int i=0;i<V;i++){
-        for(auto it: adj[i]) degree[it]++;
+        for(auto it:adj[i]) degree[it]++;
     }
 
     queue<int>q;
