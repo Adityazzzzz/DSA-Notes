@@ -36,7 +36,9 @@ vector<vector<int>>findBridgeEdge(int n,vector<vector<int>> &connections){
     vector<int>vis(n,0);
     int time[n];
     int low[n];
+    
     vector<vector<int>>bridges;
-    dfs(0,-1,vis.adj,time,low,bridges); 
+    dfs(0,-1,vis,adj,time,low,bridges);
+
     return bridges;
 }
