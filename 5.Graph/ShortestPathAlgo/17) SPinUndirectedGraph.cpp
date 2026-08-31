@@ -3,13 +3,13 @@ using namespace std;
 
 vector<int>shortestPath(vector<vector<int>>&edges,int N,int M,int src){
     vector<int>adj[N];
-    for(auto it: edges){
+    for(auto it:edges){
         adj[it[0]].push_back(it[1]);
         adj[it[1]].push_back(it[0]);
     } 
 
     int dist[N];
-    for(int i=0;i<;i++){
+    for(int i=0;i<N;i++){
         dist[i] = 1e9;
     }
 
