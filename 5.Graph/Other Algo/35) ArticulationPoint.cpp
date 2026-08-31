@@ -1,38 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void dfs(int u,int p,vector<int> &vis,vector<int> &tin,vector<int> &low,vector<int> &mark,vector<int> adj[],int &timer){
-    vis[u] = 1;
-    tin[u] = low[u] = timer++;
+int timer = 0;
+void dfs(int node,int parent,vector<int> &vis,vector<int> &time,vector<int> &low,vector<int> &mark,vector<int> adj[],int &timer){
+    vis[node] = 1;
+    time[node] = low[node] = timer;
+    timer++
     int children = 0;
 
-    for(int v:adj[u]){
-        if(v == p) continue; 
-        if(!vis[v]){
-            dfs(v,u,vis,tin,low,mark,adj,timer);
-            low[u] = min(low[u],low[v]);
+    for(int it:adj[node]){
+        if(it == parent) continue; 
+        if(!vis[it]){
+            dfs(it,node,vis,time,low,mark,adj,timer);
+            low[node] = min(low[node],low[it]);
 
-            if(low[v] >= tin[u] && p != -1){
-                mark[u] = 1; // articulation point
+            if(low[it] >= time[node] && parent != -1){
+                mark[node] = 1; // articulation point
             }
             children++;
         }
         else{
-            low[u] = min(low[u],tin[v]);
+            low[node] = min(low[node],time[it]);
         }
     }
-    if(p == -1 && children > 1){
-        mark[u] = 1;
+    if(parent == -1 && children > 1){
+        mark[node] = 1;
     }
 }
 
 vector<int> articulationPoints(int n,vector<int> adj[]){
-    vector<int> vis(n,0),tin(n,-1),low(n,-1),mark(n,0);
-    int timer = 0;
+    vector<int> vis(n,0),time(n,-1),low(n,-1),mark(n,0);
 
     for(int i=0;i<n;i++){
         if(!vis[i]){
-            dfs(i,-1,vis,tin,low,mark,adj,timer);
+            dfs(i,-1,vis,time,low,mark,adj,timer);
         }
     }
     vector<int> ans;
