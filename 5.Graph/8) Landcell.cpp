@@ -33,8 +33,8 @@ int numberOfEnclaves(vector<vector<int>> &grid){
                 q.push({nrow,ncol});
                 vis[nrow][ncol] = 1; 
             }
-        }    
-    }    
+        }
+    }
     int cnt = 0;
     for(int i = 0;i<n;i++){
         for(int j = 0;j<m;j++){
