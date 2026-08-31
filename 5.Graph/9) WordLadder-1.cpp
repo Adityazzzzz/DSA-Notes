@@ -23,7 +23,7 @@ int wordladder(string startword,string targtword,vector<string>&wordlist){
 
                 if(st.find(word) != st.end()){
                     st.erase(word);
-                    q.push({word,steps + 1});
+                    q.push({word,steps+1});
                 }
             }
             word[i] = original;
