@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void  dfs(int row,int col,vector<vector<char>>vis,vector<vector<char>>mat,int drow[],int dcol[]){
+void dfs(int row,int col,vector<vector<char>>vis,vector<vector<char>>mat,int drow[],int dcol[]){
     vis[row][col]=1;
     int n = mat.size();
     int m = mat[0].size();
