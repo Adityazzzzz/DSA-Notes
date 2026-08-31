@@ -15,7 +15,7 @@ vecor<int>toposort(int V,vector<int>adj[]){
     for(int i=0;i<V;i++){
         if(!vis[i]){
             dfs(i,vis,st,adj);
-        } 
+        }
     }
 
     vector<int>ans;
