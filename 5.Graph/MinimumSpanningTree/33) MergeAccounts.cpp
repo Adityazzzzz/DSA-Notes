@@ -3,12 +3,12 @@ using namespace std;
 
 class DisjointSet{
 public:
-    vector<int> rank, size, parent;
+    vector<int> rank,size,parent;
     DisjointSet(int n){
-        rank.resize(n+1, 0);
+        rank.resize(n+1,0);
         parent.resize(n+1);
-        size.resize(n+1, 1);
-        for(int i = 0; i <= n; i++){
+        size.resize(n+1,1);
+        for(int i=0;i<=n;i++){
             parent[i] = i;
         }
     }
@@ -16,7 +16,7 @@ public:
         if(node == parent[node]) return node;
         return parent[node] = findUparent(parent[node]);
     }
-    void unionbyrank(int x, int y){
+    void unionbyrank(int x,int y){
         int px = findUparent(x);
         int py = findUparent(y);
         if(px == py) return;
@@ -25,10 +25,10 @@ public:
         else if(rank[py] < rank[px]) parent[py] = px;
         else{
             parent[px] = py;
-            rank[py]++; // ✅ fix
+            rank[py]++;
         }
     }
-    void unionbysize(int x, int y){
+    void unionbysize(int x,int y){
         int px = findUparent(x);
         int py = findUparent(y);
         if(px == py) return;
@@ -45,43 +45,42 @@ public:
 
 class Solution{
 public:
-    vector<vector<string>> accountsMerge(vector<vector<string>>& accounts){
-        int n = accounts.size();
+    vector<vector<string>> accountsMerge(vector<vector<string>>& acc){
+        int n = acc.size();
         DisjointSet ds(n);
 
-        unordered_map<string, int> mpp; // email -> account index
+        unordered_map<string,int> mpp; // email->account index
 
-        for(int i = 0; i < n; i++){
-            for(int j = 1; j < accounts[i].size(); j++){
-                string mail = accounts[i][j];
+        for(int i=0;i<n;i++){
+            for(int j=1;j<acc[i].size();j++){
+                string mail = acc[i][j];
                 if(mpp.find(mail) == mpp.end()){
                     mpp[mail] = i;
-                } else{
-                    ds.unionbysize(i, mpp[mail]);
+                } 
+                else{
+                    ds.unionbysize(i,mpp[mail]);
                 }
             }
         }
 
         vector<vector<string>> merged(n);
-        for(auto it : mpp){
+        for(auto it:mpp){
             string mail = it.first;
             int node = ds.findUparent(it.second);
             merged[node].push_back(mail);
         }
 
-        // Step 3: Prepare result
-        vector<vector<string>> result;
-        for(int i = 0; i < n; i++){
+        vector<vector<string>> res;
+        for(int i=0;i<n;i++){
             if(merged[i].empty()) continue;
-            sort(merged[i].begin(), merged[i].end());
+            sort(merged[i].begin(),merged[i].end());
 
             vector<string> temp;
-            temp.push_back(accounts[i][0]); // account name
-            temp.insert(temp.end(), merged[i].begin(), merged[i].end());
+            temp.push_back(acc[i][0]);
+            temp.insert(temp.end(),merged[i].begin(),merged[i].end());
             
-            result.push_back(temp);
+            res.push_back(temp);
         }
-
-        return result;
+        return res;
     }
 };
