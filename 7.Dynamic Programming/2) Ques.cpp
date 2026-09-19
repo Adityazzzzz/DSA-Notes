@@ -97,7 +97,7 @@ func(int index){
 func(int index,vector<int>&dp){
     if(index==0) return arr[index];
     if(index<0) return 0;
-    if(dp[index] != -1) return dp[index];
+    if(dp[index]!=-1) return dp[index];
 
     int pick = arr[index] + func(index-2);
     int notpick = 0 + func(index-1);
