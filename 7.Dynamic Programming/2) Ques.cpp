@@ -147,7 +147,7 @@ func(int index){
         if(pick>1) pick += prev2;
         int notpick = 0 + prev;
 
-        int curr = max(pic,notpick);
+        int curr = max(pick,notpick);
         prev2 = prev;
         prev = curr
     }
