@@ -157,7 +157,7 @@ func(int index){
 long long houseRobber(vector<int>&houses){
     vector<int>temp1;
     vector<int>temp2;
-    int n = houses.size();
+    int n=houses.size();
     if(n==1) return houses[0];
 
     for(int i=0;i<n;i++){
