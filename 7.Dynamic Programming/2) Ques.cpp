@@ -161,7 +161,6 @@ long long houseRobber(vector<int>&houses){
     if(n==1) return houses[0];
 
     for(int i=0;i<n;i++){
-        // fill element
         if(i!=0) temp1.push_back(houses[i]); // except first ele
         if(i!=n-1) temp2.push_back(houses[i]);// except second ele
     }
