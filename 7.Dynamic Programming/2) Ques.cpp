@@ -83,7 +83,7 @@ int f(int index){
 //----------------------------------------------------------------------------------------------
 
 // Maximum sum of non-adjacent element
-//recursion
+// recursion
 func(int index){
     if(index==0) return arr[index];
     if(index<0) return 0;
