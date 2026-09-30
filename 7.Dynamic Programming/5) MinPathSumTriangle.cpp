@@ -3,7 +3,6 @@ using namespace std;
 
 int f(int i,int j,vector<vector<int>>& grid,int n){
     if(i==n-1) return grid[n-1][j];
-
     if(dp[i][j] == -1) return dp[i][j];
 
     int down = grid[i][j] + f(i+1,j,grid,n);
