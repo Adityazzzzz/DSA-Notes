@@ -87,11 +87,11 @@ int MaxConnection(vector<vector<int>>& grid){
             
             set<int> components;
             for(int ind=0;ind<4;ind++){
-                int newr = row + dr[ind];
-                int newc = col + dc[ind];
-                if(isValid(newr,newc,n)){
-                    if(grid[newr][newc] == 1){
-                        components.insert(ds.findUPar(newr*n + newc));
+                int nr = row + dr[ind];
+                int nc = col + dc[ind];
+                if(isValid(nr,nc,n)){
+                    if(grid[nr][nc] == 1){
+                        components.insert(ds.findUPar(nr*n + nc));
                     }
                 }
             }
@@ -103,8 +103,8 @@ int MaxConnection(vector<vector<int>>& grid){
         }
     }
 
-    for(int cellNo=0;cellNo<n*n;cellNo++){
-        mx = max(mx,ds.size[ds.findUPar(cellNo)]);
+    for(int i=0;i<n*n;i++){
+        mx = max(mx,ds.size[ds.findUPar(i)]);
     }
     return mx;
 }
