@@ -1,5 +1,4 @@
-#include<iostream>
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 //  OPTIMAL SOLU 1:  tc: O(min(n,m)) + O(nlogn) +O(mlogm)

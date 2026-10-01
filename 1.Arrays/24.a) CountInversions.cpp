@@ -1,13 +1,13 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 // ques is: i<j and a[i]>a[j]
 
 int merge(int *arr,int low,int mid ,int high){ //.......................... 3
     vector<int>temp;
-    int left=low;
-    int right=mid+1;
-    int count=0;
+    int left = low;
+    int right = mid+1;
+    int count = 0;
 
     while(left<=mid && right<=high){
         if(arr[left]<arr[right]){
@@ -30,7 +30,7 @@ int merge(int *arr,int low,int mid ,int high){ //.......................... 3
     }
 
     for(int i=low;i<=high;i++){
-        arr[i]=temp[i-low];
+        arr[i] = temp[i-low];
     }
 
     return count;
@@ -41,9 +41,9 @@ int mergesort(int *arr,int low,int high){ //.......................... 2
     if(low==high) return count;
 
     int mid=(low+high)/2;
-    count+= mergesort(arr,low,mid);
-    count+= mergesort(arr,mid+1,high);
-    count+= merge(arr,low,mid,high);
+    count += mergesort(arr,low,mid);
+    count += mergesort(arr,mid+1,high);
+    count += merge(arr,low,mid,high);
 
     return count;
 }

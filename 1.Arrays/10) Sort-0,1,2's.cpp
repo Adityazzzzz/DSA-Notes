@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 /*
@@ -15,8 +15,8 @@ Dutch national flag algorithm
 */
 
 void sorted(int arr[],int n){
-    int low=0, mid=0;
-    int high=n-1;
+    int low = 0,mid = 0;
+    int high = n-1;
     
     while(mid<=high){
         if(arr[mid]==0){

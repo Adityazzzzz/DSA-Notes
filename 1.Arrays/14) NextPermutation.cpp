@@ -1,5 +1,4 @@
-#include<iostream>
-#include <climits> 
+#include <iostream>
 using namespace std;
 
 // BRUTE Solu: 
@@ -11,16 +10,16 @@ step 3- find just next to it
 */
 
 void nextPermutation(vector<int> &arr,int n){
-    int idx=-1;
+    int idx = -1;
     for(int i=n-2;i>=0;i--){ // from second last element
         if(arr[i]<arr[i+1]){
-            idx=i;
+            idx = i;
             break;
         }
     }
     if(idx==-1) reverse(arr.begin(),arr.end());
     for(int i=n-1;i>idx;i--){ // from last element
-        if(arr[i]>arr[idx]){
+        if(arr[i] > arr[idx]){
             swap(arr[i],arr[idx]);
             break;
         }

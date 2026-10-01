@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 // BETTER SOLU: O(n^2*logn)
 /*
@@ -32,8 +32,8 @@ vector<vector<int>>3sum(int n,vector<int> &arr){
             continue;
         }
 
-        int j=i+1;
-        int k=n-1;
+        int j = i+1;
+        int k = n-1;
         while(j<k){
             int sum = arr[i] + arr[j] + arr[k];
             if(sum<0){

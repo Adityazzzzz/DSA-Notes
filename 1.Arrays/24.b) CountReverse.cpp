@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 // ques is: i<j and a[i]> 2*a[j]
@@ -8,8 +8,8 @@ using namespace std;
 
 void merge(int *arr,int low,int mid ,int high){
     vector<int>temp;
-    int left=low;
-    int right=mid+1;
+    int left = low;
+    int right = mid+1;
 
     while(left<=mid && right<=high){
         if(arr[left]<arr[right]){
@@ -31,13 +31,13 @@ void merge(int *arr,int low,int mid ,int high){
     }
 
     for(int i=low;i<=high;i++){
-        arr[i]=temp[i-low];
+        arr[i] = temp[i-low];
     }
 }
 
 int countpairs(int *arr,int low,int mid,int high){
-    int right=mid+1;
-    int count=0;
+    int right = mid+1;
+    int count = 0;
 
     for(int i=low;i<=mid;i++){
         while(right<=high && arr[i] > 2*arr[right]){
@@ -51,12 +51,12 @@ int countpairs(int *arr,int low,int mid,int high){
 int mergesort(int *arr,int low,int high){
     if(low==high) return count;
 
-    int count=0;
-    int mid=(low+high)/2;
-    count=count+mergesort(arr,low,mid);
-    count=count+mergesort(arr,mid+1,high);
+    int count = 0;
+    int mid = (low+high)/2;
+    count = count+mergesort(arr,low,mid);
+    count = count+mergesort(arr,mid+1,high);
 
-    count=count+countpairs(arr,low,mid,high);
+    count = count+countpairs(arr,low,mid,high);
 
     merge(arr,low,mid,high);
     return count;

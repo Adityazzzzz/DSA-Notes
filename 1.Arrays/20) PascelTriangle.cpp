@@ -1,14 +1,13 @@
-#include<iostream>
-#include<vector>
-using namespace std ;
+#include <iostream>
+using namespace std;
 
 // when we are given row and column : n and r ,respectively.
 // O(n) and O(1)
 int combination(int x,int y){   // x=n-1 & y=r-1;
-    int ans=1;
+    int ans = 1;
     for(int i=0;i<y;i++){
-        ans=ans*(x-i);
-        ans=ans/(i+1);
+        ans = ans*(x-i);
+        ans = ans/(i+1);
     }
     return ans;
 }
@@ -16,12 +15,12 @@ int combination(int x,int y){   // x=n-1 & y=r-1;
 // when we have to print full row
 // O(n) and O(1)
 vector<vector<int>>row(int n){  
-    int ans=1;
+    int ans = 1;
     vector<int>ansrow;
     ansrow.push_back(1);
     for(int i=1;i<n;i++){
-        ans=ans*(n-i);
-        ans=ans/(i);
+        ans = ans*(n-i);
+        ans = ans/(i);
         ansrow.push_back(ans);
     }
     return ansrow;   

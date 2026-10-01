@@ -1,5 +1,4 @@
-#include<iostream>
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 // better solu:   O(N + (N/2+1))  and O(N/2+1)
@@ -15,9 +14,9 @@ using namespace std;
 // }
 
 int onlyonce(int *arr,int n){
-    int xor1=0;
+    int xor1 = 0;
     for(int i=0;i<n;i++){
-        xor1=xor1^arr[i];
+        xor1 = xor1^arr[i];
     }
     return xor1;
 }

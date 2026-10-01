@@ -1,14 +1,13 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 void rotateby1(int *arr,int n){
     int temp = arr[0];
-    for (int i=0;i<n-1;i++){
+    for(int i=0;i<n-1;i++){
         arr[i] = arr[i+1];
     }
     arr[n-1] = temp;
 }
-
 // brute solution:
 // void rotatebyD{   arr: 1 2 3 4 5 6 7
 //    d=d%n;   d=3

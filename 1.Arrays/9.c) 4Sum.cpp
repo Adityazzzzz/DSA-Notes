@@ -1,9 +1,7 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-
 vector<vector<int>>4sum(vector<int> &arr,int n,int target){
-
     vector<vector<int>>ans;
     for(int i=0;i<n;i++){
         if(i>=0 && arr[i]==arr[i-1]) continue;
@@ -11,13 +9,13 @@ vector<vector<int>>4sum(vector<int> &arr,int n,int target){
         for(int j=i+1;j<n;j++){
             if(j>i+1 && arr[j]==arr[j-1]) continue;
 
-            int k=j+1;
-            int l=n-1;
+            int k = j+1;
+            int l = n-1;
             while(k<l){
                 long long sum=arr[i];
-                sum=sum+arr[j];
-                sum=sum+arr[k];
-                sum=sum+arr[l];
+                sum = sum + arr[j];
+                sum = sum + arr[k];
+                sum = sum + arr[l];
                 if(sum==target){
                     vector<int>temp={arr[i],arr[j],arr[k],arr[l]};
                     ans.push_back(temp);

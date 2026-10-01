@@ -1,31 +1,31 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 int secondlargest(int *arr,int n){
-    int maxi=INT_MIN;
-    int smax=INT_MIN;
+    int maxi = INT_MIN;
+    int smax = INT_MIN;
     for(int i=0;i<n;i++){
         if(arr[i]>maxi){
-            smax=maxi;
-            maxi=arr[i];
+            smax = maxi;
+            maxi = arr[i];
         }
         else if(arr[i]>smax && arr[i]<maxi){
-            smax=arr[i];
+            smax = arr[i];
         }
     }
     return smax;
 }
 
 int secondsmallest(int *arr,int n){
-    int mini=INT_MAX;
-    int smin=INT_MAX; 
+    int mini = INT_MAX;
+    int smin = INT_MAX; 
     for(int i=0;i<n;i++){
         if(arr[i]<mini){
-            smin=mini;
-            mini=arr[i];
+            smin = mini;
+            mini = arr[i];
         }
         else if(arr[i]<smin && arr[i]>mini){
-            smin=arr[i];
+            smin = arr[i];
         }
     }
     return smin;

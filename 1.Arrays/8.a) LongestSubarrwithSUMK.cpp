@@ -1,5 +1,4 @@
-#include<iostream>
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 // BRUTE solu: O(N^3)
@@ -51,20 +50,21 @@ int longestSubArr(vector<long long> *arr,long long n){
 
 // O(2N) && 0(1)
 int longestSubArr(vector<long long> &arr,long long n,long long k){
-    int left=0,right=0;
-    int sum=0;
-    long long maxl=0;
+    int left = 0,right = 0;
+    int sum = 0;
+    long long maxl = 0;
 
     while(right<n){
-        sum=sum+arr[right];
+        sum = sum+arr[right];
         
         while(sum>k && left<=right){
-            sum=sum-arr[left];
+            sum = sum-arr[left];
             left++;
         }
         right++;
-        
-        if(sum==k) maxl = max(maxl,(long long)right-left+1);
+        if(sum==k){
+            maxl = max(maxl,(long long)right-left+1);
+        }
     }
     return maxl; 
 }

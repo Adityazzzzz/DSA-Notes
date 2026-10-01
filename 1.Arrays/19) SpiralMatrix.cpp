@@ -1,16 +1,13 @@
-#include<iostream>
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-
 // tc: O(row * col)
+vector<vector<int>>spiralmatrix(vector<vector<int>> &arr,int n){
+    int row = arr.size();
+    int col = arr[0].size();
 
-vector<vector<int>>spiralmatrix(vector<vector<int>> &arr,int n) {
-    int row=arr.size();
-    int col=arr[0].size();
-
-    int left=0,right=col-1;
-    int top=0,bottom=row-1;
+    int left = 0,right = col-1;
+    int top = 0,bottom = row-1;
     vector<int>ans;
 
     while(top<=bottom && left<=right){

@@ -1,16 +1,15 @@
-#include<iostream>
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int countsubarr(int *arr,int n,int k){
     unordered_map<int,int>mpp;
-    mpp[0]=1;
-    int presum=0,count=0;
+    mpp[0] = 1;
+    int presum = 0,count = 0;
 
     fot(int i=0;i<n;i++){
-        presum+=arr[i];
-        int rem=presum-k;
-        count+=mpp[rem];
+        presum += arr[i];
+        int rem = presum-k;
+        count += mpp[rem];
         mpp[presum]++;
     }
     return count;  

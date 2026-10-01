@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 // BETTER Solu: 
@@ -18,16 +18,17 @@ vector<int> majorityelement(int arr[],int n ){
 */
 
 int majorityelement(int arr[],int n ){
-    int count1=0,count2=0;;
+    int count1 = 0;
+    int count2 = 0;
     int ele1,ele2;
     for(int i=0;i<n;i++){  // moons's voting theorem
         if(count1==0 && arr[i]!=ele2){
-            count1=1;
-            ele1=arr[i];
+            count1 = 1;
+            ele1 = arr[i];
         }
         if(count2==0 && arr[i]!=ele1){
-            count2=1;
-            ele2=arr[i];
+            count2 = 1;
+            ele2 = arr[i];
         }
         else if(arr[i]==ele1) count1++;
         else if(arr[i]==ele2) count2++;
@@ -38,7 +39,8 @@ int majorityelement(int arr[],int n ){
     }
 
     vector<int>ans;
-    int cnt1=0,cnt2=0;
+    int cnt1 = 0;
+    int cnt2 = 0;
     for(int i=0;i<n;i++){          // to check, is really that ele occurs more than n/2
         if(arr[i]==ele1) cnt1++;
         if(arr[i]==ele2) cnt2++;
