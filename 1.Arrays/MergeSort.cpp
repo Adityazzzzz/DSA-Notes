@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 // devide and merge
@@ -21,8 +21,8 @@ using namespace std;
 
 void merge(int *arr,int low,int mid ,int high){
     vector<int>temp;
-    int left=low;
-    int right=mid+1;
+    int left = low;
+    int right = mid+1;
 
     while(left<=mid && right<=high){
         if(arr[left]<arr[right]){
@@ -44,29 +44,15 @@ void merge(int *arr,int low,int mid ,int high){
     }
 
     for(int i=low;i<=high;i++){
-        arr[i]=temp[i-low];
+        arr[i] = temp[i-low];
     }
 }
 
 void mergesort(int *arr,int low,int high){
     if(low==high) return;
 
-    int mid=(low+high)/2;
+    int mid = (low+high)/2;
     mergesort(arr,low,mid);
     mergesort(arr,mid+1,high);
     merge(arr,low,mid,high);
-}
-
-int main(){
-    int n=5;
-    int arr[n];
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-    }
-    mergesort(arr,0,n-1);
-
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl;
 }
