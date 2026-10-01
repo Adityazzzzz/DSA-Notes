@@ -8,7 +8,7 @@ int f(ind ind,int prevInd,int arr[],int n,vector<vector<int>>&dp){
 
     int len = f(ind+1,prevInd,arr,n);
     if(prevInd==-1 || arr[ind]>arr[prevInd]){
-        len = max(len,1 + f(ind+1,ind,arr,n));
+        len = max(len, 1+f(ind+1,ind,arr,n));
     }
 
     return dp[ind][prevInd+1]=len;
