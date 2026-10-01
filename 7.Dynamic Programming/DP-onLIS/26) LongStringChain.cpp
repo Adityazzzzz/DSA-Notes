@@ -29,7 +29,7 @@ int longStringChain(vector<string>&arr){
 
     for(int i=0;i<n;i++){ 
         for(int prev=0;prev<i;prev++){
-            if(checkPossible(arr[i],arr[j]) &&(1+dp[prev]) > dp[i]){
+            if(checkPossible(arr[i],arr[j]) && (1+dp[prev]) > dp[i]){
                 dp[i] = 1 + dp[i]; 
             }
         }
