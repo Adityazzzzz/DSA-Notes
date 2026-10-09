@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 // 1) Pick a pivot and put it in its sorted arr position 

@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 // BETTER SOLU: O(n^2*logn)
 /*

@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 // repeatedly swap the adjacent element if it is in wrong order

@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 vector<vector<int>>4sum(vector<int> &arr,int n,int target){

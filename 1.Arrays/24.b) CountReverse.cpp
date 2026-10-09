@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 // ques is: i<j and a[i]> 2*a[j]

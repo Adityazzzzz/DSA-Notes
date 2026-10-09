@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 // better solu:   O(N + (N/2+1))  and O(N/2+1)
