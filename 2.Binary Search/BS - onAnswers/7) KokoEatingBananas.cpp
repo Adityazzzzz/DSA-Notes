@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 // retun the min integer k such that koko can eat all bananas within H hours.
 int func(int *arr,int n,int hour){
