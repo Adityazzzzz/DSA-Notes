@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 // Combination Sum 1 - using subseq method
 void subseq(int index,int target,vector<int>&arr,vector<vector<int>>&ans,vector<int>&ds){
     if(index == arr.size()){
@@ -19,13 +18,12 @@ void subseq(int index,int target,vector<int>&arr,vector<vector<int>>&ans,vector<
     subseq(index+1,target,arr,ans,ds);
 
 }
-vector<vector<int>>combination(vector<int> &arr, int target){
+vector<vector<int>>combination(vector<int> &arr,int target){
     vector<vector<int>>ans;
     vector<int>ds;
     subseq(0,target,arr,ans,ds);
     return ans;
 }
-
 
 // Combination Sum 2
 void subseq(int index,int target,vector<int>&arr,vector<vector<int>>&ans,vector<int>&ds){
@@ -44,7 +42,7 @@ void subseq(int index,int target,vector<int>&arr,vector<vector<int>>&ans,vector<
     }
 
 }
-vector<vector<int>>combination(vector<int> &arr, int target){
+vector<vector<int>>combination(vector<int> &arr,int target){
     sort(arr.begin(),arr.end());
     vector<vector<int>>ans;
     vector<int>ds;
