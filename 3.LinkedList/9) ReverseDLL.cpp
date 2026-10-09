@@ -5,7 +5,7 @@ because of LIFO , it reverses
 O(2N) and O(N)
 */
 
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 class Node{

@@ -1,6 +1,6 @@
 // Delete Nth node from the end of the LL
 
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 class Node{

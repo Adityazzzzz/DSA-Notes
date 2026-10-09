@@ -1,6 +1,6 @@
 //check if the given LL is palindrome or not
 
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 class Node{
