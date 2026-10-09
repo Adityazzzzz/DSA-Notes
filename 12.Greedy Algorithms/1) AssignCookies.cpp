@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 int findContentChildren(vector<int>& student,vector<int>& cookie){
