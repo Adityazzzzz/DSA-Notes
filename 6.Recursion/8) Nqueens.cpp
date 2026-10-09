@@ -8,7 +8,7 @@ class Solution{
             return;
         }
 
-        for(int row = 0;row < n;row++){
+        for(int row = 0;row<n;row++){
             if(leftRow[row] == 0 && lowerDiagonal[row + col] == 0 && upperDiagonal[n - 1 + col - row] == 0){
 
                 board[row][col] = 'Q';
