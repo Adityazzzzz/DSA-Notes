@@ -17,7 +17,7 @@ class Solution{
                 lowerDiagonal[row + col] = 1;
                 upperDiagonal[n - 1 + col - row] = 1;
 
-                solve(col + 1,board,ans,leftRow,upperDiagonal,lowerDiagonal,n);
+                solve(col+1,board,ans,leftRow,upperDiagonal,lowerDiagonal,n);
                 
                 board[row][col] = '.';
                 leftRow[row] = 0;
