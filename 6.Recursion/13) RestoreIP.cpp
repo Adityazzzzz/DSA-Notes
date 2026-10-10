@@ -28,7 +28,7 @@ void func(int index,vector<string>&ans,vector<string>&ds,string s){
         }
     }
 }
-vector<string> restoreIpAddresses(string s) {
+vector<string> restoreIpAddresses(string s){
     vector<string>ans;
     vector<string>ds;
     func(0,ans,ds,s);
