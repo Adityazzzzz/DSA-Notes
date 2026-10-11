@@ -29,16 +29,16 @@ int maxsum(Node* temp,int maxi){
     int r = maxsum(temp->right,maxi);
     int rs = max(0,r);
 
-    maxi = max(maxi, (ls + rs + temp->data));
+    maxi = max(maxi,(ls+rs+temp->data));
 
     return max(ls,rs)+temp->data
 }
 
 
 // Q-2
-bool isIdenticalTree(Node* t1,Node* l2){
+bool isIdenticalTree(Node* t1,Node* t2){
     if(t1==NULL || t2==NULL) return t1==t2;
 
     // return (t1->data == t2->data) && (t1->left == t2->left) && (t1->right == t2->right);
-    return (t1->data == t2->data) && isIdenticalTree(t1->left, t2->left) && isIdenticalTree(t1->right, t2->right);
+    return (t1->data == t2->data) && isIdenticalTree(t1->left,t2->left) && isIdenticalTree(t1->right,t2->right);
 }
