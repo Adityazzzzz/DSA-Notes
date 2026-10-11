@@ -37,7 +37,7 @@ vector<int>topView(Node* root){
         if(node->right != NULL) q.push({node->right,index+1});
     }
 
-    for(auto it : mpp){
+    for(auto it:mpp){
         ans.push_back(it.second);
     }
     return ans;
@@ -66,7 +66,7 @@ vector<int>bottomView(Node* root){
         if(node->right != NULL) q.push({node->right,index+1});
     }
 
-    for(auto it : mpp){
+    for(auto it:mpp){
         ans.push_back(it.second);
     }
     return ans;
