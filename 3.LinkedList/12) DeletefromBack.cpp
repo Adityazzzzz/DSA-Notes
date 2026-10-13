@@ -21,7 +21,7 @@ class Node{
 // COUNT length of LL and len-n = kth from starting
 //--------------------------------------------------------------------------------------------------------------
 
-Node* deleteNodefromEnd(Node* head, int n){
+Node* deleteNodefromEnd(Node* head,int n){
     Node* fast = head;
     Node* slow = head;
 
