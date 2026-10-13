@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 int spanningTree(int V,vector<vector<int>> adj){
