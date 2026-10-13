@@ -13,7 +13,7 @@ public:
         right = nullptr;
     }
 
-    Node(int val, Node* left1, Node* right1){
+    Node(int val,Node* left1,Node* right1){
         data = val;
         left = left1;
         right = right1;

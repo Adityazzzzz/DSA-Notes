@@ -31,8 +31,8 @@ vector<vectpr<int>>vertical(Node* root){
         int y = it.second.second;
 
         mpp[x][y].insert(temp->val);
-        if(temp->left) q.push({temp->left, {x-1,y+1}});
-        if(temp->right) q.push({temp->right, {x+1,y+1}});
+        if(temp->left) q.push({temp->left,{x-1,y+1}});
+        if(temp->right) q.push({temp->right,{x+1,y+1}});
     }
     
     for(auto it1 : mpp){

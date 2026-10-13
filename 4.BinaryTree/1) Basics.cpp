@@ -113,7 +113,7 @@ vector<int> postOrder(Node* root) {
     vector<int> postorder;
     if(root == NULL) return postorder;
 
-    stack<Node*> st1, st2;
+    stack<Node*> st1,st2;
     st1.push(root);
 
     while(!st1.empty()){
@@ -153,14 +153,14 @@ vector<int>Traversals (Node* root){
             pre.push_back(it.first->val);
             it.second++;
             st.push(it);
-            if(it.first->left != NULL)  st.push(it.first->left, 1);
+            if(it.first->left != NULL)  st.push(it.first->left,1);
         }
 
         else if(it.second == 2){
             in.push_back(it.first->val);
             it.second++;
             st.push(it);
-            if(it.first->right != NULL)  st.push(it.first->right, 1);
+            if(it.first->right != NULL)  st.push(it.first->right,1);
         }
 
         else{

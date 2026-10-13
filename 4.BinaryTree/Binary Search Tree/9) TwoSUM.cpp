@@ -50,7 +50,7 @@ class BSTiterator{
 
 class Solution{
 public:
-    bool twosum(TreeNode* root, int k){
+    bool twosum(TreeNode* root,int k){
         if(!root) return false;
 
         BSTiterator l(root,false);

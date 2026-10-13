@@ -42,7 +42,7 @@ Node* deserialize(string data){
     stringstream s(data);
     string str;
 
-    getline(s, str, ',');
+    getline(s,str,',');
     Node* newnode = new Node(stoi(str));
 
     queue<Node*> q;
@@ -52,13 +52,13 @@ Node* deserialize(string data){
         Node* node = q.front();
         q.pop();
 
-        getline(s, str, ',');
+        getline(s,str,',');
         if(str != "#"){
             Node* leftNode = new Node(stoi(str));
             node->left = leftNode;
             q.push(leftNode);
         }
-        getline(s, str, ',');
+        getline(s,str,',');
         if(str != "#"){
             Node* rightNode = new Node(stoi(str));
             node->right = rightNode;

@@ -44,7 +44,7 @@ int dfsHeight(Node* root){
 
 
 // diameter of tree
-int diameter(Node* root, int maxi){
+int diameter(Node* root,int maxi){
     if(root==NULL) return 0;
 
     int lh=diameter(root->left,maxi);

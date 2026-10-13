@@ -15,7 +15,7 @@ class Node{
     }
 };
 
-Node* insertnode(Node* root, int k){
+Node* insertnode(Node* root,int k){
     if(root == NULL) return new Node(k);
     Node* temp = root;
     while(true){
@@ -44,7 +44,7 @@ Node* insertnode(Node* root, int k){
 
 // -----------------------------------------------------------------------------------------
 
-Node* deletenode(Node* root, int key){
+Node* deletenode(Node* root,int key){
     if(root == NULL) return nullptr;
     if(root->val == key) return helper(root);
 

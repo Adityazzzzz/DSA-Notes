@@ -5,7 +5,7 @@ struct Node {
     int data;
     Node* left;
     Node* right;
-    Node(int val) : data(val), left(nullptr), right(nullptr) {}
+    Node(int val) : data(val),left(nullptr),right(nullptr){}
 };
 
 Node* markParent(Node* root,unordered_map<Node*,Node*>& parent,int target){
@@ -29,11 +29,11 @@ Node* markParent(Node* root,unordered_map<Node*,Node*>& parent,int target){
     return temp;
 }
 
-int minTime(Node* root, int target) {
-    unordered_map<Node*, Node*> parent;    
-    Node* temp = markParent(root, parent, target);
+int minTime(Node* root,int target) {
+    unordered_map<Node*,Node*> parent;    
+    Node* temp = markParent(root,parent,target);
 
-    unordered_map<Node*, bool> visited;
+    unordered_map<Node*,bool> visited;
     queue<Node*> q;
     q.push(temp);
     visited[temp] = true;
