@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 int func(int day,int last,vector<vector<int>&arr,vector<vector<int>&dp){
