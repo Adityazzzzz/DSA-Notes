@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 vector<vector<int>>nearest(vector<vector<int>>grid){
@@ -21,8 +21,8 @@ vector<vector<int>>nearest(vector<vector<int>>grid){
             }
         }
     }
-    int drow[] ={-1,0,1,0};
-    int dcol[] ={0,1,0,-1};
+    int drow[] = {-1,0,1,0};
+    int dcol[] = {0,1,0,-1};
     while(!q.empty()){
         int row = q.front().first.first;
         int col = q.front().first.second;
@@ -36,7 +36,7 @@ vector<vector<int>>nearest(vector<vector<int>>grid){
 
             if((nr>=0 && nr<n)  &&  (nc>=0 && nc<m)  &&  (vis[nr][nc]==0) ){
                 vis[nr][nc]=1;
-                q.push({{nr,nc}, steps+1});
+                q.push({{nr,nc},steps+1});
             }
         }
     }

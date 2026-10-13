@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 bool dfs(int node,int nodecolor,int color[],vector<int>&adj[]){

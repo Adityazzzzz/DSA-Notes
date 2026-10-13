@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 void dfs(int row,int col,vector<vector<char>>vis,vector<vector<char>>mat,int drow[],int dcol[]){
@@ -18,8 +18,8 @@ void dfs(int row,int col,vector<vector<char>>vis,vector<vector<char>>mat,int dro
 
 vector<vector<char>> fill(int n,int m,vector<vector<char>>mat){
     vector<vector<int>>vis(n,vector<int>(m,0));
-    int drow[] ={-1,0,1,0};
-    int dcol[] ={0,1,0,-1};
+    int drow[] = {-1,0,1,0};
+    int dcol[] = {0,1,0,-1};
     
     // traverse boundary lines first
     for(int j=0;j<m;j++){

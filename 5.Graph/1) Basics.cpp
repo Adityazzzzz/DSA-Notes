@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 int main(){
@@ -34,7 +34,7 @@ int main2(){
 
 
 // BFS Traversal
-vector<int>bfsgraph(int V, vector<int>& adj[]){
+vector<int>bfsgraph(int V,vector<int>& adj[]){
     vector<int>ans;
 
     int vis[V] = {0};
@@ -60,7 +60,7 @@ vector<int>bfsgraph(int V, vector<int>& adj[]){
 
 
 // DFS Traversal
-vector<int>dfsgraph(int V, vector<int>& adj[]){
+vector<int>dfsgraph(int V,vector<int>& adj[]){
     vector<int>list;
     int vis[n] = {0};
     int start = 0;
@@ -68,7 +68,7 @@ vector<int>dfsgraph(int V, vector<int>& adj[]){
     dfs(start,adj,vis,list);
     return list;
 }
-void dfs(int node, vector<int>& adj[], int vis[], vector<int>& list){
+void dfs(int node,vector<int>& adj[],int vis[],vector<int>& list){
     vis[node] = 1;
     list.push_back(node);
 

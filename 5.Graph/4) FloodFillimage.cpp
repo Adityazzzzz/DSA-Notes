@@ -1,8 +1,7 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 // using DFS
-
 void dfs(int sr,int sc,vector<vector<int>>&image,int &initialcolor,int newcolor,int drow[],int dcol[]){
     ans[sr,sc] = newcolor;
     int n = image.size();
@@ -17,10 +16,10 @@ void dfs(int sr,int sc,vector<vector<int>>&image,int &initialcolor,int newcolor,
     }
 }
 
-vector<vector<int>>Floodfill(vector<vector<int>>&image,int sr,int sc, int newcolor){
+vector<vector<int>>Floodfill(vector<vector<int>>&image,int sr,int sc,int newcolor){
     int initialcolor = image[sr][sc];
     vector<vector<int>>ans = image;
-    int drow[] ={-1,0,1,0};
-    int dcol[] ={0,1,0,-1};
+    int drow[] = {-1,0,1,0};
+    int dcol[] = {0,1,0,-1};
     dfs(sr,sc,ans,initialcolor,newcolor,drow,dcol);
 }

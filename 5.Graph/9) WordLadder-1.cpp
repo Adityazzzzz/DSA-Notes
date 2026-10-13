@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 // word-ladder 1
@@ -67,8 +67,7 @@ vector<vector<int>> findladder(string beginword,string endword,vector<string>&wo
     q.push(beginword);
     str = beginword;
     
-    unordered_set<int>st(wordlist.begin(),
-    wordlist.end());
+    unordered_set<int>st(wordlist.begin(),wordlist.end());
     st.erase(beginword);
     
     mpp[beginword]=1;
