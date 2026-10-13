@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int median(vector<vector<int>>& matrix, int n, int m){
+int median(vector<vector<int>>& matrix,int n,int m){
     int low = matrix[0][0];
     int high = matrix[n-1][m-1];
 
@@ -12,7 +12,7 @@ int median(vector<vector<int>>& matrix, int n, int m){
         
         // count no of elements <= mid
         for(int i=0;i<n;i++){
-            count += upper_bound(matrix[i].begin(), matrix[i].end(), mid) - matrix[i].begin();
+            count += upper_bound(matrix[i].begin(),matrix[i].end(),mid) - matrix[i].begin();
         }
         
         if(count < desired) low = mid + 1;

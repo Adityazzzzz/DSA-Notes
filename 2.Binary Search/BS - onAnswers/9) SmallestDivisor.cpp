@@ -14,7 +14,7 @@ int sumbyD(int *arr,int div){
 int smallestdivisor(int *arr,int n,int limit){
 
     if(n>limit) return -1;
-    int low=1, high=*max_element(arr,arr+n);
+    int low=1,high=*max_element(arr,arr+n);
     int ans=0;
     while(low<=high){
         int mid=(low+high)/2;
