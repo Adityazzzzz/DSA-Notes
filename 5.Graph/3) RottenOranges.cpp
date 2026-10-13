@@ -37,14 +37,14 @@ int rottenOranges(vector<vector<int>>grid){
 
             if((r>=0 && r<n)  &&  (c>=0 && c<m)  &&  (vis[r][c]!=2)  &&  (grid[r][c]==1)){
                 vis[r][c]=2;
-                q.push({{r,c}, t+1});
+                q.push({{r,c},t+1});
             }
         }
     }
 
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
-            if(grid[i][j] == 1  &&  vis[i][j] != 2){
+            if(grid[i][j] == 1 && vis[i][j] != 2){
                return -1;
             }
         }

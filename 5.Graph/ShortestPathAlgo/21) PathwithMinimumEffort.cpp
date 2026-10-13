@@ -30,7 +30,7 @@ int MinimumEffort(vector<vector<int>>& heights){
             int nc = col + dc[i];
 
             if(nr>=0 && nc>=0 && nr<n && nc<m){
-                int newEffort = max(abs(heights[row][col] - heights[nr][nc]), diff);
+                int newEffort = max(abs(heights[row][col] - heights[nr][nc]),diff);
                 
                 if(newEffort < dist[nr][nc]){
                     dist[nr][nc] = newEffort;

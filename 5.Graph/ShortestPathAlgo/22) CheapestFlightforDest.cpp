@@ -26,7 +26,7 @@ int CheapestFlight(int n,vector<vector<int>>&flights,int src,int dest,int k){
 
             if(cost + egde < dist[adjnode] && stops<=k){
                 dist[adjnode] = cost + egde;
-                q.push({stops+1,{adjnode, cost+edge}});
+                q.push({stops+1,{adjnode,cost+edge}});
             }
         }
     }

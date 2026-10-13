@@ -29,6 +29,6 @@ vector<int>Nodes(int V,vector<int>adj[]){
 		}
 	}
 
-    sort(safeNodes.begin(), safeNodes.end());
+    sort(safeNodes.begin(),safeNodes.end());
 	return safeNodes;
 }
