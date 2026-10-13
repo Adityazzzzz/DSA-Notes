@@ -24,14 +24,14 @@ Node* convertArrtoLL(vector<int> &arr){
 }
 //----------------------------------------------------------------------------------------------
 
-Node* insertNodeatHead(Node* head, int val){
+Node* insertNodeatHead(Node* head,int val){
     Node* temp = new Node(val);
     temp->next=head;
     return temp;
 }
 //----------------------------------------------------------------------------------------------
 
-Node* insertNodeatLast(Node* head, int val){
+Node* insertNodeatLast(Node* head,int val){
     if(head==NULL){
         return  new Node(val);
     }
@@ -46,7 +46,7 @@ Node* insertNodeatLast(Node* head, int val){
 }
 //----------------------------------------------------------------------------------------------
 
-Node* insertNodeatKth(Node* head, int val, int k){
+Node* insertNodeatKth(Node* head,int val,int k){
     Node* newNode= new Node(val);
     if(head==NULL){
         if(k==1) return newNode;
@@ -71,7 +71,7 @@ Node* insertNodeatKth(Node* head, int val, int k){
 }
 //----------------------------------------------------------------------------------------------
 
-Node* insertNodebeforeELEMENTgiven(Node* head, int val, int el){
+Node* insertNodebeforeELEMENTgiven(Node* head,int val,int el){
     Node* newNode= new Node(val);
     if(head==NULL){
         return NULL;

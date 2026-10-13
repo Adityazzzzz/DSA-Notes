@@ -7,7 +7,7 @@ class Node{
     Node* next;
     Node* back; 
     public:
-    Node(int data1, Node* next1, Node* back1){
+    Node(int data1,Node* next1,Node* back1){
         data=data1;
         next=next1;
         back= back1;
@@ -51,7 +51,7 @@ Node* deleteTailNode(Node* head){
     return head;
 }
 
-Node* deleteKthNode(Node* head, int k){
+Node* deleteKthNode(Node* head,int k){
     if(head == NULL) return NULL;
 
     int cnt=0;

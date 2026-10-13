@@ -10,7 +10,7 @@ class Node{
     Node* back; 
 
     public:
-    Node(int data1, Node* next1, Node* back1){
+    Node(int data1,Node* next1,Node* back1){
         data=data1;
         next=next1;
         back= back1;
@@ -27,7 +27,7 @@ Node* findMiddle(Node* head){
     return slow;
 }
 
-Node* mergeTwoLists(Node* list1, Node* list2){
+Node* mergeTwoLists(Node* list1,Node* list2){
     Node* dummyNode = new Node(-1,nullptr);
     Node* temp = dummyNode;
     while(list1 != NULL && list2 != NULL){

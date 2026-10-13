@@ -1,6 +1,6 @@
 /*
-solu-1: put of data of DLL in a stack and then put it back in DLL , 
-because of LIFO , it reverses
+solu-1: put of data of DLL in a stack and then put it back in DLL,
+because of LIFO,it reverses
 
 O(2N) and O(N)
 */
@@ -15,7 +15,7 @@ class Node{
     Node* back; 
 
     public:
-    Node(int data1, Node* next1, Node* back1){
+    Node(int data1,Node* next1,Node* back1){
         data=data1;
         next=next1;
         back= back1;

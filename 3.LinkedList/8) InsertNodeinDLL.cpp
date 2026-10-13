@@ -7,7 +7,7 @@ class Node{
     Node* next;
     Node* back; 
     public:
-    Node(int data1, Node* next1, Node* back1){
+    Node(int data1,Node* next1,Node* back1){
         data=data1;
         next=next1;
         back= back1;
@@ -26,13 +26,13 @@ Node* convertArrtoDL(vector<int> &arr){
     return head;
 }
 
-Node* InsertatHead(Node* head, int val){
+Node* InsertatHead(Node* head,int val){
     Node* newNode = new Node(val,head,nullptr);
     head->back = newNode; 
     return newNode;
 }
 
-Node* InsertBeforeTail(Node* head, int val){
+Node* InsertBeforeTail(Node* head,int val){
     if(head->next == NULL){
         return InsertatHead(head,val)
     }
@@ -48,7 +48,7 @@ Node* InsertBeforeTail(Node* head, int val){
     return head;
 }
 
-Node* InsertBeforeKthNode(Node* head,int k, int val){
+Node* InsertBeforeKthNode(Node* head,int k,int val){
     if(k==1){
         return InsertatHead(head,val)
     }

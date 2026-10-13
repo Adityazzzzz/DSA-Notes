@@ -8,14 +8,14 @@ class Node{
     Node* back; 
 
     public:
-    Node(int data1, Node* next1, Node* back1){
+    Node(int data1,Node* next1,Node* back1){
         data=data1;
         next=next1;
         back= back1;
     }
 };
 // Q-1 : Delete all occurances of given key
-Node* deleteAllOccuranceofKey(Node* head, int key){
+Node* deleteAllOccuranceofKey(Node* head,int key){
     if(head == NULL || head->next == NULL) return head;
 
     Node* temp = head;
