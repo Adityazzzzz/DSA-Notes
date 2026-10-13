@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 int countSquares(int n, int m, vector<vector<int>> &arr) {

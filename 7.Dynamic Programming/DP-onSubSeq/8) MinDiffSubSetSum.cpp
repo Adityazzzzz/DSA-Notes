@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 int minDiffSubsetSum(vector<int>&arr,int tar){
