@@ -18,7 +18,7 @@ public:
         while(idx > 1){
             int parent = idx / 2;
             if(arr[parent] < arr[idx]){
-                swap(arr[parent], arr[idx]);
+                swap(arr[parent],arr[idx]);
                 idx = parent;
             } 
             else{
@@ -39,11 +39,11 @@ public:
             int right = 2*i + 1;
 
             if(left < size && arr[i] < arr[left]){
-                swap(arr[i], arr[left]);
+                swap(arr[i],arr[left]);
                 i = left;
             } 
             else if(right < size && arr[i] < arr[right]){
-                swap(arr[i], arr[right]);
+                swap(arr[i],arr[right]);
                 i = right;
             } 
             else{
@@ -51,7 +51,4 @@ public:
             }
         }
     }
-
-
-
 }
