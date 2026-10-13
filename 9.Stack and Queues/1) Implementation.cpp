@@ -30,7 +30,7 @@ public:
 //--------------------------------------------------------------------------------------------------
 // 2. Implement Queue using 2 stacks - COSTLY PUSH - easy 
 class Queue{
-    stack<int> s1, s2;
+    stack<int> s1,s2;
 public:
     void push(int x){
         while(!s1.empty()){
@@ -59,7 +59,7 @@ public:
 //---------------------------------------------------------------------------------------------------
 // 3. Implement Queue in O(1) / Implement Queue using 2 stacks - COSTLY POP - interview;
 class Queue{
-    stack<int> s1, s2;
+    stack<int> s1,s2;
 public:
     void push(int x){
         s1.push(x);

@@ -62,7 +62,7 @@ long long sumSubarrayRanges(vector<int>& nums){
     auto pgee = getPGEE(nums);
     auto nge = getNGE(nums);
 
-    long long mn = 0, mx = 0;
+    long long mn = 0,mx = 0;
 
     for(int i=0;i<n;i++){
         long long left = i - psee[i];

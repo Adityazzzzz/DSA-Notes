@@ -113,7 +113,7 @@ public:
     }
 };
 class Queue {
-    Node *front=NULL, *rear=NULL;
+    Node *front=NULL,*rear=NULL;
 public:
     void push(int x) {
         Node* temp = new Node(x);

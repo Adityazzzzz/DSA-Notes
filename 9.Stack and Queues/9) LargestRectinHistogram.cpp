@@ -13,7 +13,7 @@ int func(vector<int>& arr){
 
             int nse = i;
             int pse = s.empty()? -1 : s.top();
-            maxarea = max( maxarea, (arr[ele]*(nse-pse-1)) )
+            maxarea = max( maxarea,(arr[ele]*(nse-pse-1)) )
         }
         s.push(i);
     }
@@ -24,7 +24,7 @@ int func(vector<int>& arr){
         s.pop();
         int pse = s.empty()? -1 : s.top();
 
-        maxarea = max( maxarea, (arr[ele]*(nse-pse-1)) )
+        maxarea = max( maxarea,(arr[ele]*(nse-pse-1)) )
     }
     return maxarea;
 }

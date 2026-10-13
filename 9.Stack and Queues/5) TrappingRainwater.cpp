@@ -5,7 +5,7 @@ using namespace std;
 // sc : O(2n)
 int trap(vector<int>& arr){
     int n = arr.size();
-    vector<int> pref(n), suff(n);
+    vector<int> pref(n),suff(n);
 
     pref[0] = arr[0];
     for(int i=1;i<n;i++){
@@ -32,8 +32,8 @@ int trap(vector<int>& arr){
 
 int trap(vector<int>& arr){
     int n=arr.size();
-    int l=0, r=n-1;
-    int leftMax=0, rightMax=0;
+    int l=0,r=n-1;
+    int leftMax=0,rightMax=0;
     int ans = 0;
 
     while(l<r){

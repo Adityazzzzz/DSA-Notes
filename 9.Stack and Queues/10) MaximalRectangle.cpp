@@ -11,7 +11,7 @@ int largestRectangleArea(vector<int>& arr){
 
             int nse = i;
             int pse = s.empty()? -1 : s.top();
-            maxarea = max( maxarea, (arr[ele]*(nse-pse-1)) )
+            maxarea = max( maxarea,(arr[ele]*(nse-pse-1)) )
         }
         s.push(i);
     }
@@ -22,7 +22,7 @@ int largestRectangleArea(vector<int>& arr){
         s.pop();
         int pse = s.empty()? -1 : s.top();
 
-        maxarea = max( maxarea, (arr[ele]*(nse-pse-1)) )
+        maxarea = max( maxarea,(arr[ele]*(nse-pse-1)) )
     }
     return maxarea;
 }
@@ -40,6 +40,6 @@ int maximalRectangle(vector<vector<char>>& matrix){
             if (matrix[i][j]=='1') height[j]++;
             else height[j] = 0;
         }
-        ans = max(ans, largestRectangleArea(height));
+        ans = max(ans,largestRectangleArea(height));
     }
 }

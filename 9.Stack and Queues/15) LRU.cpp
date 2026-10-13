@@ -11,7 +11,7 @@ public:
         Node* prev;
         Node* next;
 
-        Node(int key, int val){
+        Node(int key,int val){
             this->key = key;
             this->val = val;
         }
@@ -20,7 +20,7 @@ public:
     Node* head = new Node(-1,-1);
     Node* tail = new Node(-1,-1);
     int cap;
-    unordered_map<int, Node*> mpp;
+    unordered_map<int,Node*> mpp;
 
     LRUCache(int capacity){
         cap = capacity;
@@ -62,7 +62,7 @@ public:
         return -1;
     }
 
-    void put(int key, int value){
+    void put(int key,int value){
         if(mpp.find(key) != mpp.end()){
             Node* curr = mpp[key];
             mpp.erase(key);
@@ -74,7 +74,7 @@ public:
             deleteNode(tail->prev);
         }
 
-        addNode(new Node(key, value));
+        addNode(new Node(key,value));
         mpp[key] = head->next;
     }
 };

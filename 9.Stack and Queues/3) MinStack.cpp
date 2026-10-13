@@ -11,7 +11,7 @@ class Minstack{
             st.push({val,val}); // (12,12)
         }
         else{
-            st.push({val, min(val,st.top().second)}); // (12,12),(15,12),(10,10);
+            st.push({val,min(val,st.top().second)}); // (12,12),(15,12),(10,10);
         }
     }
     void getMin(){

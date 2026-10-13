@@ -15,7 +15,7 @@ public:
 
     void makeMostFrequentlyUsed(int k){
         auto &vec=(*(mp[k]));
-        int key=vec[0], value=vec[1], f=vec[2];
+        int key=vec[0],value=vec[1],f=vec[2];
 
         freq[f].erase(mp[key]);
         if(freq[f].empty()) freq.erase(f);
@@ -33,7 +33,7 @@ public:
         return val;
     }
     
-    void put(int key, int value) {
+    void put(int key,int value) {
         if(cap==0) return;
 
         if(mp.count(key)){
