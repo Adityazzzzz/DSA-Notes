@@ -7,7 +7,7 @@ void selectionsort(int arr[],int n){
         for(int j=i+1;j<n;j++){
             if(arr[j] < arr[mini])  mini = j;
         }
-        if(mini!=i) swap(arr[mini], arr[i]);
+        if(mini!=i) swap(arr[mini],arr[i]);
     }
 }
 
