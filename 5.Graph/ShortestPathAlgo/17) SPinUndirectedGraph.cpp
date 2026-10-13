@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 vector<int>shortestPath(vector<vector<int>>&edges,int N,int M,int src){
@@ -20,6 +20,7 @@ vector<int>shortestPath(vector<vector<int>>&edges,int N,int M,int src){
     while(!q.empty()){
         int node = q.front();
         q.pop();
+        
         for(auto it:adj[node]){
             if(dist[node]+1 < dist[it]){
                 dist[it] = 1+dist[node];

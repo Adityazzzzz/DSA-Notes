@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 vector<int> bellman_ford(int V,vector<vector<int>> &edges,int S){
     vector<int> dist(V,1e8);
     dist[S] = 0;

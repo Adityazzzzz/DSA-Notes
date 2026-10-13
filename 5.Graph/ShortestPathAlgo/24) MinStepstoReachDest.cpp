@@ -15,10 +15,10 @@ int minimumMultiplications(vector<int>& arr,int start,int end){
         int steps = q.front().second;
         q.pop();
 
-        for(auto it : arr){
+        for(auto it:arr){
             int num = (it * node) % 100000;
 
-            if(steps + 1 < dist[num]){
+            if(steps+1 < dist[num]){
                 dist[num] = steps + 1;
                 if(num == end) return steps + 1;
                 q.push({num,steps + 1});
