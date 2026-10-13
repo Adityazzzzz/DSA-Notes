@@ -9,7 +9,7 @@ struct Node {
     Node* get(int ind) {
         return links[ind];
     }
-    void put(int ind, Node* node) {
+    void put(int ind,Node* node) {
         links[ind] = node;
     }
 };
@@ -28,7 +28,7 @@ public:
         for (int i = 31; i >= 0; i--) {
             int bit = (num >> i) & 1;
             if (!node->containsKey(bit)) {
-                node->put(bit, new Node());
+                node->put(bit,new Node());
             }
             node = node->get(bit);
         }
@@ -57,15 +57,15 @@ class Solution {
 public:
     vector<int> maxXorQueries(vector<int> &arr,vector<vector<int>> &queries) {
 
-        vector<int> ans(queries.size(), 0);
-        vector<pair<int, pair<int,int>>> offlineQueries;
-        sort(arr.begin(), arr.end());
+        vector<int> ans(queries.size(),0);
+        vector<pair<int,pair<int,int>>> offlineQueries;
+        sort(arr.begin(),arr.end());
         int index = 0;
         for (auto &it: queries) {
-            offlineQueries.push_back({it[1], {it[0], index++}});
+            offlineQueries.push_back({it[1],{it[0],index++}});
         }
 
-        sort(offlineQueries.begin(), offlineQueries.end());
+        sort(offlineQueries.begin(),offlineQueries.end());
         
         int i = 0;
         int n = arr.size();
