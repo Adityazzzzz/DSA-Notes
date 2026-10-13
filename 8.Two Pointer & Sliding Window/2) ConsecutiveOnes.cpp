@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int longestOnes(vector<int>& nums, int k) {
+int longestOnes(vector<int>& nums,int k) {
     int n = nums.size();
     int zeroes=0,maxlen=0,left=0,right=0;
 
@@ -51,7 +51,7 @@ int func(string s,int k){
 
     while(r < s.size()){
         hash[s[r]-'A']++;
-        maxfreq = max(maxfreq, hash[s[r]-'A']);
+        maxfreq = max(maxfreq,hash[s[r]-'A']);
 
         if((r-l+1)-maxfreq > k){
             hash[s[l]-'A']--;
@@ -103,7 +103,7 @@ int func(nums,k){
         rsum = rsum + nums[rindex];
         rindex --;
 
-        maxsum = max(maxsum, lsum+rsum);
+        maxsum = max(maxsum,lsum+rsum);
     }
     return maxsum;  
 }
