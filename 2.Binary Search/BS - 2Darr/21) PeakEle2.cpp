@@ -4,7 +4,7 @@ using namespace std;
 int findMaxEle(int mid,vector<vector<int>>& mat,int rowSize,int colSize){
     int maxi = INT_MIN;
     int index=0;
-    for(int i = 0; i < rowSize; i++){
+    for(int i=0;i<rowSize;i++){
         if(maxi<mat[i][mid]){
             maxi=mat[i][mid];
             index = i;
