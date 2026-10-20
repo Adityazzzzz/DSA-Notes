@@ -1,19 +1,17 @@
 // Delete Nth node from the end of the LL
-
 #include<iostream>
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* next;
     Node* back; 
-
-    public:
+public:
     Node(int data1,Node* next1,Node* back1){
-        data=data1;
-        next=next1;
-        back= back1;
+        data = data1;
+        next = next1;
+        back = back1;
     }
 };
 
@@ -55,9 +53,4 @@ Node* deleteMiddleNode(Node* head){
     slow->next = slow->next->next;
     delete middle;
     return head;
-}
-
-int main(){
-    vector<int>arr = {2,5,8,7};
-    Node* head= convertArrtoDLL(arr);
 }

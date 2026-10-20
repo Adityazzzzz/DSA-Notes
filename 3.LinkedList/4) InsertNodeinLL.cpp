@@ -2,23 +2,23 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* next;
-    public:
+public:
     Node(int data){
-        data=data1;
-        next=nullptr;
+        data = data1;
+        next = nullptr;
     }
 };
 Node* convertArrtoLL(vector<int> &arr){
-    Node* head= new Node(arr[0]);  // 1
-    Node* mover= head;            //2
+    Node* head = new Node(arr[0]);  // 1
+    Node* mover = head;            //2
 
     for(int i=1;i<arr.size();i++){
-        Node* temp=new Node(arr[i]);   //3
-        mover->next= temp;            //4
-        mover=temp;
+        Node* temp = new Node(arr[i]);   //3
+        mover->next = temp;            //4
+        mover = temp;
     }
     return head;
 }
@@ -26,7 +26,7 @@ Node* convertArrtoLL(vector<int> &arr){
 
 Node* insertNodeatHead(Node* head,int val){
     Node* temp = new Node(val);
-    temp->next=head;
+    temp->next = head;
     return temp;
 }
 //----------------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ Node* insertNodeatLast(Node* head,int val){
     Node* newnode = new Node(val);
     Node* temp = head;
     while(temp->next !=NULL){
-        temp=temp->next;
+        temp = temp->next;
     }
     temp->next = newnode;
     return head;
@@ -47,7 +47,7 @@ Node* insertNodeatLast(Node* head,int val){
 //----------------------------------------------------------------------------------------------
 
 Node* insertNodeatKth(Node* head,int val,int k){
-    Node* newNode= new Node(val);
+    Node* newNode = new Node(val);
     if(head==NULL){
         if(k==1) return newNode;
         else return NULL;
@@ -56,13 +56,13 @@ Node* insertNodeatKth(Node* head,int val,int k){
         newNode->next = head;
         return newNode;
     }
-    Node* temp=head;
-    int cnt=0;
+    Node* temp = head;
+    int cnt = 0;
     while(temp!=NULL){
         cnt++;
         if(cnt == (k-1)){
             newnode->next = temp->next;
-            temp->next=newNode;
+            temp->next = newNode;
             break;
         }
         temp=temp->next;
@@ -72,7 +72,7 @@ Node* insertNodeatKth(Node* head,int val,int k){
 //----------------------------------------------------------------------------------------------
 
 Node* insertNodebeforeELEMENTgiven(Node* head,int val,int el){
-    Node* newNode= new Node(val);
+    Node* newNode = new Node(val);
     if(head==NULL){
         return NULL;
     }
@@ -86,15 +86,7 @@ Node* insertNodebeforeELEMENTgiven(Node* head,int val,int el){
             temp->next=newNode;
             break;
         }
-        temp=temp->next;
+        temp = temp->next;
     }
     return head;
-}
-
-
-int main(){
-    vector<int>arr = {2,5,8,7};
-    Node* head= convertArrtoLL(arr);
-    head = deleteheadofLL(head);
-
 }

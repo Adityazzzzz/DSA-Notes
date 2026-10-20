@@ -2,23 +2,18 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* next;
     Node* back; 
-
-    public:
+public:
     Node(int data1,Node* next1,Node* back1){
-        data=data1;
-        next=next1;
-        back= back1;
+        data = data1;
+        next = next1;
+        back = back1;
     }
 };
 //--------------------------------------------------------------------------------------------------
-
-
-
-
 
 // add +1 to a LL
 int addHelp(Node* temp){
@@ -40,8 +35,6 @@ Node* adding(Node* head){
     return head;
 }
 //-------------------------------------------------------------------------------------------------
-
-
 
 
 // Add two LL
@@ -70,10 +63,4 @@ Node* addingtwoLL(Node* num1,Node* num2){
         temp->next =  newNode;
     }
     return dummyNode->next;
-}
-
-
-int main(){
-    vector<int>arr = {2,5,8,7};
-    Node* head= convertArrtoDLL(arr);
 }

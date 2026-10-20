@@ -4,16 +4,15 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* next;
     Node* back; 
-
-    public:
+public:
     Node(int data1,Node* next1,Node* back1){
-        data=data1;
-        next=next1;
-        back= back1;
+        data = data1;
+        next = next1;
+        back = back1;
     }
 };
 
@@ -59,9 +58,4 @@ Node* sortLL(Node* head){
     left = sortLL(left);
     right = sortLL(right);
     return mergeTwoLists(left,right);
-}
-
-int main(){
-    vector<int>arr = {2,5,8,7};
-    Node* head= convertArrtoDLL(arr);
 }

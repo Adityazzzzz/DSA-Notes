@@ -2,15 +2,15 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* next;
     Node* back; 
-    public:
+public:
     Node(int data1,Node* next1,Node* back1){
-        data=data1;
-        next=next1;
-        back= back1;
+        data = data1;
+        next = next1;
+        back = back1;
     }
 };
 
@@ -20,8 +20,8 @@ Node* convertArrtoDL(vector<int> &arr){
 
     for(int i=1;i<arr.length();i++){
         Node* temp = new Node(arr[0],nullptr,prev);
-        prev->next =  temp;
-        prev=temp;
+        prev->next = temp;
+        prev = temp;
     }
     return head;
 }
@@ -53,7 +53,7 @@ Node* InsertBeforeKthNode(Node* head,int k,int val){
         return InsertatHead(head,val)
     }
     Node* temp = head;
-    int cnt=0;
+    int cnt = 0;
     while(temp!= NULL){
         cnt++;
         if(cnt==k) break;
@@ -64,12 +64,4 @@ Node* InsertBeforeKthNode(Node* head,int k,int val){
     prev->next = newNode;
     temp->back = newNode;
     return head;
-}
-
-
-
-int main(){
-    vector<int>arr = {2,5,8,7};
-    Node* head= convertArrtoDLL(arr);
-    
 }

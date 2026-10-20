@@ -2,17 +2,12 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* next;
-    public:
+public:
     Node(int data,Node* next1){
-        data=data1;
-        next=next1;
+        data = data1;
+        next = next1;
     }
 };
-int main(){
-    vector<int>arr = {2,5,8,7};
-    Node* y =new Node(arr[0],nullptr);
-    cout<< y->data <<endl;
-}
