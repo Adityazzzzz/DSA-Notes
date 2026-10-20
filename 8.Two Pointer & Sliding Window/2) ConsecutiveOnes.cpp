@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int longestOnes(vector<int>& nums,int k) {
+int longestOnes(vector<int>& nums,int k){
     int n = nums.size();
     int zeroes=0,maxlen=0,left=0,right=0;
 
@@ -25,7 +25,7 @@ int longestOnes(vector<int>& nums,int k) {
 // Fruit and baskets
 // similar appoach like above ques
 
-int fruitbasket(vector<int>& fruits) {
+int fruitbasket(vector<int>& fruits){
     int n = fruits.size();
     int maxlen=0,left=0,right=0;
     map<int,int>mpp;
