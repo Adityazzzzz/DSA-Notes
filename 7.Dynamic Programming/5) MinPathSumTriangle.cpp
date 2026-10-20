@@ -86,7 +86,7 @@ int getMaxPathSum(vector<vector<int>> &matrix){
             else ld += -1e9;
 
             int rd = matrix[i][j];
-            if(j+1 < m) dp[i-1][j+1];
+            if(j+1<m) dp[i-1][j+1];
             else ld += -1e9;
 
             dp[i][j] = max(u,max(ld,rd));
@@ -104,10 +104,12 @@ int getMaxPathSum(vector<vector<int>> &matrix){
     int m = matrix[0].size();
     vector<int>curr(m,0),prev(m,0);
 
-    for(int j = 0; j < m; j++) prev[j] = matrix[0][j];
+    for(int j=0;j<m;j++){
+        prev[j] = matrix[0][j];
+    }
 
-    for(int i = 1; i < n; i++){
-        for(int j = 0; j < m; j++){
+    for(int i=1;i<n;i++){
+        for(int j=0;j<m;j++){
             int u = matrix[i][j] + prev[j];
 
             int ld = matrix[i][j];
@@ -115,7 +117,7 @@ int getMaxPathSum(vector<vector<int>> &matrix){
             else ld += -1e9;
 
             int rd = matrix[i][j];
-            if(j+1 < m) prev[j+1];
+            if(j+1<m) prev[j+1];
             else ld += -1e9;
 
             curr[j] = max(u,max(ld,rd));
