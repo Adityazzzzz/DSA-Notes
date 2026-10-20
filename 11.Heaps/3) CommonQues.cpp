@@ -3,20 +3,20 @@ using namespace std;
 
 
 // kth smallest element
-int kthSmallest(int arr[],int l,int r,int k){
+int kthSmallest(int arr[],int k){
+    int n = arr.size();
     priority_queue<int> pq;
 
     for(int i=0;i<k;i++){
         pq.push(arr[i]);
     }
-    for(int i=k;i<=r;i++){
+    for(int i=k;i<n;i++){
         if(arr[i]<pq.top()){
             pq.pop();
             pq.push(arr[i]);
         }
     }
-    int ans = pq.top();
-    return ans;
+    return pq.top();
 }
 //--------------------------------------------------------------------------------------------------
 
@@ -24,17 +24,16 @@ int kthSmallest(int arr[],int l,int r,int k){
 int kthGreatest(int arr[],int l,int r,int k){
     priority_queue<int,vector<int>,greater<int>> pq;
 
-    for(int i=l;i<l+k;i++){
+    for(int i=0;i<k;i++){
         pq.push(arr[i]);
     }
-    for(int i=l+k;i<=r;i++){
+    for(int i=k;i<n;i++){
         if(arr[i] > pq.top()){
             pq.pop();
             pq.push(arr[i]);
         }
     }
-    int ans = pq.top();
-    return ans;
+    return pq.top();
 }
 //---------------------------------------------------------------------------------------------------
 
