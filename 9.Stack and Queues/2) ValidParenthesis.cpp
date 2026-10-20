@@ -4,16 +4,16 @@ using namespace std;
 bool isValid(string s){
     stack<char> st;
 
-    for(char c:s){
-        if(c=='(' || c=='{' || c=='['){
-            st.push(c);
+    for(char it:s){
+        if(it=='(' || it=='{' || it=='['){
+            st.push(it);
         }
         else{
             if(st.empty()) return false;
             char top = st.top();
             st.pop();
 
-            if((c==')' && top != '(') || (c=='}' && top != '{') || (c==']' && top != '[')){
+            if((it==')' && top != '(') || (it=='}' && top != '{') || (it==']' && top != '[')){
                 return false;
             }
         }

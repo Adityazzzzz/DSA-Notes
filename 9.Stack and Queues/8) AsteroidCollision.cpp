@@ -3,7 +3,7 @@ using namespace std;
 
 vector<int> asteroidCollision(vector<int>& asteroids){
     vector<int> st;
-    for(auto it : asteroids){
+    for(auto it:asteroids){
         if(it>0){
             st.push_back(it);
         }

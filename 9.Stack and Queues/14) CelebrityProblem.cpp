@@ -3,7 +3,7 @@ using namespace std;
 
 int func(vector<vector<int>>& matrix){
     int n = matrix.size();
-    int top=0,down=n-1;
+    int top = 0,down = n-1;
 
     while(top < down){
         if(matrix[top][down] == 1) top++;

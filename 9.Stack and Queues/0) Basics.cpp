@@ -4,7 +4,7 @@ using namespace std;
 // 1. Stack using Arr
 class stack{
 public:
-    int top=-1;
+    int top = -1;
 
     void push(int x){
         if(top >= capacity-1){

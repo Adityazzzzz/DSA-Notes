@@ -33,7 +33,7 @@ public:
     }
     
     void put(int key,int value){
-        if(cap = 0) return;
+        if(cap == 0) return;
 
         if(mp.count(key)){
             auto &vec = (*(mp[key]));

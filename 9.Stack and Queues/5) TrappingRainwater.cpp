@@ -31,9 +31,9 @@ int trap(vector<int>& arr){
 // sc : O(1)
 
 int trap(vector<int>& arr){
-    int n=arr.size();
-    int l=0,r=n-1;
-    int leftMax=0,rightMax=0;
+    int n = arr.size();
+    int l = 0,r = n-1;
+    int leftMax = 0,rightMax = 0;
     int ans = 0;
 
     while(l<r){

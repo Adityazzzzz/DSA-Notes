@@ -5,8 +5,7 @@ using namespace std;
 class MyStack{
     queue<int>q;
 public:
-    MyStack(){
-    }
+    MyStack(){}
     void push(int x){
         q.push(x);
         for(int i=0;i<q.size()-1;i++){

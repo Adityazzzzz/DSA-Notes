@@ -1,7 +1,6 @@
 #include<iostream>
 using namespace std;
 
-
 class LRUCache{
 public:
     class Node{
