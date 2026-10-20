@@ -20,6 +20,24 @@ int kthSmallest(int arr[],int l,int r,int k){
 }
 //--------------------------------------------------------------------------------------------------
 
+// kth greatest element
+int kthGreatest(int arr[],int l,int r,int k){
+    priority_queue<int,vector<int>,greater<int>> pq;
+
+    for(int i=l;i<l+k;i++){
+        pq.push(arr[i]);
+    }
+    for(int i=l+k;i<=r;i++){
+        if(arr[i] > pq.top()){
+            pq.pop();
+            pq.push(arr[i]);
+        }
+    }
+    int ans = pq.top();
+    return ans;
+}
+//---------------------------------------------------------------------------------------------------
+
 // Is binary tree heap?
 int countNodes(struct Node* root){
     if(root == NULL) return 0;
