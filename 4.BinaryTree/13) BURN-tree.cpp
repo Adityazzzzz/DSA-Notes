@@ -29,7 +29,7 @@ Node* markParent(Node* root,unordered_map<Node*,Node*>& parent,int target){
     return temp;
 }
 
-int minTime(Node* root,int target) {
+int minTime(Node* root,int target){
     unordered_map<Node*,Node*> parent;    
     Node* temp = markParent(root,parent,target);
 
@@ -62,7 +62,7 @@ int minTime(Node* root,int target) {
                 q.push(parent[curr]);
             }
         }
-        if (burned) time++;
+        if(burned) time++;
     }
     return time;
 }

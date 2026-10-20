@@ -2,12 +2,12 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* right;
     Node* right;
 
-    public:
+public:
     Node(int data,Node* left1,Node* right1){
         data=data1;
         left=left1;
@@ -18,8 +18,8 @@ class Node{
 // height of tree
 int maxDepth(TreeNode* root){
     if(!root) return 0;
-    int lh=maxDepth(root->left);
-    int rh=maxDepth(root->right);
+    int lh = maxDepth(root->left);
+    int rh = maxDepth(root->right);
     
     return 1+max(lh,rh);
 }
@@ -47,9 +47,9 @@ int dfsHeight(Node* root){
 int diameter(Node* root,int maxi){
     if(root==NULL) return 0;
 
-    int lh=diameter(root->left,maxi);
-    int rh=diameter(root->right,maxi);
-    maxi=max(maxi,lh+rh);
+    int lh = diameter(root->left,maxi);
+    int rh = diameter(root->right,maxi);
+    maxi = max(maxi,lh+rh);
     
     return 1+max(lh,rh)
 }

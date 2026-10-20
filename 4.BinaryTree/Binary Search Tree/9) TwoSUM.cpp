@@ -22,8 +22,8 @@ class BSTiterator{
     // when reverse = true ---> before()                 
     // when reverse = false ---> next()
 
-    void pushAll(TreeNode* node) {
-        while (node != NULL) {
+    void pushAll(TreeNode* node){
+        while(node != NULL){
             stk.push(node);
             if(reverse == true) node = node->right;
             else node = node->left;

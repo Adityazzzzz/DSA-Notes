@@ -2,19 +2,18 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* right;
     Node* right;
 
-    public:
+public:
     Node(int data,Node* left1,Node* right1){
         data=data1;
         left=left1;
         right=right1;
     }
 };
-
 
 // DFS - inorder,preorder,postorder (recursion)
 void inorder(Node* root){
@@ -41,7 +40,6 @@ void postorder(Node* root){
     cout << root->data;
 }
 
-
 // BFS - for this we have to use (queue data structure)
 vector<vector<int>> bfs(Node* root){
 
@@ -56,6 +54,7 @@ vector<vector<int>> bfs(Node* root){
         for(int i=0;i<size;i++){
             Node* temp = q.front();
             q.pop();
+
             if(temp->left != NULL) q.push(temp->left);
             if(temp->right != NULL) q.push(temp->right);
             level.push_back(temp->val);
@@ -80,6 +79,7 @@ vector<int>preorder(Node* root){
     while(!st.empty()){
         Node* temp = st.top();
         st.pop();
+        
         pot.push_back(temp->val);
         if(temp->right != NULL) st.push(temp->right);
         if(temp->left != NULL) st.push(temp->left);
@@ -109,7 +109,7 @@ vector<int>inorder(Node* root){
     return pot;
 }
 //using 2 stack
-vector<int> postOrder(Node* root) {
+vector<int> postOrder(Node* root){
     vector<int> postorder;
     if(root == NULL) return postorder;
 

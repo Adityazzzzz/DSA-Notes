@@ -33,7 +33,7 @@ public:
             else curr = curr->left;
         }
         // reverse
-        for(int i = temp.size() - 1; i >= 0; --i){
+        for(int i = temp.size() - 1;i >= 0; --i){
             res.push_back(temp[i]);
         }
     }

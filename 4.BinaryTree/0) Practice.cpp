@@ -2,12 +2,12 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* right;
     Node* right;
 
-    public:
+public:
     Node(int data,Node* left1,Node* right1){
         data=data1;
         left=left1;
@@ -24,10 +24,10 @@ vector<vector<int>> bfs(Node* root){
     q.push(root);
 
     while(!q.empty()){
-        int size=q.size();
+        int size = q.size();
         vector<int>list(size);
         for(int i=0;i<size;i++){
-            Node* node=q.front();
+            Node* node = q.front();
             q.pop();
 
             // list.push_back(node->val);
@@ -43,16 +43,16 @@ vector<vector<int>> bfs(Node* root){
 //---------------------------------------------------------------------------------
 int maxDepth(TreeNode* root){
     if(!root) return 0;
-    int lh=maxDepth(root->left);
-    int rh=maxDepth(root->right);
+    int lh = maxDepth(root->left);
+    int rh = maxDepth(root->right);
     
     return 1+max(lh,rh);
 }
 //---------------------------------------------------------------------------------
 int dfs(Node* root){
     if(!root) return 0;
-    int lh=dfs(root->left);
-    int rh=dfs(root->right);
+    int lh = dfs(root->left);
+    int rh = dfs(root->right);
 
     if(abs(lh-rh)>1) return -1;
     return 1+max(lh,rh); 
@@ -64,9 +64,9 @@ bool balancedHeigth(Node* root){
 //diameter
 int dfs(TreeNode* root,int &maxi){
     if(!root) return 0;
-    int lh=dfs(root->left,maxi);
-    int rh=dfs(root->right,maxi);
-    maxi=max(maxi,lh+rh);
+    int lh = dfs(root->left,maxi);
+    int rh = dfs(root->right,maxi);
+    maxi = max(maxi,lh+rh);
     return 1+max(lh,rh);
 }
 int diameterOfBinaryTree(TreeNode* root){
