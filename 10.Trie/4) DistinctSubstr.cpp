@@ -15,7 +15,7 @@ class Node{
 }
 
 int countDistinctSubsts(string word){
-    int cnt=0;
+    int cnt = 0;
     Node* root = new Node();
 
     for(int i=0;i<word.size();i++){

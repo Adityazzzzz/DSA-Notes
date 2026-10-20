@@ -25,7 +25,7 @@ public:
     void insert(int num){
         Node* node = root;
 
-        for(int i = 31;i >= 0;i--){
+        for(int i=31;i>=0;i--){
             int bit = (num >> i) & 1;
             if(!node->containsKey(bit)){
                 node->put(bit,new Node());
@@ -39,7 +39,7 @@ public:
 
         int maxNum = 0;
 
-        for(int i = 31;i >= 0;i--){
+        for(int i=31;i>=0;i--){
             int bit = (num >> i) & 1;
             if(node->containsKey(!bit)){
                 maxNum = maxNum | (1 << i);
@@ -59,6 +59,7 @@ public:
 
         vector<int> ans(queries.size(),0);
         vector<pair<int,pair<int,int>>> offlineQueries;
+        
         sort(arr.begin(),arr.end());
         int index = 0;
         for(auto &it: queries){
