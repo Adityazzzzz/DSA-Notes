@@ -7,7 +7,7 @@ class StockSpanner{
 public:
     stack<pair<int,int>> st;
     int index;
-    
+
     StockSpanner(){
         index = -1;
     }

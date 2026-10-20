@@ -14,13 +14,13 @@ public:
     }
     int pop(){
         if(isEmpty()){
-            return -1; 
+            return -1;
         }
         return arr[top--];
     }
     int top(){
         if(isEmpty()){
-            return -1; 
+            return -1;
         }
         return arr[top];
     }

@@ -5,7 +5,7 @@ using namespace std;
 class LRUCache{
 public:
     class Node{
-    public: 
+    public:
         int key;
         int val;
         Node* prev;
@@ -68,7 +68,7 @@ public:
             mpp.erase(key);
             deleteNode(curr);
         }
-  
+
         if(mpp.size() == cap){
             mpp.erase(tail->prev->key);
             deleteNode(tail->prev);

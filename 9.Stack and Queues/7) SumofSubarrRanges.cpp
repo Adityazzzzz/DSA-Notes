@@ -30,7 +30,7 @@ vector<int> getNSE(vector<int>& a){
 
 vector<int> getPGEE(vector<int>& a){
     int n = a.size();
-    vector<int> p(n);        
+    vector<int> p(n);
     stack<int> st;
     for(int i=0;i<n;i++){
         while(!st.empty() && a[st.top()] < a[i])
@@ -43,7 +43,7 @@ vector<int> getPGEE(vector<int>& a){
 
 vector<int> getNGE(vector<int>& a){
     int n = a.size();
-    vector<int> p(n);        
+    vector<int> p(n);
     stack<int> st;
     for(int i=n-1;i>=0;i--){
         while(!st.empty() && a[st.top()] <= a[i])
@@ -58,7 +58,7 @@ vector<int> getNGE(vector<int>& a){
 long long sumSubarrayRanges(vector<int>& nums){
     int n = nums.size();
     auto psee = getPSEE(nums);
-    auto nse = getNSE(nums);        
+    auto nse = getNSE(nums);
     auto pgee = getPGEE(nums);
     auto nge = getNGE(nums);
 
