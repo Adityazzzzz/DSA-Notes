@@ -22,10 +22,9 @@ void heapify(int arr[],int n,int i){
 //Heap sort
 
 void heapsort(vector<int>&arr,int n){
-    int size=n;
-    while(size>1){
-        swap(arr[size],arr[1]);
-        size--;
-        heapify(arr,size,1);
+    while(n>1){
+        swap(arr[n],arr[1]);
+        n--;
+        heapify(arr,n,1);
     }
 }
