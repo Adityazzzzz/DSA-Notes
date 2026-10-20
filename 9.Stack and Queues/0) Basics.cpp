@@ -43,7 +43,7 @@ public:
         if(currSize==maxSize) exit(1);
         
         if(end==-1) start = 0;end = 0;
-        else end =(end + 1) % maxSize;
+        else end = (end + 1) % maxSize;
             
         arr[end] = x;
         currSize++;
@@ -53,7 +53,7 @@ public:
 
         int popped = arr[start];
         if(currSize==1) start = -1; end = -1;
-        else start =(start + 1) % maxSize;
+        else start = (start + 1) % maxSize;
         
         currSize--;
         return popped;
@@ -69,53 +69,53 @@ public:
 
 //---------------------------------------------------------------------------------------------
 // 3. Stack using LL
-class Node {
+class Node{
 public:
     int data;
     Node* next;
-    Node(int val) {
+    Node(int val){
         data = val;
         next = NULL;
     }
 };
-class Stack {
+class Stack{
     Node* top = NULL;
 public:
-    void push(int x) {
+    void push(int x){
         Node* temp = new Node(x);
         temp->next = top;
         top = temp;
     }
-    void pop() {
+    void pop(){
         if(top==NULL) return;
         Node* temp = top;
         top = top->next;
         delete temp;
     }
-    int peek() {
+    int peek(){
         if(top==NULL) return -1;
         return top->data;
     }
-    bool empty() {
+    bool empty(){
         return top==NULL;
     }
 };
 
 //--------------------------------------------------------------------------------------------------
 // 4. Queue using LL
-class Node {
+class Node{
 public:
     int data;
     Node* next;
-    Node(int val) {
+    Node(int val){
         data = val;
         next = NULL;
     }
 };
-class Queue {
+class Queue{
     Node *front=NULL,*rear=NULL;
 public:
-    void push(int x) {
+    void push(int x){
         Node* temp = new Node(x);
         if(rear==NULL){
             front = rear = temp;
@@ -124,7 +124,7 @@ public:
         rear->next = temp;
         rear = temp;
     }
-    void pop() {
+    void pop(){
         if(front==NULL) return;
         Node* temp = front;
         front = front->next;
@@ -132,11 +132,11 @@ public:
         if(front == NULL) rear = NULL;
         delete temp;
     }
-    int peek() {
+    int peek(){
         if(front==NULL) return -1;
         return front->data;
     }
-    bool empty() {
+    bool empty(){
         return front==NULL;
     }
 };
