@@ -33,12 +33,12 @@ bool subseq(int index,vector<int>&ds,int sum,int target,int arr[],int n){
     // when pick
     ds.push_back(arr[index]);
     sum += arr[index];
-    if (subseq(index+1,ds,sum,target,arr,n) == true) return true;
+    if(subseq(index+1,ds,sum,target,arr,n) == true) return true;
 
     //not pick
     sum -= arr[index];
     ds.pop_back();
-    if (subseq(index+1,ds,sum,target,arr,n) == true) return true;
+    if(subseq(index+1,ds,sum,target,arr,n) == true) return true;
 
     return false;
 }
