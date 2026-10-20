@@ -3,10 +3,10 @@ using namespace std;
 
 int findMaxEle(int mid,vector<vector<int>>& mat,int rowSize,int colSize){
     int maxi = INT_MIN;
-    int index=0;
+    int index = 0;
     for(int i=0;i<rowSize;i++){
         if(maxi<mat[i][mid]){
-            maxi=mat[i][mid];
+            maxi = mat[i][mid];
             index = i;
         }
     }
@@ -20,7 +20,7 @@ vector<int> findPeakGrid(vector<vector<int>>& mat){
     // Check if there is only one row
     if(n==1){
         int maxIndex = max_element(mat[0].begin(),mat[0].end()) - mat[0].begin();
-        return{0,maxIndex};
+        return {0,maxIndex};
     }
 
     int l = 0;

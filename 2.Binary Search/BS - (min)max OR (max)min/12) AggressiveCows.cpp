@@ -9,12 +9,12 @@ using namespace std;
 // Aggressive cows: find the, (min dist btw the cows) is max
 
 bool possible4cows(int *arr,int dist,int cows){
-    int cntcows=1,last=arr[0];
+    int cntcows = 1,last = arr[0];
 
     for(int i=0;i<arr.size();i++){
         if(arr[i]-last>=dist){
             cntcows++;
-            last=arr[i];
+            last = arr[i];
         }
         if(cntcows>cows) return true;
     }
@@ -22,14 +22,14 @@ bool possible4cows(int *arr,int dist,int cows){
 }
 int aggcows(int *arr,int n,int cows){
     sort(arr,arr+n);
-    int low=1,high= arr[n-1]-arr[0];// max-min
+    int low = 1,high = arr[n-1]-arr[0];// max-min
     while(low<=high){
-        int mid=(low+high)/2;
+        int mid = (low+high)/2;
         if(possible4cows(arr,mid,cows)==true){
-            ans=mid;
-            low=mid+1;
+            ans = mid;
+            low = mid+1;
         }
-        else high=mid-1;
+        else high = mid-1;
     }
     return ans;
 }

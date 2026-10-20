@@ -3,31 +3,33 @@ using namespace std;
 
 // we have to give n books to m students.(n>m) and FIND THAT MAX NO. OF PAGES IS MIN(ex: sum of any 2books should be min)
 int func(int *book,int mid,int k){
-    int stu=0,bookpages=0;
+    int stu = 0,bookpages = 0;
     for(int i=0;i<book.size();i++){
         if(bookpages+book[i]<=mid){
-            bookpages=bookpages+book[i];
+            bookpages = bookpages+book[i];
         }
         else{
             stu++;
-            bookpages=book[i];
+            bookpages = book[i];
         }
     }
     return stu;
 }
 
 int bookall(int *book,int n,int students){
-    int low=*max_element(book,book+n);
-    int high= accumulate(book,book+n,0);
+    int low = *max_element(book,book+n);
+    int high = accumulate(book,book+n,0);
+
     if(students>n) return -1;
+    
     while(low<=high){
-        int mid=(low+high)/2;
-        int noofstu=func(book,mid,students);
+        int mid = (low+high)/2;
+        int noofstu = func(book,mid,students);
         if(noofstu <= students){
-            ans=mid;
-            high=mid-1;
+            ans = mid;
+            high = mid-1;
         }
-        else low=mid+1;
+        else low = mid+1;
     }
     return ans;
 }

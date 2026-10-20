@@ -15,14 +15,14 @@ long double gasstation(int *arr,int n,int k){//imp to take long double bcz ans w
         pr.push({arr[i+1]-arr[i],i});
     }
     for(int i=1;i<=k;i++){
-        auto tp=pq.top();//took the top ele
+        auto tp = pq.top();//took the top ele
         pq.pop();// always remove that top ele
 
-        int index=tp.second();
+        int index = tp.second();
         howmany[index]++;
         
-        long double inidiff=arr[index+1]-arr[index];
-        long double finaldiff= inidiff / (long double)(howmany[index]+1);
+        long double inidiff = arr[index+1]-arr[index];
+        long double finaldiff = inidiff / (long double)(howmany[index]+1);
         pq.push({finaldiff,index});
     }
 
@@ -31,32 +31,33 @@ long double gasstation(int *arr,int n,int k){//imp to take long double bcz ans w
 //------------------------------------------------------------------------------------------------------------------------------------
 
 int gasstation(int *arr,int dist){
-    int cnt=0;
+    int cnt = 0;
     for(int i=1;i<arr.size();i++){
-        int numinbtw=((arr[i]-arr[i-1])/dist);
+        int numinbtw = ((arr[i]-arr[i-1])/dist);
         if((arr[i]-arr[i-1])/dist == numinbtw*dist){
             numinbtw--;
         }
-        cnt=cnt+numinbtw;
+        cnt = cnt+numinbtw;
     }
     return cnt;
 }
 
 long double gasstation(int *arr,int n,int k){//imp to take long double bcz ans will be decimals
-    long double low=0;
-    long double high=0;
+    long double low = 0;
+    long double high = 0;
     for(int i=0;i<n-1;i++){
-        high=max(high,(long double)(arr[i+1]-arr[i]));
+        high = max(high,(long double)(arr[i+1]-arr[i]));
     }
 
     long double diff=1e-6;
     while(high-low > diff){
-        long double mid=(low+mid)/(2.0);
-        int cnt=gasstation(arr,mid);
-        if(cnt>k) low=mid;
+        long double mid = (low+mid)/(2.0);
+        int cnt = gasstation(arr,mid);
+
+        if(cnt>k) low = mid;
         else{
-            ans=high;
-            high=mid;
+            ans = high;
+            high = mid;
         }
     }
     return ans;
