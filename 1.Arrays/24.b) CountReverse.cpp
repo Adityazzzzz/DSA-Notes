@@ -21,7 +21,7 @@ void merge(int *arr,int low,int mid ,int high){
             right++;
         }
     }
-    while (left<=mid){
+    while(left<=mid){
         temp.push_back(arr[left]);
         left++;
     }

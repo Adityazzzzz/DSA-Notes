@@ -7,7 +7,7 @@ using namespace std;
 
 //   mergesort(arr,low,high){
 //      if(low==high) return;
-//      mid=(low+high)/2
+//      mid = (low+high)/2
 
 //      mergesort(arr,low,mid);
 //      mergesort(arr,mid+1,high);
@@ -34,7 +34,7 @@ void merge(int *arr,int low,int mid ,int high){
             right++;
         }
     }
-    while (left<=mid){
+    while(left<=mid){
         temp.push_back(arr[left]);
         left++;
     }

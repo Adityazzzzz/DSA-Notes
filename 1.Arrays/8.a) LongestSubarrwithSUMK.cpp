@@ -55,10 +55,10 @@ int longestSubArr(vector<long long> &arr,long long n,long long k){
     long long maxl = 0;
 
     while(right<n){
-        sum = sum+arr[right];
+        sum = sum + arr[right];
         
         while(sum>k && left<=right){
-            sum = sum-arr[left];
+            sum = sum - arr[left];
             left++;
         }
         right++;

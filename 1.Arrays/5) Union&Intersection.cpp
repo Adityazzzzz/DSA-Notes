@@ -18,8 +18,8 @@ using namespace std;
 
 // optimal solu: 2-pointer
 vector<int> unionArr(int *arr1,int *arr2,int n){
-    int i=0;
-    int j=0;
+    int i = 0;
+    int j = 0;
     vector<int>ans;
     while(i<n && j<n){
         if(arr1[i]<=arr2[j]){

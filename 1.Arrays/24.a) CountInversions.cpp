@@ -40,7 +40,7 @@ int mergesort(int *arr,int low,int high){ //.......................... 2
     int count=0;
     if(low==high) return count;
 
-    int mid=(low+high)/2;
+    int mid = (low+high)/2;
     count += mergesort(arr,low,mid);
     count += mergesort(arr,mid+1,high);
     count += merge(arr,low,mid,high);

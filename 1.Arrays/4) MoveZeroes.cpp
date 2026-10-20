@@ -19,7 +19,7 @@ void move0toend(int *arr,int n){
     //         break;
     //     }
     // }
-    int i=0;
+    int i = 0;
     for(int j=0;j<n;j++){
         if(arr[j]!=0){
             swap(arr[i],arr[j]);
