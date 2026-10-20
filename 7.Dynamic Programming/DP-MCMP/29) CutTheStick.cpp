@@ -6,7 +6,7 @@ int f(int i,int j,vector<int> &cuts){
     int mini = INT_MAX;
     if(dp[i][j]!=-1) return dp[i][j];
 
-    for(int ind = i;ind <= j;ind++){
+    for(int ind=i;ind<=j;ind++){
         int cost = (cuts[j+1]-cuts[i-1]) + f(i,ind-1,cuts) + f(ind+1,j,cuts);  
         mini = min(mini,cost);
     }

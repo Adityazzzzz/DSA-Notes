@@ -2,7 +2,7 @@
 using namespace std;
 
 bool isPalindrome(int i,int j,string s){
-    while(i < j){
+    while(i<j){
         if(s[i] != s[j]) return false;
         i++;
         j--;
@@ -11,6 +11,7 @@ bool isPalindrome(int i,int j,string s){
 }
 int f(int i,int n,string &str){
     if(i == n) return 0;
+    
     int minCost = INT_MAX;
     for(int j=i;j<n;j++){
         if(isPalindrome(i,j,str)){
