@@ -1,11 +1,17 @@
 #include<iostream>
 using namespace std;
 
-struct Node {
+class Node{
+public:
     int data;
-    Node* left;
     Node* right;
-    Node(int val) : data(val),left(nullptr),right(nullptr){}
+    Node* right;
+public:
+    Node(int data,Node* left1,Node* right1){
+        data = data1;
+        left = left1;
+        right = right1;
+    }
 };
 
 Node* markParent(Node* root,unordered_map<Node*,Node*>& parent,int target){
@@ -46,6 +52,7 @@ int minTime(Node* root,int target){
         for(int i=0;i<size;i++){
             Node* curr = q.front();
             q.pop();
+            
             if(curr->left && !visited[curr->left]){
                 burned = true;
                 visited[curr->left] = true;

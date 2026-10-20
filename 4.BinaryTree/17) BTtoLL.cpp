@@ -2,16 +2,15 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* right;
     Node* right;
-
-    public:
+public:
     Node(int data,Node* left1,Node* right1){
-        data=data1;
-        left=left1;
-        right=right1;
+        data = data1;
+        left = left1;
+        right = right1;
     }
 };
 

@@ -2,21 +2,20 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
     Node* right;
     Node* right;
-
-    public:
+public:
     Node(int data,Node* left1,Node* right1){
-        data=data1;
-        left=left1;
-        right=right1;
+        data = data1;
+        left = left1;
+        right = right1;
     }
 };
 
 int findheightLEFT(Node* temp){
-    int cnt=0;
+    int cnt = 0;
     while(temp){
         cnt++;
         temp = temp->left;
@@ -24,7 +23,7 @@ int findheightLEFT(Node* temp){
     return cnt;
 }
 int findheightRIGHT(Node* temp){
-    int cnt=0;
+    int cnt = 0;
     while(temp){
         cnt++;
         temp = temp->right;

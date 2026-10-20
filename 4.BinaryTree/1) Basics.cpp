@@ -6,12 +6,11 @@ public:
     int data;
     Node* right;
     Node* right;
-
 public:
     Node(int data,Node* left1,Node* right1){
-        data=data1;
-        left=left1;
-        right=right1;
+        data = data1;
+        left = left1;
+        right = right1;
     }
 };
 
@@ -79,7 +78,7 @@ vector<int>preorder(Node* root){
     while(!st.empty()){
         Node* temp = st.top();
         st.pop();
-        
+
         pot.push_back(temp->val);
         if(temp->right != NULL) st.push(temp->right);
         if(temp->left != NULL) st.push(temp->left);

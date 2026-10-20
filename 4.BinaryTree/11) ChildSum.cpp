@@ -6,13 +6,11 @@ public:
     int data;
     Node* left;
     Node* right;
-
     Node(int val){
         data = val;
         left = nullptr;
         right = nullptr;
     }
-
     Node(int val,Node* left1,Node* right1){
         data = val;
         left = left1;

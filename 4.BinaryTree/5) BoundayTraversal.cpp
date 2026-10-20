@@ -1,16 +1,20 @@
 #include<iostream>
 using namespace std;
 
-struct Node{
+class Node{
+public:
     int data;
-    Node* left;
     Node* right;
-    Node(int val) : data(val),left(nullptr),right(nullptr){}
+    Node* right;
+public:
+    Node(int data,Node* left1,Node* right1){
+        data = data1;
+        left = left1;
+        right = right1;
+    }
 };
-
 class Solution{
 public:
-
     bool isLeaf(Node* root){
         return !root->left && !root->right;
     }
@@ -33,7 +37,7 @@ public:
             else curr = curr->left;
         }
         // reverse
-        for(int i = temp.size() - 1;i >= 0; --i){
+        for(int i=temp.size()-1;i>=0;--i){
             res.push_back(temp[i]);
         }
     }
@@ -43,8 +47,8 @@ public:
             res.push_back(root->data);
             return;
         }
-        if(root->left)   addLeaves(root->left,res);
-        if(root->right)  addLeaves(root->right,res);
+        if(root->left) addLeaves(root->left,res);
+        if(root->right) addLeaves(root->right,res);
     }
 
     vector<int> printBoundary(Node* root){

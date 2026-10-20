@@ -1,17 +1,16 @@
 #include<iostream>
 using namespace std;
 
-class Node{
-    public:
+cclass Node{
+public:
     int data;
     Node* right;
     Node* right;
-
-    public:
+public:
     Node(int data,Node* left1,Node* right1){
-        data=data1;
-        left=left1;
-        right=right1;
+        data = data1;
+        left = left1;
+        right = right1;
     }
 };
 
@@ -51,7 +50,7 @@ int findfloor(TreeNode* temp,int key){
             return floor;
         } 
 
-        if(key < temp->val) temp = temp->left;
+        if(key<temp->val) temp = temp->left;
         else{ 
             floor = temp->val;
             temp = temp->right;

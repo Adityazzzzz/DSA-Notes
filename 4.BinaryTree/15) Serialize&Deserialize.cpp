@@ -2,19 +2,17 @@
 using namespace std;
 
 class Node{
-    public:
+public:
     int data;
-    Node* left;
     Node* right;
-
-    public:
+    Node* right;
+public:
     Node(int data,Node* left1,Node* right1){
-        data=data1;
-        left=left1;
-        right=right1;
+        data = data1;
+        left = left1;
+        right = right1;
     }
 };
-
 
 string serialize(Node* root){
     if(!root) return "";
