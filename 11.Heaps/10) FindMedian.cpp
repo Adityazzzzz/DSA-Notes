@@ -36,7 +36,7 @@ void callMedian(int x,
                 maxi.push(x);
             }
 
-            median =(maxi.top() + mini.top()) / 2;
+            median = (maxi.top() + mini.top()) / 2;
             break;
 
         // Min heap has one extra element
@@ -50,7 +50,7 @@ void callMedian(int x,
                 maxi.push(x);
             }
 
-            median =(maxi.top() + mini.top()) / 2;
+            median = (maxi.top() + mini.top()) / 2;
             break;
     }
 }

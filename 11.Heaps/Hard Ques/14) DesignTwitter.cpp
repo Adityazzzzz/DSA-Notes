@@ -15,7 +15,7 @@ public:
         vector<int>feed;
         int count = 0;
 
-        for(int i=posts.size()-1; i>=0 && count < 10; i--){
+        for(int i=posts.size()-1;i>=0 && count < 10;i--){
             if(posts[i].first == userId || follows[userId][posts[i].first]){
                 feed.push_back(posts[i].second);
                 count++;
