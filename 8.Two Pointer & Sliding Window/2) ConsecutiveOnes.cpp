@@ -3,7 +3,7 @@ using namespace std;
 
 int longestOnes(vector<int>& nums,int k){
     int n = nums.size();
-    int zeroes=0,maxlen=0,left=0,right=0;
+    int zeroes = 0,maxlen = 0,left = 0,right = 0;
 
     while(right<n){
         if(nums[right]==0){
@@ -27,7 +27,7 @@ int longestOnes(vector<int>& nums,int k){
 
 int fruitbasket(vector<int>& fruits){
     int n = fruits.size();
-    int maxlen=0,left=0,right=0;
+    int maxlen = 0,left = 0,right = 0;
     map<int,int>mpp;
 
     while(right<n){
@@ -46,7 +46,7 @@ int fruitbasket(vector<int>& fruits){
 
 // Longest Repeating Character Replacement
 int func(string s,int k){
-    int l=0,r=0,maxlen=0,maxfreq=0;
+    int l = 0,r = 0,maxlen = 0,maxfreq = 0;
     int hash[26] = {0};
 
     while(r < s.size()){

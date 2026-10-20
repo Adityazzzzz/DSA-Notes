@@ -2,10 +2,10 @@
 using namespace std;
 
 int func(string s,int k){
-    int l=0,r=0,maxlen=0,maxfreq=0;
+    int l = 0,r = 0,maxlen = 0,maxfreq = 0;
     map<char,int>mpp;
 
-    while(r < s.size()){
+    while(r<s.size()){
         mpp[s[r]]++;
         if(mpp.size() > k){
             hash[s[l]]--;

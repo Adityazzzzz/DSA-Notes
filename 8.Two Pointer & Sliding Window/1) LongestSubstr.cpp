@@ -4,7 +4,7 @@ using namespace std;
 // longest substr withut repeating char
 int lengthOfLongestSubstring(string s){
     int n = s.size();
-    int left=0,right=0,maxlen=0;
+    int left = 0,right = 0,maxlen = 0;
     unordered_set<char>st;
     
     while(right<n){ 
