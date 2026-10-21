@@ -12,7 +12,7 @@ public:
         flag = false;
     }
     bool containsKey(char ch){
-        return(links[ch-'a'] != NULL);
+        return (links[ch-'a'] != NULL);
     }
     void put(char ch,Node* temp){
         links[ch-'a'] = temp;

@@ -13,7 +13,7 @@ public:
         flag = false;
     }
     bool containsKey(char ch){
-        return(links[ch-'a'] != NULL);
+        return (links[ch-'a'] != NULL);
     }
     Node* get(char ch){
         return links[ch-'a'];

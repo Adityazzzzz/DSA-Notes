@@ -4,7 +4,7 @@ using namespace std;
 struct Node{
     Node *links[2];
     bool containsKey(int ind){
-        return(links[ind] != NULL);
+        return (links[ind] != NULL);
     }
     Node* get(int ind){
         return links[ind];
