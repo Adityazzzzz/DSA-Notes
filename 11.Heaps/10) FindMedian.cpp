@@ -3,7 +3,7 @@ using namespace std;
 
 int signum(int a,int b){
     if(a == b) return 0;
-    return(a > b) ? 1 : -1;
+    return (a > b) ? 1 : -1;
 }
 
 void callMedian(int x,
