@@ -63,7 +63,7 @@ public:
         return arr[start];
     }
     bool isEmpty(){
-        return(currSize==0);
+        return (currSize==0);
     }
 };
 
