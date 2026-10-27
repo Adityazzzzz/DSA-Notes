@@ -24,7 +24,7 @@ vector<int> smallestRange(vector<vector<int>>& nums){
         // Update smallest range
         if(maxVal-minVal < minRange){
             minRange = maxVal - minVal;
-            ans ={minVal,maxVal};
+            ans = {minVal,maxVal};
         }
         
         // Push next from same list
