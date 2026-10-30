@@ -33,3 +33,17 @@ int query(int ind,int low,int high,int l,int r){
 
     return max(left,right);
 }
+
+// TC: O(logN)
+void pointUpdate(int ind,int low,int high,int node,int val){
+    if(low == high){
+        seg[low] += val;
+    }
+    else{
+        int mid = (low + high)/2;
+        if(low<=node && node<=mid) pointUpdate(2*ind+1,low,mid,node,val);
+        else pointUpdate(2*ind+2,mid+1,high,node,val);
+
+        seg[ind] = seg[2*ind+1] + seg[2*ind+2];
+    }
+}
