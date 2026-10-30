@@ -21,7 +21,7 @@ void build(int ind,int low,int high){
 // TC: O(logN)
 int query(int ind,int low,int high,int l,int r){
     //complete overlap
-    if(low>=l && high<=r){
+    if(l<=low && high<=r){
         return seg[ind];
     }
     //no overlap
