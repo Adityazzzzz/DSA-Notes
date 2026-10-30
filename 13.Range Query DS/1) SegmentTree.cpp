@@ -3,6 +3,8 @@ using namespace std;
 
 int arr[100005],seg[100005];
 // In this segment tree, we are calculating Max Element in Range
+
+// TC: O(N)
 void build(int ind,int low,int high){
     if(low == high){
         seg[ind] = arr[low];
@@ -16,6 +18,7 @@ void build(int ind,int low,int high){
     seg[ind] = max(seg[2*ind+1],seg[2*ind+2]);//backtrack
 }
 
+// TC: O(logN)
 int query(int ind,int low,int high,int l,int r){
     //complete overlap
     if(low>=l && high<=r){
