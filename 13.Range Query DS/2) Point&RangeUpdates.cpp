@@ -2,7 +2,6 @@
 using namespace std;
 
 int arr[100005],seg[100005];
-// In this segment tree, we are calculating Max Element in Range
 void build(int ind,int low,int high){
     if(low == high){
         seg[ind] = arr[low];
