@@ -19,6 +19,7 @@ int solve(int i,int tight,int prev){
 
 int findIntegers(int n){
     s = "";
+    // this loop converts Number to binary
     for(int i=31;i>=0;i--){
         if((n>>i) & 1){
             for(int j=i;j>=0;j--){
@@ -27,6 +28,7 @@ int findIntegers(int n){
             break;
         }
     }
+    // 5 -> 101
     if(s.empty()) s = "0";
     return solve(0,1,0);
 }
