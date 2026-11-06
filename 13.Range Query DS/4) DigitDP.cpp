@@ -50,7 +50,7 @@ int solve(int i,int tight,int mask,int started){
     int limit = tight ? s[i]-'0' : 9;
     int ans = 0;
     for(int d=0;d<=limit;d++){
-        int newTight = tight && (d == limit);
+        int newTight = tight && (d == s[i]-'0');
 
         if(!started && d == 0) ans += solve(i+1,newTight,mask,0);
         else{
@@ -75,7 +75,7 @@ int solve(int i,int tight,int mask,int started){
     int limit = tight ? s[i]-'0' : 9;
     int ans = 0;
     for(int d=0;d<=limit;d++){
-        int newTight = tight && (d == limit);
+        int newTight = tight && (d == s[i]-'0');
 
         if(!started && d == 0) ans += solve(i+1,newTight,mask,0);
         else{
