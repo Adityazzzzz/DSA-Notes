@@ -43,10 +43,10 @@ int solve(int idx,bool tight,bool started){
     for(int d=0;d<=limit;d++){
         if(!started && d==0){
             res += solve(idx+1,false,false);
-            }
+        }
         else{
             if(!(mask & (1 << d))) continue;
-            res += solve(idx + 1,tight && (d == limit),true);
+            res += solve(idx+1,tight && (d == limit),true);
         }
     }
 
