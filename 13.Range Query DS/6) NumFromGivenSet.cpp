@@ -23,7 +23,6 @@ int atMostNGivenDigitSet(vector<string>& digits,int n){
     for(auto it:digits){
         mask |= (1<<stoi(it));
     }
-
     string s = to_string(n);
     return solve(0,true,false,mask);
 }
