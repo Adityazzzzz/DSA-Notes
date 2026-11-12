@@ -31,7 +31,6 @@ int atMostNGivenDigitSet(vector<string>& digits,int n){
 string s;
 int dp[11][2][2];
 int mask;
-
 int solve(int idx,bool tight,bool started){
     if(idx==s.size()) return started ? 1 : 0;
     if(dp[idx][tight][started] != -1) return dp[idx][tight][started];
