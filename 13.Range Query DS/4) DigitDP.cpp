@@ -52,7 +52,7 @@ int solve(int i,int tight,int mask,int started){
     for(int d=0;d<=limit;d++){
         int newTight = tight && (d == s[i]-'0');
 
-        if(!started && d == 0) ans += solve(i+1,newTight,mask,0);
+        if(!started && d==0) ans += solve(i+1,newTight,mask,0);
         else{
             if(mask & (1<<d)) continue;
             ans += solve(i+1,newTight,mask | (1<<d),1);
@@ -77,7 +77,7 @@ int solve(int i,int tight,int mask,int started){
     for(int d=0;d<=limit;d++){
         int newTight = tight && (d == s[i]-'0');
 
-        if(!started && d == 0) ans += solve(i+1,newTight,mask,0);
+        if(!started && d==0) ans += solve(i+1,newTight,mask,0);
         else{
             if(mask & (1<<d)) continue;
             ans += solve(i+1,newTight,mask | (1<<d),1);
