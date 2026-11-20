@@ -61,18 +61,18 @@ public:
     }
 
     void pointUpdate(long long ind,long long low,long long high,long long i,long long val){
-    if(low == high){
-        seg[ind] = val;
-        return;
+        if(low == high){
+            seg[ind] = val;
+            return;
+        }
+
+        long long mid = (low + high)/2;
+
+        if(i<=mid) pointUpdate(2*ind+1,low,mid,i,val);
+        else pointUpdate(2*ind+2,mid+1,high,i,val);
+
+        seg[ind] = min(seg[2*ind+1],seg[2*ind+2]);
     }
-
-    long long mid = (low + high)/2;
-
-    if(i<=mid) pointUpdate(2*ind+1,low,mid,i,val);
-    else pointUpdate(2*ind+2,mid+1,high,i,val);
-
-    seg[ind] = min(seg[2*ind+1],seg[2*ind+2]);
-}
 };
 
 int main(){
